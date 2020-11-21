@@ -1,13 +1,12 @@
 # lammps input file
 
-variable 	Ti equal 293.15
-variable	Tf equal 373.15
+variable 	Ti equal 293.15 # initial temperature in Kelvin
+variable	Tf equal 373.15 # final temperature in Kelvin
 
-# processors	1 1 4 # for use with openmpi
+# processors	* * 4 # for use with openmpi
 
 boundary	p p p
 units		real
-
 atom_style	full
 bond_style	harmonic
 angle_style	harmonic
@@ -31,10 +30,17 @@ fix 		myat1 all ave/time 10 100 1000 c_myTemp file temp.profile.dat
 
 thermo 	1000
 timestep 	2.0
+
 run		10000 # equilibrate the system at temperature Ti
 
+unfix myshk # to allow LAMMPS to replicate the system 
+
 replicate	2 2 1
+
+fix		myshk all shake 1.0e-4 200 0 b 1 a 1 # maintain the shape of the water molecule
+
 fix		myber all temp/berendsen ${Ti} ${Tf} 100
 
-dump 		mydmp all atom 100 dump.lammpstrj
+dump 		mydmp all atom 10000 dump.lammpstrj
+
 run		100000
