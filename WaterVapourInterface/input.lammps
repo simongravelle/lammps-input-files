@@ -1,0 +1,40 @@
+# lammps input file
+
+variable 	Ti equal 293.15
+variable	Tf equal 373.15
+
+# processors	1 1 4 # for use with openmpi
+
+boundary	p p p
+units		real
+
+atom_style	full
+bond_style	harmonic
+angle_style	harmonic
+
+pair_style	lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
+kspace_style	pppm/tip4p 1.0e-4
+pair_modify 	shift yes mix arithmetic
+
+read_data	./data.lammps
+include 	./PARM.lammps
+
+velocity 	all create ${Ti} 4928459 rot yes dist gaussian # give an initial temperature to the molecules
+
+fix		mynve all nve
+fix		myber all temp/berendsen ${Ti} ${Ti} 100
+
+fix		myshk all shake 1.0e-4 200 0 b 1 a 1 # maintain the shape of the water molecule
+
+compute		myTemp all temp
+fix 		myat1 all ave/time 10 100 1000 c_myTemp file temp.profile.dat
+
+thermo 	1000
+timestep 	2.0
+run		10000 # equilibrate the system at temperature Ti
+
+replicate	2 2 1
+fix		myber all temp/berendsen ${Ti} ${Tf} 100
+
+dump 		mydmp all atom 100 dump.lammpstrj
+run		100000
