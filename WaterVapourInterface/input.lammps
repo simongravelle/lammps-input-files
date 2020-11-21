@@ -1,7 +1,6 @@
 # lammps input file
 
-variable 	Ti equal 293.15 # initial temperature in Kelvin
-variable	Tf equal 373.15 # final temperature in Kelvin
+variable 	T equal 273.15+90 # temperature in Kelvin
 
 # processors	* * 4 # for use with openmpi
 
@@ -18,10 +17,10 @@ pair_modify 	shift yes mix arithmetic
 read_data	./data.lammps
 include 	./PARM.lammps
 
-velocity 	all create ${Ti} 4928459 rot yes dist gaussian # give an initial temperature to the molecules
+velocity 	all create ${T} 4928459 rot yes dist gaussian # give an initial temperature to the molecules
 
 fix		mynve all nve
-fix		myber all temp/berendsen ${Ti} ${Ti} 100
+fix		myber all temp/berendsen ${T} ${T} 100
 
 fix		myshk all shake 1.0e-4 200 0 b 1 a 1 # maintain the shape of the water molecule
 
@@ -38,8 +37,6 @@ unfix myshk # to allow LAMMPS to replicate the system
 replicate	2 2 1
 
 fix		myshk all shake 1.0e-4 200 0 b 1 a 1 # maintain the shape of the water molecule
-
-fix		myber all temp/berendsen ${Ti} ${Tf} 100
 
 dump 		mydmp all atom 10000 dump.lammpstrj
 
