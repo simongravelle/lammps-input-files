@@ -1,4 +1,4 @@
-Molecular dynamics simulation of a water-vapour interface. After an equilibration step, the temperature of the system is increased linearly. 
+Molecular dynamics simulation of a water-vapour interface.
 
 Step 1: Run the GenerateData.m using octave of matlab, or just use the data.lammps already generated.
 
