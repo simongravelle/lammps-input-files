@@ -1,7 +1,9 @@
-Run the GenerateData.m using octave of matlab, or just use the data.lammps already generated.
+Molecular dynamics simulation of a water-vapour interface. After an equilibration step, the temperature of the system is increased linearly. 
 
-Run the input.lammps using LAMMPS. The water is TIP4P/2005.
+Step 1: Run the GenerateData.m using octave of matlab, or just use the data.lammps already generated.
 
-Visualise the dump file using VMD for example.
+Step 2: Run the input.lammps using LAMMPS. The water is TIP4P/2005.
 
-Visualise the evolution of the temperature with time using xmgrace for example.
+Step 3: Visualise the dump file using VMD for example.
+
+Step 4: Visualise the evolution of the temperature with time using xmgrace for example.
