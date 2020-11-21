@@ -1,0 +1,20 @@
+# this file contains parameter for the TIP4P/2005 force field
+
+# Mass
+
+mass 1 15.9994 # oxygen
+mass 2 1.008 # hydrogen
+
+#Pair Coeff
+
+pair_coeff 1 1 0.1852 3.1589
+pair_coeff 2 2 0 0
+
+#Bond
+
+bond_coeff 1 0 0.9572
+
+#Angle
+
+angle_coeff 1 0 104.52
+
