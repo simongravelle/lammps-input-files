@@ -1,0 +1,83 @@
+# this script allows to simulate a single CNT under longitudinal stress
+
+variable	poro equal 0.03 # control the fraction of atom to remove
+variable	seed equal 15462 # change to run different simulation
+variable	T equal 300 # initiale temperature
+variable	dt equal 0.0005 # ps unit 
+
+units		metal # required by airebo
+atom_style	full
+boundary	p p p
+pair_style  	airebo 2.5 1 1
+
+read_data	data.mysystem
+change_box	all z final -30 70 y final -20 20 x final -20 20
+pair_coeff 	* * ./CH.airebo C C C
+
+group		CNT type 1
+variable	zmax equal bound(CNT,zmax)-10
+variable	zmin equal bound(CNT,zmin)+10
+variable	zmax0 equal bound(CNT,zmax)-20
+variable	zmin0 equal bound(CNT,zmin)+20
+
+region		top block INF INF INF INF ${zmax} INF
+region		bot block INF INF INF INF INF ${zmin}
+region		mob block INF INF INF INF ${zmin0} ${zmax0}
+group		topgroup region top
+group		botgroup region bot
+group		mobile region mob
+
+set 		group topgroup type 2 # control group 1
+set 		group botgroup type 3 # control group 2
+
+delete_atoms 	porosity mob ${poro} ${seed} # create porosity only in the central part
+
+fix		myber all temp/berendsen ${T} ${T} 0.1
+fix		mynve all nve
+
+dump 		mydmp all atom 500 dump.eq.lammpstrj
+
+timestep	${dt}
+thermo		500
+run		5000 # first step, equilibrate the whole system at T
+
+unfix		myber
+undump		mydmp
+
+dump 		mydmp all atom 1000 dump.run.lammpstrj
+
+fix 		sf1 topgroup setforce NULL NULL 0.0 # kill all the force along z for the control group 1 
+fix 		sf2 botgroup setforce NULL NULL 0.0 # kill all the force along z for the control group 2 
+velocity	topgroup set NULL NULL 0 # cancel velocity for the control group 1 
+velocity	botgroup set NULL NULL 0 # cancel velocity for the control group 2
+
+compute	Ttop topgroup temp/partial 1 1 0 # for thermalisation of the control group 1 along x and y only
+compute	Tbot botgroup temp/partial 1 1 0 # for thermalisation of the control group 2 along x and y only
+compute	Tmob mobile temp
+thermo_modify 	temp Tmob # to print the temperature of the central part
+
+fix		myber1 topgroup temp/berendsen ${T} ${T} 0.1
+fix_modify	myber1 temp Ttop # for thermalisation of the control group 1 along x and y only
+fix		myber2 botgroup temp/berendsen ${T} ${T} 0.1
+fix_modify	myber2 temp Tbot # for thermalisation of the control group 2 along x and y only
+
+# output
+variable	L equal v_zmax-v_zmin # length of the central part
+fix 		myat1 all ave/time 10 10 100 v_L file tubeLength.dat
+variable	longforce equal f_sf1[3]-f_sf2[3]
+fix 		myat2 all ave/time 10 10 100 v_longforce file forcetube.dat
+
+# incremental elongation of the tube
+variable 	a loop 100
+label 		loop
+displace_atoms	topgroup move 0 0 0.1
+displace_atoms	botgroup move 0 0 -0.1
+run		1000
+next		a
+jump 		input.lammps loop
+
+
+
+
+
+
