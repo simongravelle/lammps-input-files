@@ -7,3 +7,5 @@ Step 2: Run the input.lammps using LAMMPS. The water is TIP4P/2005.
 Step 3: Visualise the dump file using VMD for example.
 
 Step 4: Visualise the evolution of the temperature with time using xmgrace for example.
+
+A video corresponding to the simulation is available here : https://www.youtube.com/watch?v=3xhfw0KIRYk
