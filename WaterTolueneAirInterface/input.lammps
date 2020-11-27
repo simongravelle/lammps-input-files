@@ -1,0 +1,61 @@
+# lammps input file
+
+processors	* * *
+
+boundary	p p p
+units		real
+
+atom_style	full
+bond_style	harmonic
+angle_style	harmonic
+dihedral_style	hybrid opls harmonic
+improper_style	harmonic
+
+pair_style	lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
+kspace_style	pppm/tip4p 1.0e-4
+pair_modify 	shift yes mix arithmetic
+special_bonds	lj/coul 0.0 0.0 0.5 angle yes dihedral yes
+
+read_data	./data.lammps
+include 	./PARM.lammps
+
+dump 		dp1 all atom 1000 dump.eq.lammpstrj		
+
+group		H2O type 1
+group		H2O include molecule
+group		tol type 22
+group		tol include molecule
+
+fix		s1 H2O shake 1.0e-4 200 0 b 1 a 1
+
+fix		mynve all nve
+fix 		myber all temp/berendsen 1.0 300.0 100.0
+
+fix		myrc all recenter NULL INIT NULL
+ 
+thermo 	500
+timestep 	1.0
+run		50000
+undump		dp1
+change_box 	all y final -50 50
+
+dump 		dp1 all atom 5000 dump.run.lammpstrj		
+fix 		myber all temp/berendsen 300.0 300.0 100.0
+
+fix		myrc all recenter NULL INIT NULL
+
+run		1000000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
