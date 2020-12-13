@@ -1,4 +1,4 @@
-# Water molecule. SPC/E model.
+# Water molecule. TIP4P/2005 model.
 
 3 atoms
 2 bonds
