@@ -1,0 +1,20 @@
+# LAMMPS input - silicalite with tersoff potential
+
+boundary	p p p
+units		metal
+atom_style	atomic
+pair_style	tersoff
+
+read_data	data.lammps
+
+mass 		1 15.999400
+mass 		2 28.085501
+
+pair_coeff 	* * SiO.tersoff O Si
+
+fix		mynpt all nvt temp 300 300 0.1
+
+dump 		dp1 all atom 1000 dump.all.lammpstrj
+
+thermo		1000
+run		5000
