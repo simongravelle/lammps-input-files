@@ -3,7 +3,7 @@
 
 ## LAMMPS input script
 
-This folder contains LAMMPS (molecular simulation) input scripts. Download lammps here: https://lammps.sandia.gov/
+This folder contains LAMMPS (molecular simulation) input scripts. Download LAMMPS here: https://lammps.sandia.gov/
 
 ## Videos
 
