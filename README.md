@@ -1,3 +1,9 @@
-This folder contains LAMMPS input scripts (https://lammps.sandia.gov/).
+## LAMMPS input script
 
-Videos corresponding to the scripts are available here : https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw 
+This folder contains LAMMPS (molecular simulation) input scripts.
+
+Download lammps here: https://lammps.sandia.gov/
+
+## Videos
+
+For each folder, there is a video here: https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw 
