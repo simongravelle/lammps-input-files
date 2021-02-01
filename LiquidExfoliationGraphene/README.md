@@ -1,4 +1,4 @@
-# Liquid exfoliation of a multilayer nanographene: out-of-equilibrium molecular dynamic simulations
+## Liquid exfoliation of a multilayer nanographene: out-of-equilibrium molecular dynamic simulations
 
 ### Step 1
 
@@ -10,7 +10,7 @@ From the Equilibration forder, run the input.lammps script using LAMMPS
 
 ### Step 3
 
-finally, run the input.lammps cript within Run using LAMMPS. this perform a shearing simulation with a shear rate of 1e10 1/s
+Finally, run the input.lammps cript within Run using LAMMPS. this perform a shearing simulation with a shear rate of 1e10 1/s
 
 ### Output
 
