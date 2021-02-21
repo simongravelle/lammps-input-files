@@ -12,9 +12,7 @@ read_data	./data.lammps
 include 	./PARM.lammps
 
 group		wat type 1 2
-group		Na type 3
-group		Cl type 4
-group		salt type 3 4
+group		salt type 3 4 # Na = type 3 and Cl = type 4
 
 dump		dp1 all atom 50000 dump.lammpstrj
 
