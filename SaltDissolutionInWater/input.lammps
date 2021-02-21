@@ -26,7 +26,3 @@ fix		myrct salt recenter INIT INIT INIT
 timestep	1.0
 thermo		1000
 run 		25000000
-write_data	data.lammps
-
-
-
