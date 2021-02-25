@@ -1,2 +1,2 @@
-the GO particle has been made using make graphitics : https://github.com/velocirobbie/make-graphitics
+I used 'make graphitics' to generate the GO particle : https://github.com/velocirobbie/make-graphitics
 
