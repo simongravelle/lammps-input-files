@@ -1,0 +1,34 @@
+fix 			11 bond3 bond/create 1 2 3 3.0 1 prob 1. 1423
+fix 			12 bond3 bond/break 1 1 3.0 prob 1. 143
+
+fix 			13 bond4 bond/create 1 2 4 3.0 1 prob 1. 1423
+fix 			14 bond4 bond/break 1 1 3.0 prob 1. 143
+
+fix 			15 bond5 bond/create 1 2 5 3.0 1 prob 1. 1423
+fix 			16 bond5 bond/break 1 1 3.0 prob 1. 143
+
+fix 			17 bond6 bond/create 1 2 6 3.0 1 prob 1. 1423
+fix 			18 bond6 bond/break 1 1 3.0 prob 1. 143
+
+fix 			21 bond7 bond/create 1 2 3 3.0 1 prob 1. 1423
+fix 			22 bond7 bond/break 1 1 3.0 prob 1. 143
+
+fix 			23 bond8 bond/create 1 2 4 3.0 1 prob 1. 1423
+fix 			24 bond8 bond/break 1 1 3.0 prob 1. 143
+
+fix 			25 bond9 bond/create 1 2 5 3.0 1 prob 1. 1423
+fix 			26 bond9 bond/break 1 1 3.0 prob 1. 143
+
+fix 			27 bond10 bond/create 1 2 6 3.0 1 prob 1. 1423
+fix 			28 bond10 bond/break 1 1 3.0 prob 1. 143
+
+variable		N1 equal f_11[2]-f_12[2]
+variable		N2 equal f_13[2]-f_14[2]
+variable		N3 equal f_15[2]-f_16[2]
+variable		N4 equal f_17[2]-f_18[2]
+variable		N5 equal f_21[2]-f_22[2]
+variable		N6 equal f_23[2]-f_24[2]
+variable		N7 equal f_25[2]-f_26[2]
+variable		N8 equal f_27[2]-f_28[2]
+
+variable		Ntot equal v_N1+v_N2+v_N3+v_N4+v_N5+v_N6+v_N7+v_N8

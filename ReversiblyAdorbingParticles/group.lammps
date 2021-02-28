@@ -1,0 +1,10 @@
+group 			ions type 3 4 5 6 7 8 9 10
+group 			solide type  1 2
+group			bond3 type 2 3
+group			bond4 type 2 4
+group			bond5 type 2 5
+group			bond6 type 2 6
+group			bond7 type 2 7
+group			bond8 type 2 8
+group			bond9 type 2 9
+group			bond10 type 2 10
