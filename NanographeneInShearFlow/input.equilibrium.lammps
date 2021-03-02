@@ -1,8 +1,7 @@
-# lammps shearing
+# lammps equilibrate
 
-variable 	T equal 300 			# desired temperature (K)
-variable	p0 equal 1e5  			# desired pressure (Pa)
-variable	gamma equal 1e10/1e15 		# desired shear rate (1/fs)
+variable 	T equal 300 		# desired temperature (K)
+variable	p0 equal 1e5  		# desired pressure (Pa)
 
 boundary	p p p
 units		real
@@ -19,9 +18,8 @@ kspace_style	pppm/tip4p 1.0e-4
 pair_modify 	shift yes mix arithmetic
 special_bonds	lj 0.0 0.0 0.5 coul 0.0 0.0 1.0 angle yes dihedral yes
 
-read_data	data.equilibrium
+read_data	data.lammps
 include 	PARM.lammps
-change_box 	all z final -46 46
 
 region		TopR block INF INF INF INF 0 INF 
 region		BotR block INF INF INF INF INF 0 
@@ -47,30 +45,20 @@ fix    	af2 pstBot aveforce NULL NULL ${f0}
 fix 		sf1 pstTop setforce 0.0 0.0 NULL
 fix 		sf2 pstBot setforce 0.0 0.0 NULL
 
-compute	tpi H2O temp/partial 0 1 1
+compute	tpi H2O temp
 fix 		myber H2O temp/berendsen ${T} ${T} 100
 fix_modify	myber temp tpi
-fix 		mynve all nve
+fix 		mynve1 H2O nve
+fix 		mynve2 pst nve
 fix		myshk H2O shake 1.0e-4 200 0 b 9 a 3
 fix		myrct all recenter NULL NULL INIT
 
-variable	pist equal bound(pstTop,zmin)
-variable	pisb equal bound(pstBot,zmax)
-variable	pU equal ${gamma}*(v_pist-v_pisb)/2
-variable	mU equal -v_pU
-velocity 	pstTop set v_pU NULL NULL
-velocity 	pstBot set v_mU NULL NULL
-
-dump 		mydmp all atom 5000 dump.lammpstrj
+dump 		mydmp all atom 5000 dump.eq.lammpstrj
 
 timestep 	1.0
 thermo 	1000
 thermo_modify 	temp tpi
 run		50000
-
-
-
-
-
+write_data	data.equilibrium
 
 
