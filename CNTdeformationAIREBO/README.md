@@ -1,3 +1,9 @@
-Molecular dynamics simulation of a CNT. The force field is AIREBO, and the initial configutation has been generated using TopoTools (https://sites.google.com/site/akohlmey/software/topotools) and VMD (https://www.ks.uiuc.edu/Research/vmd/).
+## Deformation of a carbon nanotube using a reactive force field
 
-A video corresponding to the simulation is available here : https://www.youtube.com/watch?v=f1ve1j3yA6w.
+Molecular dynamics simulation of a carbon nanotube. The reactive force field is AIREBO, and the initial configutation has been generated using TopoTools (https://sites.google.com/site/akohlmey/software/topotools) and VMD (https://www.ks.uiuc.edu/Research/vmd/).
+
+Just run the input.lammps file using LAMMPS.
+
+### Output
+
+The following video has been made with this code : https://www.youtube.com/watch?v=f1ve1j3yA6w
