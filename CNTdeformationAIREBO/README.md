@@ -1,12 +1,14 @@
-## Deformation of a carbon nanotube using a reactive force field
+## Carbon nanotube under longitudinal strain using a reactive force field
 
-Molecular dynamics simulation of a carbon nanotube under deformation. The CNT is divided into three parts (central part + 2 edges), and a displacement is imposed to the two edges, forcing the elongation of the CNT. Since a reactive force field (AIREBO) is used, chemical bonds eventualy break. The initial configuration has been generated using TopoTools (https://sites.google.com/site/akohlmey/software/topotools) and VMD (https://www.ks.uiuc.edu/Research/vmd/).
+### Description
+
+The simulation consists of a singne CNT in vacuum. The CNT is divided into three parts: the central part and the two edges. The two edges are forced to moved, which leads to progressive elongation of the CNT. Eventually, the CNT will break. The breaking of the chemical bonds is permit by the use of a reactive force field (AIREBO). 
 
 ![Algorithm schema](./CNTunderdeformation.jpeg)
 
-Run the input.lammps file using LAMMPS.
+### How to
 
-A step-by-step tutorial describing the generation of a carbon structure using VMD and TopoTools is available here: https://lammpstutorials.github.io/
+Simply run the input.lammps file using LAMMPS, and visualise the 'dump' output using VMD or Ovito. The initial configuration has been generated using TopoTools (https://sites.google.com/site/akohlmey/software/topotools) and VMD (https://www.ks.uiuc.edu/Research/vmd/). A step-by-step tutorial describing the generation of a carbon structure using VMD and TopoTools is available here: https://lammpstutorials.github.io/
 
 ### Output
 
