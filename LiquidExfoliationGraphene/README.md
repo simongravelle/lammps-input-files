@@ -1,18 +1,21 @@
 ## Liquid exfoliation of a multilayer nanographene: out-of-equilibrium molecular dynamic simulations
 
-### Step 1
+### Description
 
-From the Construction folder, run the GenerateData.m script using Matlab
+The simulation consists of a nanoparticle made of multiple graphene layers in a box of water. A linear shear is imposed thanks to two moving walls.  The shear rate of 1e10 1/s.
 
-### Step 2
+![Algorithm schema](./LiquideExfoliationGraphene.jpeg)
 
-From the Equilibration forder, run the input.lammps script using LAMMPS
+### How to
 
-### Step 3
-
-Finally, run the input.lammps cript within Run using LAMMPS. this perform a shearing simulation with a shear rate of 1e10 1/s
+From the 'Construction' folder, run the GenerateData.m script using Matlab (Octave should also work with a few modification). From the 'Equilibration' folder, run the input.lammps script using LAMMPS. Finally, run the input.lammps cript within the 'Run' folder using LAMMPS. 
 
 ### Output
 
-The following video has been made with this code using a shear rate of 200e10 1/s : 
-https://www.youtube.com/watch?v=GALFLXkUEAU
+The following video has been made with this code : https://www.youtube.com/watch?v=GALFLXkUEAU
+
+### See also
+
+My LAMMPS tutorials website : https://lammpstutorials.github.io/
+
+
