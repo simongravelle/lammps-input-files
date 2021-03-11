@@ -16,6 +16,6 @@ The following video has been made with this code : https://www.youtube.com/watch
 
 ### See also
 
-My LAMMPS tutorial website : https://lammpstutorials.github.io/
+My LAMMPS tutorials website : https://lammpstutorials.github.io/
 
 
