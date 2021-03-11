@@ -8,7 +8,7 @@ The simulation consists of a nanoparticle made of multiple graphene layers in a 
 
 ### How to
 
-From the 'Construction' folder, run the GenerateData.m script using Matlab (Octave should also work with a few modification). From the 'Equilibration' folder, run the input.lammps script using LAMMPS. Finally, run the input.lammps cript within the 'Run' folder using LAMMPS. 
+From the 'Construction' folder, run the GenerateData.m script using Matlab (Octave should also work with a few modification). From the 'Equilibration' folder, run the input.lammps script using LAMMPS. Finally, run the input.lammps script within the 'Run' folder using LAMMPS. 
 
 ### Output
 
