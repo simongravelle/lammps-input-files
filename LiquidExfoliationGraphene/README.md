@@ -2,7 +2,7 @@
 
 ### Description
 
-The simulation consists of a nanoparticle made of multiple graphene layers in a box of water. A linear shear is imposed thanks to two moving walls.  The shear rate of 1e10 1/s.
+The simulation consists of a nanoparticle made of multiple graphene layers in a box of water. A linear shear is imposed thanks to two moving walls.  With a shear rate of 1e10 1/s or higher, the layers separate from each other and the particle is exfoliated into multiple single layer particles.
 
 ![Algorithm schema](./LiquideExfoliationGraphene.jpeg)
 
@@ -17,5 +17,7 @@ The following video has been made with this code : https://www.youtube.com/watch
 ### See also
 
 My LAMMPS tutorials website : https://lammpstutorials.github.io/
+
+Our article on the subject : https://doi.org/10.1063/1.5141515
 
 
