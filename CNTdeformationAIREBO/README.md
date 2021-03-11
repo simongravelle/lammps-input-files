@@ -13,3 +13,9 @@ Simply run the input.lammps file using LAMMPS, and visualise the 'dump' output u
 ### Output
 
 The following video has been made with this code : https://www.youtube.com/watch?v=f1ve1j3yA6w
+
+### See also
+
+My LAMMPS tutorial website : https://lammpstutorials.github.io/
+
+
