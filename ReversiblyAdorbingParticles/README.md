@@ -17,5 +17,6 @@ The following video has been made with this code : https://youtu.be/lIL5v0_ObnU
 ### See also
 
 My LAMMPS tutorials website : https://lammpstutorials.github.io/
+
 Our article on the origin of pink noise in nanopore : https://pubs.acs.org/doi/10.1021/acs.nanolett.9b02858
 
