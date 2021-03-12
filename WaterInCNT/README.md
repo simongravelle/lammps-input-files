@@ -8,7 +8,7 @@ The first part of the run consists of a GCMC step. During this step, water molec
 
 ### How to
 
-Run the GenerateData.m using octave of matlab, or just use the data.lammps already generated. Then, run the input.lammps using LAMMPS.
+Run the GenerateData.m using octave or matlab, or just use the data.lammps already generated. Then, run the input.lammps using LAMMPS.
 
 ### Output
 
