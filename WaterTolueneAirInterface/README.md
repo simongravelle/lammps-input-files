@@ -1,11 +1,20 @@
 
+## Molecular dynamics simulation of a oil-water-vapor interface.
 
-Molecular dynamics simulation of a oil-water-vapor interface.
+### Description
 
-Step 1: Run the GenerateData.m using octave of matlab, or just use the data.lammps already generated.
+Molecular dynamics simulation of a slab of initially mixed water and toluene molecules in contact with vacuum. The temperature is 300°K.
 
-Step 2: Run the input.lammps using LAMMPS.
+![Algorithm schema](./WaterToluene.jpeg)
 
-Step 3: Visualise the dump file using VMD for example.
+### How to
 
-A video corresponding to the simulation is available here : https://www.youtube.com/watch?v=r9nScybOfz8&feature=youtu.be
+Run the GenerateData.m using octave or matlab, or just use the data.lammps already generated. Then, run the input.lammps using LAMMPS. Visualise the dump file using VMD of Ovito.
+
+### Output
+
+The following video has been made with this code : https://www.youtube.com/watch?v=rFG4MNJ5K10
+
+### See also
+
+My LAMMPS tutorials website : https://lammpstutorials.github.io/
