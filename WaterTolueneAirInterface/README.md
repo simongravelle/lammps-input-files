@@ -1,5 +1,5 @@
 
-## Molecular dynamics simulation of a oil-water-vapor interface.
+## Molecular dynamics simulation of a oil-water-vapor interface
 
 ### Description
 
