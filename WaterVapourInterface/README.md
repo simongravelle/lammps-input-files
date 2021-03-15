@@ -1,11 +1,20 @@
-Molecular dynamics simulation of a water-vapour interface.
 
-Step 1: Run the GenerateData.m using octave of matlab, or just use the data.lammps already generated.
+## Vaporisation of a water slab using molecular dynamics simulation
 
-Step 2: Run the input.lammps using LAMMPS. The water is TIP4P/2005.
+### Description
 
-Step 3: Visualise the dump file using VMD for example.
+Molecular dynamics simulation of a slab of water in contact with vacuum. The water model is TIP4P/2005. The temperature is increased from 20°C to 400°C. The total duration of the simulation is 0.1 nanosecond.
 
-Step 4: Visualise the evolution of the temperature with time using xmgrace for example.
+![Algorithm schema](./WaterVour.jpeg)
 
-A video corresponding to the simulation is available here : https://www.youtube.com/watch?v=3xhfw0KIRYk
+### How to
+
+Run the GenerateData.m using octave or matlab, or just use the data.lammps already generated. Then, run the input.lammps using LAMMPS. Visualise the dump file using VMD of Ovito.
+
+### Output
+
+The following video has been made with this code : https://www.youtube.com/watch?v=l_APjA5_wZc
+
+### See also
+
+My LAMMPS tutorials website : https://lammpstutorials.github.io/
