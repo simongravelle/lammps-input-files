@@ -1,8 +1,8 @@
-## Generation of amorphous carbon structure  using the liquid quench method
+## Generation of amorphous carbon structure using the liquid quench method
 
 ### Description
 
-The simulation consists of carbon atoms, initially in the liquid state (high temperature). The temperature of the system is decreased progressively, and hexagonal rings form. 
+The simulation consists of carbon atoms, initially in the liquid state (high temperature). The temperature of the system is decreased progressively until hexagonal rings form. It results in an amorphous nanoporous structure of carbon.
 
 ![Algorithm schema](./AmorphousCarbon.jpeg)
 
