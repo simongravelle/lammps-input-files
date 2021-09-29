@@ -16,4 +16,4 @@ This [video](https://youtu.be/P6M7mJdh7uM) has been made with this script.
 
 ### Contact
 
-Feel free to contact me by email if you have inquiries. You can find details on my [personal page](https://lammpstutorials.github.io/).
+Feel free to contact me by email if you have inquiries. You can find contact details on my [personal page](https://simongravelle.github.io/).
