@@ -8,14 +8,12 @@ The simulation consists of carbon atoms, initially in the liquid state (high tem
 
 ### How to
 
-Simply run the input.lammps file using LAMMPS, and visualise the 'dump' output using VMD or Ovito.
+Run the input.lammps file using LAMMPS, and visualise the 'dump' output using VMD or Ovito.
 
 ### Output
 
-The following video has been made with this code : https://youtu.be/P6M7mJdh7uM
+This [video](https://youtu.be/P6M7mJdh7uM) has been made with this script.
 
 ### See also
 
-My LAMMPS tutorials website : https://lammpstutorials.github.io/
-
-
+My [personal page](https://lammpstutorials.github.io/) and [LAMMPS Tutorials](https://lammpstutorials.github.io/) website.

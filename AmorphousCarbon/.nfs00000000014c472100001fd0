@@ -1,10 +1,4 @@
 # LAMMPS input script
-# Tested with the 30Jul2021 version of LAMMPS
-# Writen by Simon Gravelle
-# https://simongravelle.github.io/
-# Find more script here:
-# https://github.com/simongravelle/lammps-input-files
-# https://lammpstutorials.github.io/
 
 units		metal
 atom_style	full
