@@ -11,9 +11,9 @@ atom_style	full
 boundary	p p p
 pair_style  	airebo 2.5 1 1
 
-region		block block -28.750 28.750 -20 20 -25 25
+region		block block -20 20 -20 20 -20 20
 create_box	1 block                                                                   
-create_atoms 	1 random 7000 45287 block
+create_atoms 	1 random 5000 45287 block
 
 mass 		1 12.0107
 
@@ -24,10 +24,9 @@ minimize 	1.0e-4 1.0e-6 100 1000
 reset_timestep	0
 
 velocity 	all create 10000 49284 dist gaussian
+fix		mynvt all nvt temp 10000 4000 0.1
 
 dump 		dp1 all atom 10000 dump.lammpstrj
-
-fix		mynvt all nvt temp 10000 4000 0.1
 
 timestep	0.0005
 thermo		1000
