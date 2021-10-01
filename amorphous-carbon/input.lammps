@@ -1,4 +1,4 @@
-# LAMMPS input script
+# This LAMMPS input script simulates the formation of amorphous carbon structure
 # Tested with the 30Jul2021 version of LAMMPS
 # Writen by Simon Gravelle
 # https://simongravelle.github.io/
@@ -16,7 +16,7 @@ create_box	1 block
 create_atoms 	1 random 5000 45287 block
 
 mass 		1 12.0107
-pair_coeff	* * ./CH.airebo C
+pair_coeff	* * ../ff/CH.airebo C
 
 thermo		10
 minimize 	1.0e-4 1.0e-6 100 1000

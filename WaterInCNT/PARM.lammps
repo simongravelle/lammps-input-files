@@ -9,7 +9,7 @@ mass 3 12.011 # C (CNT AIREBO)
 pair_coeff * * lj/cut/tip4p/long 0 0
 pair_coeff 1 1 lj/cut/tip4p/long 0.008031034 3.1589 # O-O (water TIP4P/2005)
 pair_coeff 1 3 lj/cut/tip4p/long 0.00494351 3.28 # O-C (amber)
-pair_coeff * * airebo ./CH.airebo NULL NULL C
+pair_coeff * * airebo ../ff/CH.airebo NULL NULL C
 
 #Bond
 

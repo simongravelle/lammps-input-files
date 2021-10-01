@@ -1,4 +1,10 @@
-# this script allows to simulate a single CNT under longitudinal stress
+# This LAMMPS input script simulates a single CNT with defects under longitudinal stress
+# Tested with the 29Sep2021 version of LAMMPS
+# Writen by Simon Gravelle
+# https://simongravelle.github.io/
+# Find more script here:
+# https://github.com/simongravelle/lammps-input-files
+# https://lammpstutorials.github.io/
 
 variable	poro equal 0.03 # control the fraction of atom to remove
 variable	seed equal 15462 # change to run different simulation
@@ -10,9 +16,9 @@ atom_style	full
 boundary	p p p
 pair_style  	airebo 2.5 1 1
 
-read_data	data.mysystem
+read_data	data.CNT
 change_box	all z final -30 70 y final -20 20 x final -20 20
-pair_coeff 	* * ./CH.airebo C C C
+pair_coeff 	* * ../ff/CH.airebo C C C
 
 group		CNT type 1
 variable	zmax equal bound(CNT,zmax)-10
