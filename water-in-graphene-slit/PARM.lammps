@@ -1,0 +1,20 @@
+
+mass 1 15.9994 # O TIP4P/epsilon
+mass 2 1.008 # H TIP4P/epsilon
+mass 3 12.011 # C
+
+pair_coeff 1 1 0.18481 3.165 # TIP4P/epsilon
+pair_coeff 2 2 0.0 0.0 # TIP4P/epsilon
+pair_coeff 3 3 0.0663 3.5812 # GROMOS53A6
+
+bond_coeff 1 0 0.9572 # TIP4P/epsilon
+bond_coeff 2 610.0 1.42 # GROMOS53A6
+
+angle_coeff 1 0 104.52 # TIP4P/epsilon
+angle_coeff  2 80.0 120.0 # GROMOS53A6
+
+dihedral_coeff 1 0.0 7.25 0.0	0.0
+
+improper_coeff 1 5.0 180.0
+
+

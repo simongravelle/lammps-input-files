@@ -1,0 +1,44 @@
+# LAMMPS input file
+
+variable	tem equal 300
+variable	frc equal 2e-4 # force to be applied to the water molecule
+
+units		real
+atom_style	full
+bond_style	harmonic
+angle_style	harmonic
+dihedral_style	opls
+improper_style	harmonic
+boundary	p p p
+pair_style  	lj/cut/tip4p/long 1 2 1 1 0.105 10.0
+kspace_style	pppm/tip4p 1.0e-4
+pair_modify	mix arithmetic tail yes
+special_bonds	lj/coul 0.0 0.0 0.5 angle yes
+
+read_data	data.lammps
+include 	PARM.lammps
+
+group		wat type 1 2
+group		Car type 3
+
+fix		myshk wat shake 1.0e-4 200 0 b 1 a 1
+fix		mynve all nve
+
+compute 	ctN wat temp/partial 0 1 1 # only thermalise the water using ddl normal to the direction of the flow
+fix		myber1 wat temp/berendsen ${tem} ${tem} 100
+fix_modify	myber1 temp ctN
+
+compute 	ctM Car temp
+fix		myber2 Car temp/berendsen ${tem} ${tem} 100
+fix_modify	myber2 temp ctM
+
+fix 		kick wat addforce ${frc} 0.0 0.0
+
+fix 		mymum Car momentum 1 linear 1 1 1
+fix 		myrec Car recenter NULL NULL INIT
+
+dump		dp1 all atom 1000 dump.lammpstrj
+
+timestep	2.0
+thermo		1000
+run		50000
