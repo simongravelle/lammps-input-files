@@ -2,7 +2,7 @@
 
 ### Description
 
-The simulation consists of a single graphene oxide particle with a few water molecules. The initial GO nanoparticle has been generated using [make graphitics](https://github.com/velocirobbie/make-graphitics)
+The simulation consists of a single graphene oxide particle with a few water molecules. The initial GO nanoparticle has been generated using [make graphitics](https://github.com/velocirobbie/make-graphitics).
 
 ![Algorithm schema](./GO-nanoparticle.jpg)
 
