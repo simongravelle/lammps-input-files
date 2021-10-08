@@ -1,21 +1,21 @@
-## Graphene oxide nanoparticle and water molecules
+## Graphene oxide nanoparticle in interaction with water
 
 ### Description
 
-The simulation consists of a single graphene oxide particle in a box with a few water molecules.
+The simulation consists of a single graphene oxide particle with a few water molecules. The initial GO nanoparticle has been generated using [make graphitics](https://github.com/velocirobbie/make-graphitics)
 
-![Algorithm schema](./GOnanoparticle.jpeg)
+![Algorithm schema](./GO-nanoparticle.jpg)
 
 ### How to
 
-Simply run the input.lammps file using LAMMPS, and visualise the 'dump' output using VMD or Ovito. The initial configuration has been generated with the help of 'make graphitics': https://github.com/velocirobbie/make-graphitics
+Run the input.lammps file using LAMMPS, and visualise the 'dump' output using VMD. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 ### Output
 
-The following video has been made with this code : https://www.youtube.com/watch?v=5DaTJFEyUmI
+This [video](https://www.youtube.com/watch?v=5DaTJFEyUmI) has been made with this script.
 
-### See also
+### Contact
 
-My LAMMPS tutorials website : https://lammpstutorials.github.io/
+Feel free to contact me by email if you have inquiries. You can find contact details on my [personal page](https://simongravelle.github.io/).
 
 
