@@ -14,9 +14,9 @@ tzlo=-30; tzhi=-tzlo;
 
 dx=3.4;
 
-PnmpA=load('./WaterMolecule/Position.dat');
-BnmpA=load('./WaterMolecule/Bond.dat');
-AnmpA=load('./WaterMolecule/Angle.dat');
+PnmpA=load('../ff/H2O_TIP4P2005/position.dat');
+BnmpA=load('../ff/H2O_TIP4P2005/bond.dat');
+AnmpA=load('../ff/H2O_TIP4P2005/angle.dat');
 
 x=txlo+dx/4;
 y=tylo+dx/4;

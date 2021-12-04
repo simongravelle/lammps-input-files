@@ -1,0 +1,50 @@
+# lammps input file
+
+variable 	T equal 273.15+20 # temperature in Kelvin
+variable 	A2m equal 1e-10 # Angstrom to meter
+variable 	atm2Pa equal 101325 # Atmosphere to Pascal
+variable 	N2mN equal 1e3 # Newton to milliNewton
+
+boundary	p p p
+units		real
+atom_style	full
+bond_style	harmonic
+angle_style	harmonic
+pair_style	lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
+kspace_style	pppm/tip4p 1.0e-4
+pair_modify 	shift yes mix arithmetic
+
+read_data	data.lammps
+include 	PARM.lammps
+
+# dynamics
+velocity 	all create ${T} 4928459 mom yes rot yes dist gaussian # give an initial temperature to the molecules
+fix		mynve all nve
+fix		myber all temp/berendsen ${T} ${T} 100
+fix		myshk all shake 1.0e-4 200 0 b 1 a 1 # maintain the shape of the water molecule
+timestep 	2.0
+
+# output and run
+# first : equilibrate the system at temperature T
+thermo 		1000
+run		10000
+
+# replicate (shake must be cancelled and recreated)
+unfix 		myshk # to allow LAMMPS to replicate the system 
+replicate	2 1 1
+reset_timestep	0
+fix		myshk all shake 1.0e-4 200 0 b 1 a 1
+
+# outputs
+variable 	xPress equal c_thermo_press[1]
+variable 	yPress equal c_thermo_press[2]
+variable 	zPress equal c_thermo_press[3]
+variable	lz equal lz
+variable 	myst equal 0.5*${lz}*(v_zPress-0.5*(v_xPress+v_yPress))*${A2m}*${atm2Pa}*${N2mN}
+dump 		mydmp all atom 5000 dump.lammpstrj
+compute		mytemp all temp
+fix 		myat1 all ave/time 10 500 5000 c_mytemp file temperatureVStime.dat
+fix 		myat2 all ave/time 10 500 5000 v_myst file surfacetensionVStime.dat
+
+# longer run
+run		100000
