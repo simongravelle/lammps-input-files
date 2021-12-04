@@ -2,7 +2,7 @@
 
 ### Description
 
-Molecular dynamics simulation of a slab of water in contact with vacuum. The water model is TIP4P/2005. The temperature is increased from 20°C to 400°C. The total duration of the simulation is 0.1 nanosecond.
+Molecular dynamics simulation of a slab of water in contact with vacuum. The water model is TIP4P/2005. The surface tension is measured from the difference between the stresses normal and parallel to the liquid-vapour interface. 
 
 ![Algorithm schema](./water-vapour.png)
 
