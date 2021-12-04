@@ -1,4 +1,4 @@
-## Measure the surface tension of a water slab
+## Measure the surface tension of water
 
 ### Description
 
