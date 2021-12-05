@@ -6,7 +6,7 @@ This folder contains input files for the LAMMPS molecular dynamics software.
 
 ## Videos
 
-For each folder, there is a video on my [youtube channel](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw). 
+For each folder, there is a corresponding video on my [youtube channel](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw). 
 
 ## Tutorials 
 
