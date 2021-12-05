@@ -7,20 +7,19 @@ Natomtypes=3;
 Nbondtypes=1;
 Nangletypes=1;
 
+% initialise counter
 cptmol=0;
 cptatom=0;
 cptbond=0;
 cptangle=0;
 
+% set box size
 txlo=-10; txhi=-txlo; Lx=txhi-txlo;
 tylo=-10; tyhi=-tylo; Ly=tyhi-tylo;
 tzlo=-27.8696-0.89990265356/2; tzhi=-tzlo; Lz=tzhi-tzlo;
 
-%%%%%%%
-% CNT %
-%%%%%%%
-
-A=load('./CNT/Positions.dat');
+% import CNT atoms' positions
+A=load('./CNT/position.dat');
 A(:,3)=A(:,3)+2; % shift to account for water molecule (O and H) 
 A(:,5)=A(:,5)-mean(A(:,5)); % recenter the CNT
 A(:,6)=A(:,6)-mean(A(:,6)); % recenter the CNT
@@ -29,32 +28,32 @@ cptatom=length(A(:,1));
 cptmol=cptmol+1;
 A(:,2)=cptmol;
 
-%%%%%%%%%%%%%%%%%%%
-% water molecules %
-%%%%%%%%%%%%%%%%%%%
-
-PnmpA=load('./WaterMolecule/Position.dat');
-BnmpA=load('./WaterMolecule/Bond.dat');
-AnmpA=load('./WaterMolecule/Angle.dat');
+% import water molecules details
+Ph2o=load('../ff/H2O_TIP4P2005/position.dat');
+Bh2o=load('../ff/H2O_TIP4P2005/bond.dat');
+Ah2o=load('../ff/H2O_TIP4P2005/angle.dat');
 
 % add a few water molecules inside the CNT
 x=0;
 y=0;
 for z=tzlo+3.4/2:3.4:tzhi-3.4/2
 	cptmol=cptmol+1;
-	for ii=1:length(BnmpA(:,1))
+	for ii=1:length(Bh2o(:,1))
 		cptbond=cptbond+1;
-		B(cptbond,:)=[cptbond BnmpA(ii,2) BnmpA(ii,3)+cptatom BnmpA(ii,4)+cptatom];
+		B(cptbond,:)=[cptbond Bh2o(ii,2) Bh2o(ii,3)+cptatom Bh2o(ii,4)+cptatom];
 	end
-	for ii=1:length(AnmpA(:,1))
+	for ii=1:length(Ah2o(:,1))
 		cptangle=cptangle+1;
-		Ag(cptangle,:)=[cptangle AnmpA(ii,2) AnmpA(ii,3)+cptatom AnmpA(ii,4)+cptatom AnmpA(ii,5)+cptatom];
+		Ag(cptangle,:)=[cptangle Ah2o(ii,2) Ah2o(ii,3)+cptatom Ah2o(ii,4)+cptatom Ah2o(ii,5)+cptatom];
 	end
-	for ii=1:length(PnmpA(:,1))
+	for ii=1:length(Ph2o(:,1))
 		cptatom=cptatom+1;
-		A(cptatom,:)=[cptatom cptmol PnmpA(ii,3) PnmpA(ii,4) PnmpA(ii,5)+x PnmpA(ii,6)+y PnmpA(ii,7)+z];
+		A(cptatom,:)=[cptatom cptmol Ph2o(ii,3) Ph2o(ii,4) Ph2o(ii,5)+x Ph2o(ii,6)+y Ph2o(ii,7)+z];
 	end
 end
+
+X = ['The number of water molecule is ',num2str(cptmol)];
+disp(X)
 
 % generate the lammps data file
 fid = fopen('data.lammps','wt');
@@ -114,32 +113,3 @@ for ii=1:length(Ag(:,1))
 end
 fprintf(fid, '\n');
 fclose(fid);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

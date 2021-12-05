@@ -12,7 +12,7 @@ read_data		data.lammps
 
 region			acces cylinder z 0 0 20.0535228296 INF INF
 
-include		group.lammps
+include			group.lammps
 
 set			type * charge 0
 
@@ -27,9 +27,9 @@ mass 			* 39.1
 fix 			1 ions nve 
 fix 			2 ions langevin 300.0 300.0 23.0 33414 zero yes
 
-include		bond.lammps
+include			bond.lammps
 
-thermo 		10000
+thermo 			10000
 compute 		Tion ions temp 
 thermo_modify 		temp Tion
 

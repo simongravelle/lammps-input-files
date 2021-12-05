@@ -2,6 +2,7 @@
 # first, water is equilibrated at a pressure of 1 bars within the CNT using GCMC
 # then, an additional equilibration step is performed
 
+# define all necessary variables
 variable	T equal 300 # initiale temperature
 variable	dt equal 0.0005 # ps unit 
 variable	seed equal 4928459
@@ -10,6 +11,7 @@ variable	P index 1 # bars
 variable	disp index 0.5 # not used
 variable	tfac equal 5.0/3.0 # (3 trans + 2 rot)/(3 trans)
 
+# simulations initial parameters
 units		metal # required by airebo
 atom_style	full
 bond_style	harmonic
@@ -18,25 +20,28 @@ boundary	p p p
 pair_style  	hybrid airebo 2.5 1 1 lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
 kspace_style	pppm/tip4p 1.0e-4 # TIP4P/2005
 
-read_data	./data.lammps
-include 	./PARM.lammps
+# load data, parameter, and molecule files
+read_data	data.lammps
+include 	PARM.lammps
+molecule	h2omol ../ff/H2O_TIP4P2005/TIP4P2005.lammps
 
+# define region and group of interest
 variable	zlo equal zlo
 variable	zhi equal zhi
-region 	CNT cylinder z 0 0 5 ${zlo} ${zhi}
+region 		CNT cylinder z 0 0 5 ${zlo} ${zhi}
 group		wat type 1 2
-molecule	h2omol H2O.txt
 
+# initialise velocities, perform nvt on water, and maintain water molecule shape
 velocity 	wat create ${T} ${seed} rot yes dist gaussian
-
-compute	twat wat temp
+compute		twat wat temp
 compute_modify	twat dynamic/dof yes
 fix		mynvt wat nvt temp ${T} ${T} 0.1
-fix_modify	mynvt temp twat
+fix_modify	mynvt temp twat # important for subgroup thermalisation
 fix		myshk wat shake 1.0e-4 200 0 b 1 a 1 mol h2omol
+timestep	${dt}
 
+# GCMC procedure
 compute_modify	thermo_temp dynamic/dof yes
-
 fix		mygcmc wat gcmc 100 100 0 0 54341 ${T} ${mu} ${disp} &
 		mol h2omol tfac_insert ${tfac} group wat shake myshk &
 		pressure ${P} region CNT
@@ -50,7 +55,6 @@ fix		myavt all ave/time 100 1 100 v_nO file numberO.dat
 # for visualisation (open with ovito for example)
 dump 		mydmp all atom 1000 dump.GCMC.lammpstrj
 
-timestep	${dt}
 thermo		100
 run		20000
 
@@ -60,10 +64,12 @@ undump		mydmp
 unfix		mygcmc
 unfix		mynvt
 
+# simple NVT dynamic on all system
 fix		mynve all nve
 fix		myber all temp/berendsen ${T} ${T} 0.1
 fix		myrct all recenter INIT INIT NULL
 
+# new output
 dump 		mydmp all atom 1000 dump.MD.lammpstrj
 
 run		10000

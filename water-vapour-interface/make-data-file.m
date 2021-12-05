@@ -14,9 +14,9 @@ tzlo=-30; tzhi=-tzlo;
 
 dx=3.4;
 
-PnmpA=load('../ff/H2O_TIP4P2005/position.dat');
-BnmpA=load('../ff/H2O_TIP4P2005/bond.dat');
-AnmpA=load('../ff/H2O_TIP4P2005/angle.dat');
+Ph2O=load('../ff/H2O_TIP4P2005/position.dat');
+Bh2O=load('../ff/H2O_TIP4P2005/bond.dat');
+Ah2O=load('../ff/H2O_TIP4P2005/angle.dat');
 
 x=txlo+dx/4;
 y=tylo+dx/4;
@@ -25,17 +25,17 @@ while z<=tzhi/2
 	while y < tyhi-dx/2
 		while x < txhi-dx/2
 			cptmol=cptmol+1; 
-			for ii=1:length(BnmpA(:,1))
+			for ii=1:length(Bh2O(:,1))
 				cptbond=cptbond+1;
-				B(cptbond,:)=[cptbond BnmpA(ii,2) BnmpA(ii,3)+cptatom BnmpA(ii,4)+cptatom];
+				B(cptbond,:)=[cptbond Bh2O(ii,2) Bh2O(ii,3)+cptatom Bh2O(ii,4)+cptatom];
 			end
-			for ii=1:length(AnmpA(:,1))
+			for ii=1:length(Ah2O(:,1))
 				cptangle=cptangle+1;
-				Ag(cptangle,:)=[cptangle AnmpA(ii,2) AnmpA(ii,3)+cptatom AnmpA(ii,4)+cptatom AnmpA(ii,5)+cptatom];
+				Ag(cptangle,:)=[cptangle Ah2O(ii,2) Ah2O(ii,3)+cptatom Ah2O(ii,4)+cptatom Ah2O(ii,5)+cptatom];
 			end
-			for ii=1:length(PnmpA(:,1))
+			for ii=1:length(Ph2O(:,1))
 				cptatom=cptatom+1;
-				A(cptatom,:)=[cptatom cptmol PnmpA(ii,3) PnmpA(ii,4) PnmpA(ii,5)+x PnmpA(ii,6)+y PnmpA(ii,7)+z];
+				A(cptatom,:)=[cptatom cptmol Ph2O(ii,3) Ph2O(ii,4) Ph2O(ii,5)+x Ph2O(ii,6)+y Ph2O(ii,7)+z];
 			end
 			x=x+dx;
 		end
@@ -46,6 +46,8 @@ while z<=tzhi/2
 	z=z+dx;	
 end
 
+X = ['The number of water molecule is ',num2str(cptmol)];
+disp(X)
 
 fid = fopen('data.lammps','wt');
 fprintf(fid, '# System\n\n');

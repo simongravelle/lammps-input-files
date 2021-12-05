@@ -13,12 +13,16 @@ read_data	data.lammps
 include 	PARM.lammps
 
 group		H2O type 1 2
-fix		myshk H2O shake 1.0e-4 200 0 b 1 a 1
+
+# dynamics :  give atoms an initial velocity, maintain water molecule shape, apply isotropic npt
 velocity 	all create 1000 4928459 rot yes mom yes dist gaussian
+fix		myshk H2O shake 1.0e-4 200 0 b 1 a 1
 fix		mynpt all npt temp 300 300 100 x 1 1 1000 y 1 1 1000
-
-dump		dp1 all atom 1000 dump.lammpstrj
-
 timestep	2.0
+
+# output
+dump		dp1 all atom 1000 dump.lammpstrj
 thermo		1000
+
+# run
 run		50000

@@ -1,0 +1,19 @@
+## Silicalite SiO2 MFI structure 
+
+### Description
+
+The simulation consists of SiO2 MFI sctructure in the NVT ensemble. The force field is the bond order potential SiO.tersoff.
+
+![Algorithm schema](./silicalite.png)
+
+### How to
+
+Run the input.lammps script using LAMMPS.
+
+### Output
+
+This [video](https://www.youtube.com/watch?v=hyj0vCOnzJA) has been made with this script.
+
+### Contact
+
+Feel free to contact me by email if you have inquiries. You can find contact details on my [personal page](https://simongravelle.github.io/).

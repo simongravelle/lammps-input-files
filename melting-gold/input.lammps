@@ -15,19 +15,22 @@ region 	cube block -${L2} ${L2} -${L2} ${L2} -${L2} ${L2}
 create_box 	1 system
 
 pair_style 	eam/fs
-pair_coeff 	* * ./FeAu-eam-LJ.fs Au
+pair_coeff 	* * ../ff/FeAu-eam-LJ.fs Au
 
 lattice 	fcc 4.065
 create_atoms 	1 region cube
 lattice 	none 1.0
 
+# dynamics
 velocity 	all create ${Ti} 425521 rot yes mom yes dist gaussian
 fix		mynve all nve
 fix 		myber all temp/berendsen ${Ti} ${Tf} 0.1
 fix 		myrc all recenter INIT INIT INIT
-
-dump		dp1 all atom 1000 dump.lammpstrj
-
 timestep	0.001
+
+# output
+dump		dp1 all atom 1000 dump.lammpstrj
 thermo		1000
+
+# run
 run		100000 

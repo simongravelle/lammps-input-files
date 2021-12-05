@@ -8,7 +8,7 @@ Molecular dynamics simulation of a slab of water in contact with vacuum. The wat
 
 ### How to
 
-Run the make-data-file.m using Octave or Matlab to create the lammps data file. Then, execute the input.lammps file using LAMMPS. Visualise the dump file using  VMD, and extract the temperature and surface tension from the two data files. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
+Run the make-data-file.m using Octave or Matlab to create the lammps data file. Then, execute the input.lammps file using LAMMPS. Visualise the dump file using VMD, and extract the temperature and surface tension from the two data files. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 ### Output
 

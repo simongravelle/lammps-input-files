@@ -50,9 +50,9 @@ for line in Lines:
     count += 1
 wallNaCl = wallNaCl[0:count]
 
-Ph2o = np.loadtxt('WaterMolecule/position.txt')
-Bh2o = np.loadtxt('WaterMolecule/bond.txt')
-Ah2o = np.loadtxt('WaterMolecule/angle.txt')
+Ph2o = np.loadtxt('../ff/H2O_TIP4P2005/position.dat')
+Bh2o = np.loadtxt('../ff/H2O_TIP4P2005/bond.dat')
+Ah2o = np.loadtxt('../ff/H2O_TIP4P2005/angle.dat')
 
 while cptH2O+nNa+nCl < N: # if the initial distance between the wall is too small to acomodate the molecules, increase h
     if attemps>0:
