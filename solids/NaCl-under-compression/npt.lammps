@@ -1,0 +1,40 @@
+# ============= This LAMMPS input script simulates the equilibirum of NaCl
+# ============= Written by Simon Gravelle (https://simongravelle.github.io/)
+# ============= Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# ============= LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+
+# ============= set variables
+variable	pre equal 1 # desired pressure (Atm)
+variable	tem equal 300 # desired temperature (K)
+
+# ============= basic parameters
+units		real # style of units (A, fs, Kcal/mol)
+atom_style	full # molecular + charge
+boundary	p p p # periodic boundary conditions
+pair_style  	lj/cut/coul/long 10 # cut-off 1 nm
+kspace_style	pppm 1.0e-4
+pair_modify	mix arithmetic tail yes # eij = sqrt(ei*ej), dij = 0.5*(di+dj)
+
+# ============= import positions and parameters
+read_data	data.lammps
+include 	PARM.lammps
+
+# ============= groups
+group		nacl type 1 2 # nacl wall
+group		eth type 3 4 5 6 7 # ethanol molecules
+
+# ============= prevent drift
+# ============= give atoms velocity, apply fix npt
+timestep	1 # (fs)
+fix 		mymme nacl momentum 1 linear 1 1 1
+velocity 	all create ${tem} 4928459 rot yes mom yes dist gaussian
+fix		mynpt all npt temp ${tem} ${tem} 100 aniso ${pre} ${pre} 1000
+
+# ============= dump atom positions every 1 ps and log info every 1 ps
+thermo		1000 
+dump		dp1 all atom 1000 npt.lammpstrj # print every 1 ps
+
+# ============= run (5 ps)
+# ============= save final positions
+run		5000
+write_data	data.npt

@@ -1,0 +1,46 @@
+# ============= This LAMMPS input script simulates the compression of NaCl
+# ============= Written by Simon Gravelle (https://simongravelle.github.io/)
+# ============= Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# ============= LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+
+# ============= set variables
+variable	pre equal 1 # desired pressure (Atm)
+variable	tem equal 300 # desired temperature (K)
+
+# ============= basic parameters
+units		real # style of units (A, fs, Kcal/mol)
+atom_style	full # molecular + charge
+boundary	p p p # periodic boundary conditions
+pair_style  	lj/cut/coul/long 10 # cut-off 1 nm
+kspace_style	pppm 1.0e-4
+pair_modify	mix arithmetic tail yes # eij = sqrt(ei*ej), dij = 0.5*(di+dj)
+
+# ============= import positions and parameters
+read_data	data.npt
+include 	PARM.lammps
+
+# ============= groups
+group		nacl type 1 2 # nacl wall
+group		eth type 3 4 5 6 7 # ethanol molecules
+
+# ============= prevent drift
+# ============= apply anisotropic npt (only on y and z)
+timestep	1 # (fs)
+fix 		mymme nacl momentum 1 linear 1 1 1
+fix		mynpt all npt temp ${tem} ${tem} 100 y ${pre} ${pre} 1000 z ${pre} ${pre} 1000
+
+# ============= dump atom positions every 1 ps and log info every 1 ps
+thermo		1000 
+dump		dp1 all atom 1000 dump.lammpstrj # print every 1 ps
+
+# ============= run
+# ============= loop + incremental box reduction along x
+variable 	a loop 20
+label 		loop
+change_box 	all x scale 0.99
+run		500
+next 		a
+jump 		input.lammps loop
+
+# ============= write final state
+write_data	data.compress

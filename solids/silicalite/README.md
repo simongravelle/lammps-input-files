@@ -8,7 +8,7 @@ The simulation consists of SiO2 MFI sctructure in the NVT ensemble. The force fi
 
 ### How to
 
-Run the input.lammps script using LAMMPS.
+Run the input.lammps script using LAMMPS. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 ### Output
 

@@ -31,14 +31,11 @@ tylo=-8.5223; tyhi=-tylo;
 tzlo=-walldistance/2-widthwall-5; tzhi=-tzlo;
 
 % wall 1 FeO
-
-PnmpA=load('./FeO/PositionFeO.dat');
-
+PnmpA=load('../../../shared/FeO/Positions.dat');
 x=txlo+dFeO/2;
 y=tylo+dFeO/2;
 z=-widthwall/2;
 cptmol=cptmol+1;
-
 while z<=widthwall/2-2*dFeO
 	while y < tyhi
 		while x < txhi
@@ -57,7 +54,6 @@ end
 A(:,7)=A(:,7)+walldistance/2+widthwall/2;
 
 % wall 2 FeO
-
 cptmol=cptmol+1;
 At=A;
 At(:,7)=-At(:,7);
@@ -75,7 +71,7 @@ BnmpA=load('./Graphene/Bonds.dat');
 AnmpA=load('./Graphene/Angles.dat');
 DnmpA=load('./Graphene/Dihedrals.dat');
 InmpA=load('./Graphene/Impropers.dat');
-
+% place graphene layers
 x=0;
 y=0;
 for z=-c:c:z
@@ -105,14 +101,14 @@ for z=-c:c:z
 end
 
 % load water
-
 lengthAbeforewater=length(A(:,1));
 clear PnmpA;
 clear BnmpA;
 clear AnmpA;
-PnmpA=load('./WaterMoleculeSPCE/Position.dat');
-BnmpA=load('./WaterMoleculeSPCE/Bond.dat');
-AnmpA=load('./WaterMoleculeSPCE/Angle.dat');
+PnmpA=load('../../../shared/H2O_SPCE/position.dat');
+BnmpA=load('../../../shared/H2O_SPCE/bond.dat');
+AnmpA=load('../../../shared/H2O_SPCE/angle.dat');
+% place water molecules
 dx=ee; dy=ee; dz=ee;
 x=txlo+dx/2;
 y=tylo+dy/2;
@@ -120,7 +116,6 @@ z=-walldistance/2+ee;
 while z<walldistance/2-ee
 	while y < tyhi-dy/2
 		while x < txhi-dz/2
-
 
 			xeff=x+(rand-0.5)/10;
 			yeff=y+(rand-0.5)/10;
@@ -163,7 +158,7 @@ while z<walldistance/2-ee
 	z=z+dz;	
 end
 
-
+% write data lammps
 fid = fopen('data.lammps','wt');
 fprintf(fid, '# System\n\n');
 fprintf(fid, num2str(cptatom));
@@ -247,33 +242,3 @@ for ii=1:length(Ig(:,1))
 end
 disp('Done writing the data file')
 fclose(fid);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
