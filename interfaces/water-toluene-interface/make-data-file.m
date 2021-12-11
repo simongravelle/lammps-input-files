@@ -21,18 +21,18 @@ tzlo=-30; tzhi=-tzlo; Lz=tzhi-tzlo;
 % toluene molecules %
 %%%%%%%%%%%%%%%%%%%%%
 
-PnmpA=load('../ff/toluene/Positions.dat');
+PnmpA=load('../../shared/toluene/Positions.dat');
 PnmpA(:,3)=PnmpA(:,3)+2; % shift to account for water molecule (O and H) 
 PnmpA(:,5)=PnmpA(:,5)-mean(PnmpA(:,5)); % recenter the Toluene molecule
 PnmpA(:,6)=PnmpA(:,6)-mean(PnmpA(:,6)); % recenter the Toluene molecule
 PnmpA(:,7)=PnmpA(:,7)-mean(PnmpA(:,7)); % recenter the Toluene molecule
-BnmpA=load('../ff/toluene/Bonds.dat');
+BnmpA=load('../../shared/toluene/Bonds.dat');
 BnmpA(:,2)=BnmpA(:,2)+1; % shift OH water
-AnmpA=load('../ff/toluene/Angles.dat');
+AnmpA=load('../../shared/toluene/Angles.dat');
 AnmpA(:,2)=AnmpA(:,2)+1; % shift HOH water
-DnmpA=load('../ff/toluene/Dihedrals.dat');
+DnmpA=load('../../shared/toluene/Dihedrals.dat');
 DnmpA(:,2)=DnmpA(:,2);
-InmpA=load('../ff/toluene/Impropers.dat');
+InmpA=load('../../shared/toluene/Impropers.dat');
 InmpA(:,2)=InmpA(:,2);
 
 dx=8; dy=6; dz=7;
@@ -115,9 +115,9 @@ clear AnmpA;
 clear DnmpA;
 clear InmpA;
 
-PnmpA=load('../ff/H2O_TIP4P2005/Position.dat');
-BnmpA=load('../ff/H2O_TIP4P2005/Bond.dat');
-AnmpA=load('../ff/H2O_TIP4P2005/Angle.dat');
+PnmpA=load('../../shared/H2O_TIP4P2005/Position.dat');
+BnmpA=load('../../shared/H2O_TIP4P2005/Bond.dat');
+AnmpA=load('../../shared/H2O_TIP4P2005/Angle.dat');
 
 % add water molecule at random position if no intersection with other molecule
 Ntrial=0;

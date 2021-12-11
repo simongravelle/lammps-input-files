@@ -14,9 +14,9 @@ tzlo=-30; tzhi=-tzlo;
 
 dx=3.4;
 
-Ph2O=load('../ff/H2O_TIP4P2005/position.dat');
-Bh2O=load('../ff/H2O_TIP4P2005/bond.dat');
-Ah2O=load('../ff/H2O_TIP4P2005/angle.dat');
+Ph2O=load('../../shared/H2O_TIP4P2005/position.dat');
+Bh2O=load('../../shared/H2O_TIP4P2005/bond.dat');
+Ah2O=load('../../shared/H2O_TIP4P2005/angle.dat');
 
 x=txlo+dx/4;
 y=tylo+dx/4;
