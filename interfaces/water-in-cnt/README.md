@@ -4,7 +4,7 @@
 
 The first part of the run consists of a GCMC step. During this step, water molecules are added to a rigid CNT. The second part is a molecular dynamics step, during which the CNT is allowed to deform. 
 
-![Algorithm schema](./water-in-cnt.png)
+![water in CNT](./water-in-cnt.png)
 
 ### How to
 
