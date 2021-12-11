@@ -67,6 +67,7 @@ PnmpA=load('./Graphene/Positions.dat');
 PnmpA(:,5)=PnmpA(:,5)-mean(PnmpA(:,5));
 PnmpA(:,6)=PnmpA(:,6)-mean(PnmpA(:,6));
 PnmpA(:,7)=PnmpA(:,7)-mean(PnmpA(:,7));
+PnmpA(:,3) = PnmpA(:,3)+4; % shift atom ids
 BnmpA=load('./Graphene/Bonds.dat');
 AnmpA=load('./Graphene/Angles.dat');
 DnmpA=load('./Graphene/Dihedrals.dat');
@@ -106,6 +107,7 @@ clear PnmpA;
 clear BnmpA;
 clear AnmpA;
 PnmpA=load('../../../shared/H2O_SPCE/position.dat');
+PnmpA(:,3) = PnmpA(:,3)+2; % shift atom ids
 BnmpA=load('../../../shared/H2O_SPCE/bond.dat');
 AnmpA=load('../../../shared/H2O_SPCE/angle.dat');
 % place water molecules

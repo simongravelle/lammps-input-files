@@ -1,59 +1,72 @@
-# lammps shearing
+# ============= This LAMMPS input script simulates a hexaben molecule in water under shearing
+# ============= Tested with the 30Jul2021 version of LAMMPS
+# ============= Written by Simon Gravelle (https://simongravelle.github.io/)
+# ============= Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# ============= LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
 
+# ============= please cite https://doi.org/10.1103/PhysRevFluids.6.034303
+
+# ============= define variables
 variable 	T equal 300 			# desired temperature (K)
 variable	p0 equal 1e5  			# desired pressure (Pa)
 variable	gamma equal 1e10/1e15 		# desired shear rate (1/fs)
 
+# ============= basic parameters
 boundary	p p p
 units		real
-
 atom_style	full
 bond_style	harmonic
 angle_style	harmonic
 dihedral_style	harmonic
 improper_style	harmonic
-
 pair_style	lj/cut/tip4p/long 4 5 9 3 0.1546 12.0
 kspace_style	pppm/tip4p 1.0e-4
-
 pair_modify 	shift yes mix arithmetic
 special_bonds	lj 0.0 0.0 0.5 coul 0.0 0.0 1.0 angle yes dihedral yes
 
+# ============= read data and parameters, change box size
 read_data	data.equilibrium
 include 	PARM.lammps
 change_box 	all z final -46 46
 
+# ============= define regions and groups
 region		TopR block INF INF INF INF 0 INF 
 region		BotR block INF INF INF INF INF 0 
-
 group		HBC type 1 2
 group		pst type 3
 group		H2O type 4 5
-
-neighbor 	2.0 bin
-neigh_modify	exclude group pst pst
-
 group		TopA region TopR
 group		BotA region BotR
 group		pstTop intersect pst TopA
 group		pstBot intersect pst BotA
 
-# Pressure on Piston
+# ============= control neighbor list (exclude immobile atoms)
+neighbor 	2.0 bin
+neigh_modify	exclude group pst pst
+
+# ============= control pressure on piston
+# ============= for piston to move as a block
 variable	nb equal count(pstTop)
 variable 	srf equal lx*ly
 variable	f0 equal ${p0}*${srf}/${nb}*1.44e-10 # force per atom in Kcal/mol/A ensuring a pressure of p0
-fix    	af1 pstTop aveforce NULL NULL -${f0}
-fix    	af2 pstBot aveforce NULL NULL ${f0}
+fix    		af1 pstTop aveforce NULL NULL -${f0}
+fix    		af2 pstBot aveforce NULL NULL ${f0}
 fix 		sf1 pstTop setforce 0.0 0.0 NULL
 fix 		sf2 pstBot setforce 0.0 0.0 NULL
 
-compute	tpi H2O temp/partial 0 1 1
+# ============= thermalise water in the y and z direction only (normal to shear direction)
+# ============= solve netwon equation for all
+# ============= maintain water rigid
+# ============= recenter whole system
+compute		tpi H2O temp/partial 0 1 1
 fix 		myber H2O temp/berendsen ${T} ${T} 100
 fix_modify	myber temp tpi
 fix 		mynve all nve
 fix		myshk H2O shake 1.0e-4 200 0 b 9 a 3
 fix		myrct all recenter NULL NULL INIT
+timestep 	1.0
 
+# ============= set piston in motion
 variable	pist equal bound(pstTop,zmin)
 variable	pisb equal bound(pstBot,zmax)
 variable	pU equal ${gamma}*(v_pist-v_pisb)/2
@@ -61,11 +74,12 @@ variable	mU equal -v_pU
 velocity 	pstTop set v_pU NULL NULL
 velocity 	pstBot set v_mU NULL NULL
 
+# ============= dump atom positions every 5 ps and log info every 1 ps
 dump 		mydmp all atom 5000 dump.lammpstrj
-
-timestep 	1.0
 thermo 	1000
 thermo_modify 	temp tpi
+
+# ============= run (50 ps)
 run		50000
 
 
