@@ -1,5 +1,4 @@
 # ============= This LAMMPS input script simulates the melting of a cube of Au
-# ============= Tested with the 30Jul2021 version of LAMMPS
 # ============= Written by Simon Gravelle (https://simongravelle.github.io/)
 # ============= Find more scripts here: https://github.com/simongravelle/lammps-input-files
 # ============= LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
@@ -31,7 +30,7 @@ create_atoms 	1 region cube
 lattice 	none 1.0
 
 # ============= give atoms velocity
-# ============= fix nve + berendsten = NVT ensemble
+# ============= fix nve + berendsen = NVT ensemble
 # ============= temperature increases from 1 K to 2500 K
 # ============= set timestep (1 fs)
 velocity 	all create ${Ti} 425521 rot yes mom yes dist gaussian
