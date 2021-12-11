@@ -1,0 +1,17 @@
+# ============= Mass
+mass 		1 15.9994 # O (water TIP4P/2005)
+mass 		2 1.008 # H (water TIP4P/2005)
+mass 		3 22.989770 # NA
+mass 		4 35.450000 # CL
+
+# ============= Pair Coeff
+pair_coeff 	1 1 0.18481 3.165
+pair_coeff 	2 2 0.0 0.0
+pair_coeff 	3 3 0.10755 2.31
+pair_coeff 	4 4 0.10038 4.3
+
+# ============= Bond
+bond_coeff 	1 0 0.9572
+
+# ============ Angle
+angle_coeff	1 0 104.52
