@@ -1,6 +1,4 @@
 ## The abnormal behaviour of graphene quantum dot in shear flow
-
-Please cite [this article](https://doi.org/10.1103/PhysRevFluids.6.034303)
  
 ### Description
 
@@ -19,3 +17,7 @@ This [video](https://www.youtube.com/watch?v=sSGt2CX8WxY) has been made with thi
 ### Contact
 
 Feel free to contact me by email if you have inquiries. You can find contact details on my [personal page](https://simongravelle.github.io/).
+
+### Citation
+
+If you use this script, please cite [Gravelle, Kamal, Botto, Violations of Jeffery's theory in the dynamics of nanographene in shear flow, Phys. Rev. Fluids 6 (2021) 034303](https://doi.org/10.1103/PhysRevFluids.6.034303)

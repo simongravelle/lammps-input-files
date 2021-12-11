@@ -9,7 +9,7 @@ The simulation consists of a nanoparticle made of multiple graphene layers in a 
 
 ### How to
 
-From the 'Construction' folder, run the GenerateData.m script using Matlab (Octave should also work with a few modification). From the 'Equilibration' folder, run the input.lammps script using LAMMPS. Finally, run the input.lammps script within the 'Run' folder using LAMMPS.  If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
+From the 'Construction' folder, run the GenerateData.m script using Octave. From the 'Equilibration' folder, run the input.lammps script using LAMMPS. Finally, run the input.lammps script within the 'Run' folder using LAMMPS.  If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 
 ### Output
@@ -22,4 +22,4 @@ Feel free to contact me by email if you have inquiries. You can find contact det
 
 ### Citation
 
-If you use this script, please consider citing [Gravelle, Kamal, Botto, Liquid exfoliation of multilayer graphene in sheared solvents: A molecular dynamics investigation, J. Chem. Phys. 152, 104701 (2020)](https://doi.org/10.1063/1.5141515)
+If you use this script, please cite [Gravelle, Kamal, Botto, Liquid exfoliation of multilayer graphene in sheared solvents: A molecular dynamics investigation, J. Chem. Phys. 152, 104701 (2020)](https://doi.org/10.1063/1.5141515)

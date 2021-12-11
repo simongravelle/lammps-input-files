@@ -63,15 +63,15 @@ A=[A; At];
 cptatom=max(A(:,1));
 
 % load  graphene
-PnmpA=load('./Graphene/Positions.dat');
+PnmpA=load('../../../shared/GrapheneParticle/Positions.dat');
 PnmpA(:,5)=PnmpA(:,5)-mean(PnmpA(:,5));
 PnmpA(:,6)=PnmpA(:,6)-mean(PnmpA(:,6));
 PnmpA(:,7)=PnmpA(:,7)-mean(PnmpA(:,7));
 PnmpA(:,3) = PnmpA(:,3)+4; % shift atom ids
-BnmpA=load('./Graphene/Bonds.dat');
-AnmpA=load('./Graphene/Angles.dat');
-DnmpA=load('./Graphene/Dihedrals.dat');
-InmpA=load('./Graphene/Impropers.dat');
+BnmpA=load('../../../shared/GrapheneParticle/Bonds.dat');
+AnmpA=load('../../../shared/GrapheneParticle/Angles.dat');
+DnmpA=load('../../../shared/GrapheneParticle/Dihedrals.dat');
+InmpA=load('../../../shared/GrapheneParticle/Impropers.dat');
 % place graphene layers
 x=0;
 y=0;
