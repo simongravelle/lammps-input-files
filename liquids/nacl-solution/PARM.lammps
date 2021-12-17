@@ -1,9 +1,13 @@
 ############### mass parameters
 mass 		1 15.9994 # O water TIP4P/2005
 mass 		2 1.008 # H water TIP4P/2005
+mass 		3 22.989770 # Na 
+mass 		4 35.450000 # Cl
 ############### pair coeffs
 pair_coeff 	1 1 0.1852 3.1589 # TIP4P/2005
 pair_coeff 	2 2 0.0 0.0 # TIP4P/2005
+pair_coeff 	3 3 0.10755 2.31 # from Loche et al. 10.1021/acs.jpcb.1c05303 
+pair_coeff 	4 4 0.10038 4.3 # from Loche et al. 10.1021/acs.jpcb.1c05303 
 ############### bond coeffs
 bond_coeff 	1 0 0.9572 # TIP4P/2005
 ############### angle coeffs
