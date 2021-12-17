@@ -6,10 +6,14 @@ Na = 6.022e23 #constants.Avogadro
 Mh2o = 0.018053 # kg/mol - water
 
 dw = 3.2 		# initial inter-molecule distances (A)
-Nh2O = 2000		# desired number of water molecules
+Ntot = 2000		# desired number of species (ion + water)
+
+c = 5
+nion = c*Ntot*Mh2o/(2*(1+Mh2o*c)) # desired number for each ion
+nwater = Ntot - 2*nion
 
 # Types of atoms, bonds, and angles
-Tatom = 2
+Tatom = 4
 Tbond = 1
 Tangle = 1
 
@@ -26,8 +30,10 @@ Bh2o = np.loadtxt('../../../shared/H2O_TIP4P2005/Bond.dat')
 Ah2o = np.loadtxt('../../../shared/H2O_TIP4P2005/Angle.dat')
 
 cptH2O = 0
+cptNa = 0
+cptCl = 0
 attemps = 0
-while cptH2O < Nh2O:
+while cptH2O+cptNa+cptCl < Nh2O:
     if attemps>0:
         Lx += dw/2
         Ly += dw/2
@@ -43,15 +49,16 @@ while cptH2O < Nh2O:
     cptmol = 0
     cptH2O = 0
     cptCl = 0
+    cptNa = 0
+    cptCl = 0
     
     # allocate memory
-    atoms = np.zeros((10000,7))
-    bonds = np.zeros((10000,4))
-    angles = np.zeros((10000,5))
-    XYZ = np.zeros((1000000,3))
-    Typ = ["" for x in range(1000000)]
-    ResName = ["" for x in range(1000000)]
-    ResNum = np.zeros((1000000))
+    atoms = np.zeros((100000,7))
+    bonds = np.zeros((100000,4))
+    angles = np.zeros((100000,5))
+    
+    
+    
     
     for z in np.arange(tzlo+dw/2,tzhi-dw/2,dw):
         for x in np.arange(txlo+dw/2,txhi-dw/2,dw):
@@ -67,15 +74,9 @@ while cptH2O < Nh2O:
                     angles[cptangle] = cptangle+1, m[1], m[2]+cptatom, m[3]+cptatom, m[4]+cptatom
                     cptangle += 1 
 
-                    j = 0
                     for m in Ph2o:
                         atoms[cptatom] = cptatom+1, cptmol, m[2], m[3], m[4]+x, m[5]+y, m[6]+z
-                        XYZ[cptatom] = [x,y,z]+np.array(Ph2o[j][4:])
-                        Typ[cptatom] = TypH2O[j]
-                        ResNum[cptatom] = cptmol
-                        ResName[cptatom] = 'SOL'
                         cptatom += 1 
-                        j += 1
                         
     attemps += 1
 atoms = atoms[0:cptatom]       
@@ -124,22 +125,3 @@ for nlin in range(len(angles)):
         f.write(str(int(newline[col]))+' ')
     f.write('\n')
 f.close()
-
-# write conf.gro
-f = open('conf.gro', 'w')
-f.write('Pure water\n')
-f.write(str(cptatom)+'\n')
-for n in range(cptatom):
-    f.write("{: >5}".format(str(np.int32(ResNum[n])))) # residue number (5 positions, integer) 
-    f.write("{: >5}".format(str(ResName[n]))) # residue name (5 characters) 
-    f.write("{: >5}".format(str(Typ[n]))) # atom name (5 characters) 
-    f.write("{: >5}".format(str(np.int32(n+1)))) # atom number (5 positions, integer)
-    f.write("{: >8}".format(str("{:.3f}".format(XYZ[n][0]/10)))) # position (in nm, x y z in 3 columns, each 8 positions with 3 decimal places)
-    f.write("{: >8}".format(str("{:.3f}".format(XYZ[n][1]/10)))) # position (in nm, x y z in 3 columns, each 8 positions with 3 decimal places) 
-    f.write("{: >8}".format(str("{:.3f}".format(XYZ[n][2]/10)))) # position (in nm, x y z in 3 columns, each 8 positions with 3 decimal places) 
-    f.write("\n")
-f.write("{: >10}".format(str("{:.5f}".format(Lx/10))))
-f.write("{: >10}".format(str("{:.5f}".format(Ly/10))))
-f.write("{: >10}".format(str("{:.5f}".format(Lz/10))))
-f.close()
-
