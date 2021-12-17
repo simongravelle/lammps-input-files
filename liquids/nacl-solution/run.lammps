@@ -1,0 +1,27 @@
+# Bulk TIP4P/2005 water system
+###############	variables
+variable	pre equal 1 # desired pressure (Atm)
+variable	tem equal 293.15 # desired temperature (K)
+############### main parameters
+units		real # style of units (A, fs, Kcal/mol)
+atom_style	full # molecular + charge
+bond_style	harmonic
+angle_style	harmonic
+boundary	p p p # periodic boundary conditions
+pair_style  	lj/cut/tip4p/long 1 2 1 1 0.1546 10 # cut-off 1 nm
+kspace_style	pppm/tip4p 1.0e-4
+pair_modify	mix arithmetic tail yes # eij = sqrt(ei*ej), dij = 0.5*(di+dj)
+############### import positions and parameters
+read_data	data.npt
+include 	PARM.lammps
+############### groups # descriptions
+group		wat type 1 2 # bulk water
+############### dynamics
+timestep	2 # (fs)
+fix		myshk wat shake 1.0e-5 200 0 b 1 a 1 # shake with increased precision
+fix		mynve all nve 
+############### output 
+dump		dp1 all xtc 50 run.xtc # print every 0.1 ps
+thermo		1000 
+############### run 
+run		1000000 # 2 ns

@@ -1,0 +1,10 @@
+############### mass parameters
+mass 		1 15.9994 # O water TIP4P/2005
+mass 		2 1.008 # H water TIP4P/2005
+############### pair coeffs
+pair_coeff 	1 1 0.1852 3.1589 # TIP4P/2005
+pair_coeff 	2 2 0.0 0.0 # TIP4P/2005
+############### bond coeffs
+bond_coeff 	1 0 0.9572 # TIP4P/2005
+############### angle coeffs
+angle_coeff 	1 0 104.52 # TIP4P/2005
