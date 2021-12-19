@@ -1,10 +1,10 @@
-## Graphene oxide nanoparticle in interaction with water
+# Graphene oxide nanoparticle in interaction with water
+
+<img align="right" width="30%" src="GO-nanoparticle.jpg">
 
 ### Description
 
 The simulation consists of a single graphene oxide particle with a few water molecules. The initial GO nanoparticle has been generated using [make graphitics](https://github.com/velocirobbie/make-graphitics).
-
-![Algorithm schema](./GO-nanoparticle.jpg)
 
 ### How to
 
