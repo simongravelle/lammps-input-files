@@ -1,6 +1,6 @@
 # 2D Lennard-Jones fluids
 
-<img align="left" width="30%" src="2D-lj.jpg">
+<img align="right" width="30%" src="2D-lj.jpg">
 
 ### Description
 
