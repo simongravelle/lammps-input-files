@@ -1,10 +1,10 @@
-## Compression of NaCl crystal
+# Compression of NaCl crystal
+
+<img align="right" width="30%" src="nacl_crystal.jpg">
 
 ### Description
 
-The simulation consists of a block of NaCl atoms. The box size along x is reduced progressively.  
-
-![NaCl crystal](./nacl_crystal.jpg)
+The simulation consists of a block of NaCl atoms. The box size along x is reduced progressively.
 
 ### How to
 
