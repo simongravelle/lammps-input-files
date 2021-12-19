@@ -23,7 +23,7 @@ timestep	2 # (fs)
 fix		myshk wat shake 1.0e-5 200 0 b 1 a 1 # shake with increased precision
 fix		mynpt all npt temp ${tem} ${tem} 100 iso ${pre} ${pre} 1000 # npt equilibrium
 ############### output 
-dump		dp1 all atom 10000 dump.npt.lammpstrj
+dump		dp1 all atom 1000 dump.npt.lammpstrj
 thermo		1000 
 ############### run 
 run		50000 # 100 ps

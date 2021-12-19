@@ -1,14 +1,14 @@
-## NaCl ions in water
+# NaCl ions in water
+
+<img align="right" width="30%" src="nacl_solution_transparent.png">
 
 ### Description
 
-The simulation consists of a NaCl in water.
-
-![NaCldissolutioninwater](./nacl_solution.png)
+The simulation consists of a bulk solution of NaCl in water.
 
 ### How to
 
-Run the GenerateConfLAMMPS.py script with python, then run input.npt.lammps and input.run.lammps using LAMMPS. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
+From the build folder, run the GenerateConfLAMMPS.py script using Python. Then run input.npt.lammps and input.run.lammps using LAMMPS. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 ### Contact
 
