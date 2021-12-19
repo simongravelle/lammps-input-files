@@ -1,4 +1,4 @@
-# 2D Lennard-Jones fluids
+# 3D Lennard-Jones fluids
 
 <img align="right" width="30%" src="3D-lj.jpg">
 
