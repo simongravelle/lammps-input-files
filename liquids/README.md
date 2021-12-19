@@ -7,3 +7,14 @@
 Salt dissolution in water    | .  | .
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](salt-dissolution-water/NaCldissolution.jpeg)  |  ![](white.jpg) |  ![](white.jpg)
+
+
+<p float="left">
+  <img src="2D-lj-fluid/2D-lj.jpg" width="32%" />
+</p>
+<p float="center">
+  <img src="3D-lj-fluid/3D-lj.jpg" width="32%" />
+</p>
+<p float="right">
+  <img src="nacl-solution/nacl_solution_transparent.jpg" width="32%" />
+</p>
