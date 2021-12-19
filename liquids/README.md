@@ -7,7 +7,7 @@
 
 NaCl crytal dissolution in water    |  3D Lennard-Jones fluids |  NaCl ions in water
 :-------------------------:|:-------------------------:|:-------------------------:
-![](salt-dissolution-water/NaCldissolution.jpegg)  |  ![](white) |  ![](white.jpg)
+![](salt-dissolution-water/NaCldissolution.jpeg)  |  ![](white) |  ![](white.jpg)
 
 
 ## 2D Lennard-Jones fluids
