@@ -1,0 +1,41 @@
+# ============= This LAMMPS input script simulates LJ particles in a 2D box
+# ============= Written by Simon Gravelle (https://simongravelle.github.io/)
+# ============= Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# ============= LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+
+# ============= main parameters
+units		lj
+dimension 	2
+atom_style	atomic
+pair_style	lj/cut 2.5
+boundary	p p p
+
+# ============= create system and insert atoms
+region		myreg block -30 30 -30 30 -0.5 0.5
+create_box	2 myreg
+create_atoms	1 random 1500 341341 myreg
+create_atoms	2 random 100 127569 myreg
+
+# ============= atom settings
+mass		1 1
+mass		2 1
+pair_coeff	1 1 1.0 1.0
+pair_coeff	2 2 0.5 3.0
+neigh_modify	every 1 delay 5 check yes
+
+# ============= minimisation
+minimize	1.0e-4 1.0e-6 1000 10000
+reset_timestep	0
+
+# ============= dynamics
+fix		mynve all nve
+fix		mylgv all langevin 1.0 1.0 0.1 1530917
+fix		myefn all enforce2d
+timestep	0.005
+
+# ============= outputs
+thermo		1000
+dump 		mydmp all atom 1000 dump.lammpstrj
+
+# ============= run
+run		10000
