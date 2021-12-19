@@ -1,6 +1,6 @@
 # NaCl crytal dissolution in water
 
-<img align="right" width="30%" src="NaCldissolution.jpg">
+<img align="right" width="30%" src="NaCldissolution.jpeg">
 
 ### Description
 
