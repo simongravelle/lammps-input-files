@@ -1,6 +1,6 @@
 # Silicalite SiO2 MFI structure 
 
-<img align="right" width="30%" src="silicalite.png">
+<img align="right" width="30%" src="silicalite.jpeg">
 
 ### Description
 
