@@ -1,8 +1,8 @@
 # Liquids
 
-2D Lennard-Jones fluids    |  3D Lennard-Jones fluids
-:-------------------------:|:-------------------------:
-![](2D-lj-fluid/2D-lj.jpg)  |  ![](3D-lj-fluid/3D-lj.jpg)
+2D Lennard-Jones fluids    |  3D Lennard-Jones fluids |  3D Lennard-Jones fluids
+:-------------------------:|:-------------------------:|:-------------------------:
+![](2D-lj-fluid/2D-lj.jpg)  |  ![](3D-lj-fluid/3D-lj.jpg) |  ![](3D-lj-fluid/3D-lj.jpg)
 
 
 ## 2D Lennard-Jones fluids
