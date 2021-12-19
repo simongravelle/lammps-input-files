@@ -30,9 +30,9 @@ fix		mynpt all npt temp 360 360 100 iso 1 1 1000
 timestep	1.0
 fix		myrct salt recenter INIT INIT INIT
 
-# ============= dump atom positions every 50 ps and log info every 1 ps
+# ============= dump atom positions every 50 ps and log info every 5 ps
 dump		dp1 all atom 50000 dump.lammpstrj
-thermo		1000
+thermo		5000
 
 # ============= run for 25 ns
 run 		25000000

@@ -1,10 +1,10 @@
-## NaCl crytal dissolution in water
+# NaCl crytal dissolution in water
+
+<img align="right" width="30%" src="NaCldissolution.jpg">
 
 ### Description
 
-The simulation consists of a cluster of NaCl in water. The temperature is 360K.
-
-![NaCldissolutioninwater](./NaCldissolution.jpeg)
+The simulation consists of a cluster of NaCl in water in the NPT ensemble, at a temperature of 360 K and pressure of 1 atm.
 
 ### How to
 
