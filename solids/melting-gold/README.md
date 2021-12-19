@@ -1,10 +1,10 @@
-## Melting of a cube of gold metal using the embedded atom method (eam) force field
+# Melting of a cube of gold metal using the embedded atom method (eam) force field
+
+<img align="right" width="30%" src="gold.png">
 
 ### Description
 
 The simulation consists of a cube of gold atoms. The temperature is increased linearly during the simulation, and the initially solid cube eventuelly melts. 
-
-![Algorithm schema](./gold.png)
 
 ### How to
 
