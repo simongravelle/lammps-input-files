@@ -22,6 +22,14 @@ This folder contains input files for the LAMMPS molecular dynamics software.
   <a href="solids/silicalite/"><img src="solids/silicalite/silicalite.jpeg" width="24.5%" /></a>
 </p>
 
+## Colloidal suspension
+
+<p float="left">
+  <a href="colloidal-suspension/liquid-exfoliation-graphene/"><img src="colloidal-suspension/liquid-exfoliation-graphene/HBC_molecule.jpeg" width="24.5%" /></a>
+  <a href="colloidal-suspension/nanographene-in-shear-flow/"><img src="colloidal-suspension/nanographene-in-shear-flow/cnt-under-deformation.jpg" width="24.5%" /></a>
+</p>
+
+
 ## Videos
 
 For each folder, there is a corresponding video on my [youtube channel](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw). 
