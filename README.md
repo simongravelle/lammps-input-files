@@ -25,8 +25,8 @@ This folder contains input files for the LAMMPS molecular dynamics software.
 ## Colloidal suspension
 
 <p float="left">
-  <a href="colloidal-suspension/liquid-exfoliation-graphene/"><img src="colloidal-suspension/liquid-exfoliation-graphene/HBC_molecule.jpeg" width="24.5%" /></a>
-  <a href="colloidal-suspension/nanographene-in-shear-flow/"><img src="colloidal-suspension/nanographene-in-shear-flow/cnt-under-deformation.jpg" width="24.5%" /></a>
+  <a href="colloidal-suspension/liquid-exfoliation-graphene/"><img src="colloidal-suspension/liquid-exfoliation-graphene/LPE_graphene.jpg" width="24.5%" /></a>
+  <a href="colloidal-suspension/nanographene-in-shear-flow/"><img src="colloidal-suspension/nanographene-in-shear-flow/HBC_molecule.jpg" width="24.5%" /></a>
 </p>
 
 
