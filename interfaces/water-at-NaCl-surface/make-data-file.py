@@ -8,7 +8,7 @@ import copy
 Na = 6.022e23 #constants.Avogadro
 Mh2o = 0.018053 # kg/mol - water
 
-# choose the initial box dimention
+# choose the initial box dimension
 dnacl = 2.84
 nx = 12
 ny = 12
