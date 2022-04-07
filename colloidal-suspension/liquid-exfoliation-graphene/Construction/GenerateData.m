@@ -109,7 +109,9 @@ clear AnmpA;
 PnmpA=load('../../../shared/H2O_SPCE/position.dat');
 PnmpA(:,3) = PnmpA(:,3)+2; % shift atom ids
 BnmpA=load('../../../shared/H2O_SPCE/bond.dat');
+BnmpA(:,2) = BnmpA(:,2)+2; % shift bond ids
 AnmpA=load('../../../shared/H2O_SPCE/angle.dat');
+AnmpA(:,2) = AnmpA(:,2)+2; % shift angle ids
 % place water molecules
 dx=ee; dy=ee; dz=ee;
 x=txlo+dx/2;
