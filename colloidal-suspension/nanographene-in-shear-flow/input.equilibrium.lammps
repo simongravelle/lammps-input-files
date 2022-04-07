@@ -56,6 +56,7 @@ fix 		sf2 pstBot setforce 0.0 0.0 NULL
 # ============= solve netwon equation for piston and water
 # ============= maintain water rigid
 # ============= recenter whole system
+velocity 	H2O create ${T} 4928459 rot yes mom yes dist gaussian
 compute		tpi H2O temp
 fix 		myber H2O temp/berendsen ${T} ${T} 100
 fix_modify	myber temp tpi

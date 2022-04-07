@@ -111,7 +111,9 @@ nbCarWall=length(A(:,1));
 PnmpA=load('../../shared/H2O_TIP4P2005/position.dat');
 PnmpA(:,3) = PnmpA(:,3) + 3;
 BnmpA=load('../../shared/H2O_TIP4P2005/bond.dat');
+BnmpA(:,2) = BnmpA(:,2) + 8;
 AnmpA=load('../../shared/H2O_TIP4P2005/angle.dat');
+AnmpA(:,2) = AnmpA(:,2) + 2;
 
 dx=3.4;
 dy=3.4;
