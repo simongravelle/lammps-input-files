@@ -3,7 +3,8 @@
 clear all
 close all
 
-GenerateParamFile
+% Generate the parameters
+MakeParmFile
 
 cptmol=0;
 cptatom=0;
@@ -15,7 +16,6 @@ cptimpropers=0;
 txlo=-30; txhi=-txlo; Lx=txhi-txlo;
 tylo=-80; tyhi=-tylo; Ly=tyhi-tylo;
 tzlo=-30; tzhi=-tzlo; Lz=tzhi-tzlo;
-
 	
 %%%%%%%%%%%%%%%%%%%%%
 % toluene molecules %
@@ -257,32 +257,4 @@ for ii=1:length(Ig(:,1))
 	fprintf(fid, '\n');
 end
 fclose(fid);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

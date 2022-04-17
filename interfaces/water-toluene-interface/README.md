@@ -9,7 +9,7 @@ Molecular dynamics simulation of a slab of initially mixed water and toluene mol
 
 ### How to
 
-Run the make-data-file.m and make-parm-file.m using Octave or Matlab to create the lammps data and parameter files. Then, execute the input.lammps file using LAMMPS. Visualise the dump file using VMD. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
+Run the MakeDataFile.m and MakeParmFile.m using Octave or Matlab to create the lammps data and parameter files. Then, execute the input.lammps file using LAMMPS. Visualise the dump file using VMD. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 ### Output
 
