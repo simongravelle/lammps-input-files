@@ -1,0 +1,62 @@
+# LAMMPS input file
+
+processors	* 1 *
+
+variable	p0 equal 1e8
+
+units		metal
+boundary	p p p
+atom_style	full
+bond_style	harmonic
+angle_style	harmonic
+pair_style  	hybrid/overlay airebo 2.5 1 1 lj/cut/tip4p/long 3 4 1 1 0.1546 10.0
+kspace_style	pppm/tip4p 1.0e-4 # TIP4P/2005
+
+read_data	data.lammps
+pair_coeff 	* * airebo ../../../shared/CH.airebo C NULL NULL NULL
+pair_coeff	* * lj/cut/tip4p/long 0 0
+pair_coeff	1 3 lj/cut/tip4p/long 0.00494351 3.28 # Amber, 0.114 Kcal/mol
+pair_coeff	2 3 lj/cut/tip4p/long 0.02693779 3.2664 # C-O AMBER96 force field
+pair_coeff	3 3 lj/cut/tip4p/long 0.008031034 3.1589 # TIP4P Water, 0.1852 Kcal/mol
+bond_coeff	1 0.0 0.9572
+angle_coeff	1 0.0 104.52
+
+group		carbon type 1
+group		solid type 2
+group		water type 3 4
+
+# DYNAMICS
+timestep 	0.0005
+fix 		mynpt carbon npt temp 50 1 0.1 x 0 0 1 y 0 0 1
+neigh_modify	exclude group solid solid
+
+# OUTPUT
+thermo		1000
+dump 		dp1 all atom 200 dump.lammpstrj
+
+# RUN
+run		5000
+write_data      data.equilibrium
+
+# DYNAMICS
+unfix		mynpt
+fix		myshk water shake 1.0e-4 200 0 b 1 a 1
+variable	nb equal count(solid)
+variable	srf equal lx*ly*1e-20
+variable	fi equal ${p0}*${srf}/${nb}*6.24e8
+fix		myaf solid aveforce NULL NULL -${fi}
+fix 		mysf solid setforce 0.0 0.0 NULL
+fix 		mynve1 water nve
+fix		mynve2 solid nve
+compute		tpw water temp
+fix 		wbr water temp/berendsen 300 300 0.1
+fix_modify	wbr temp tpw
+
+# RUN
+run		50000
+write_data	data.equilibrium
+
+
+
+
+
