@@ -1,0 +1,53 @@
+# ============= This LAMMPS input script simulates the pouring of granular materiar in a rectangural box
+# ============= Tested with the 29Sep2021 version of LAMMPS
+# ============= Written by Simon Gravelle (https://simongravelle.github.io/)
+# ============= Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# ============= LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+
+atom_style  	sphere
+boundary 	fm fm fm
+newton  	off
+comm_modify 	vel yes
+
+region  	simulation_box block -30 30 -30 30 0 60
+region  	inject1 block -3 -1 -3 -1 57 59
+region  	inject2 block -3 1 1 3 57 59
+region  	inject3 block 1 3 1 3 57 59
+region  	inject4 block 1 3 -3 -1 57 59
+create_box 	2 simulation_box
+
+neighbor 	0.2 bin
+neigh_modify 	delay 0
+
+pair_style	granular
+pair_coeff 	* * hooke 15000 500 tangential linear_nohistory 1.0 0.4 damping mass_velocity
+
+timestep 	0.0001
+fix  		1 all nve/sphere
+fix  		2 all gravity 1.0 spherical 0.0 -180.0
+
+# wall
+fix 		mywall1 all wall/gran/region hooke/history 15000 NULL 500 NULL 0.5 0 region simulation_box 
+
+# printing and visualisation
+compute  	rot_kin all erotate/sphere # rotational kinetic energy of the spherical particles
+thermo_style 	custom step atoms ke c_rot_kin
+thermo  	10000
+thermo_modify 	lost ignore norm no # atom number non-constant
+compute_modify 	thermo_temp dynamic/dof yes 
+dump 		mydmp all atom 1000 dump.lammpstrj
+
+variable 	varloop loop 10000 # loop with 10000 step
+label 		loop
+variable	seed1 equal floor(${varloop}*34512/10000) # use different seed every times
+variable	seed2 equal floor(${varloop}*14585/10000) # use different seed every times
+variable	seed3 equal floor(${varloop}*25894/10000) # use different seed every times
+variable	seed4 equal floor(${varloop}*89541/10000) # use different seed every times
+fix  		mypour1 all pour 1 1 ${seed1} region inject1 # insert one particle at a time
+fix  		mypour2 all pour 1 2 ${seed2} region inject2 # insert one particle at a time
+fix  		mypour3 all pour 1 1 ${seed3} region inject3 # insert one particle at a time
+fix  		mypour4 all pour 1 2 ${seed4} region inject4 # insert one particle at a time
+run  		2000 # short run after particle insersion
+next 		varloop
+jump 		SELF loop
+run  		2000000 # final longer run
