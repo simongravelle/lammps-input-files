@@ -29,6 +29,11 @@ This folder contains input files for the LAMMPS molecular dynamics software.
   <a href="colloidal-suspension/nanographene-in-shear-flow/"><img src="colloidal-suspension/nanographene-in-shear-flow/HBC_molecule.jpeg" width="24.5%" /></a>
 </p>
 
+##Granular
+
+<p float="left">
+  <a href="granular/pouring/"><img src="granular/pouringpouring.png" width="24.5%" /></a>
+</p>
 
 ## Videos
 
