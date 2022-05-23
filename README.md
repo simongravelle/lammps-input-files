@@ -32,7 +32,7 @@ This folder contains input files for the LAMMPS molecular dynamics software.
 ##Granular
 
 <p float="left">
-  <a href="granular/pouring/"><img src="granular/pouringpouring.png" width="24.5%" /></a>
+  <a href="granular/pouring/"><img src="granular/pouring/pouring.png" width="24.5%" /></a>
 </p>
 
 ## Videos
