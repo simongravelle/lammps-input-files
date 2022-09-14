@@ -1,38 +1,38 @@
-# ============= This LAMMPS input script simulates the dissolution of a salt crystal in water
-# ============= Tested with the 30Jul2021 version of LAMMPS
-# ============= Written by Simon Gravelle (https://simongravelle.github.io/)
-# ============= Find more scripts here: https://github.com/simongravelle/lammps-input-files
-# ============= LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+# This LAMMPS input script simulates the dissolution of a salt crystal in water
+# Tested with the 30Jul2021 version of LAMMPS
+# Written by Simon Gravelle (https://simongravelle.github.io/)
+# Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
 
-# ============= basic parameters
-# ============= tip4p/epsilon water model is used
-units		real
-atom_style	full
-bond_style	harmonic
-angle_style	harmonic
-boundary	p p p
-pair_style  	lj/cut/tip4p/long 1 2 1 1 0.105 12.0
-kspace_style	pppm/tip4p 1.0e-4
+# basic parameters
+# tip4p/epsilon water model is used
+units real
+atom_style full
+bond_style harmonic
+angle_style harmonic
+boundary p p p
+pair_style lj/cut/tip4p/long 1 2 1 1 0.105 12.0
+kspace_style pppm/tip4p 1.0e-4
 
-# ============= read data and parameters files
-read_data	data.lammps
-include 	PARM.lammps
+# read data and parameters files
+read_data data.lammps
+include PARM.lammps
 
-# ============= define groups
-group		wat type 1 2
-group		salt type 3 4 # Na = type 3 and Cl = type 4
+# define groups
+group wat type 1 2
+group salt type 3 4 # Na = type 3 and Cl = type 4
 
-# ============= maintain the shpe of water molecules
-# ============= use NPT with isotropic pressure control
-# ============= keep salt at the water of the box
-fix		myshk wat shake 1.0e-4 200 0 b 1 a 1
-fix		mynpt all npt temp 360 360 100 iso 1 1 1000
-timestep	1.0
-fix		myrct salt recenter INIT INIT INIT
+# maintain the shape of the water molecules
+fix myshk wat shake 1.0e-4 200 0 b 1 a 1
+# use NPT with isotropic pressure control
+fix mynpt all npt temp 360 360 100 iso 1 1 1000
+timestep 1.0
+# keep salt at the center of the box
+fix myrct salt recenter INIT INIT INIT
 
-# ============= dump atom positions every 50 ps and log info every 5 ps
-dump		dp1 all atom 50000 dump.lammpstrj
-thermo		5000
+# dump atom positions every 50 ps and log info every 5 ps
+dump dp1 all atom 50000 dump.lammpstrj
+thermo 5000
 
-# ============= run for 25 ns
-run 		25000000
+# run for 25 ns
+run 25000000
