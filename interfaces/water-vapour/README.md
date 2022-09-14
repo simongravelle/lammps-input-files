@@ -1,50 +1,19 @@
-# lammps input file
+## Measure the surface tension of water
 
-variable T equal 273.15+20 # temperature in Kelvin
-variable A2m equal 1e-10 # Angstrom to meter
-variable atm2Pa equal 101325 # Atmosphere to Pascal
-variable N2mN equal 1e3 # Newton to milliNewton
+### Description
 
-boundary p p p
-units real
-atom_style full
-bond_style harmonic
-angle_style harmonic
-pair_style lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
-kspace_style pppm/tip4p 1.0e-4
-pair_modify shift yes mix arithmetic
+Molecular dynamics simulation of a slab of water in contact with vacuum. The water model is TIP4P/2005. The surface tension is measured from the difference between the stresses normal and parallel to the liquid-vapour interface. 
 
-read_data conf.data
-include PARM.lammps
+![Algorithm schema](./water-vapour.png)
 
-# dynamics
-velocity all create ${T} 4928459 mom yes rot yes dist gaussian # give an initial temperature to the molecules
-fix mynve all nve
-fix myber all temp/berendsen ${T} ${T} 100
-fix myshk all shake 1.0e-4 200 0 b 1 a 1 # maintain the shape of the water molecule
-timestep 2.0
+### How to
 
-# output and run
-# first : equilibrate the system at temperature T
-thermo 1000
-run 10000
+Run the make-data-file.m using Octave or Matlab to create the lammps data file. Then, execute the input.lammps file using LAMMPS. Visualise the dump file using VMD, and extract the temperature and surface tension from the two data files. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
-# replicate (shake must be cancelled and recreated) to allow LAMMPS to replicate the system 
-unfix myshk 
-replicate 2 1 1
-reset_timestep 0
-fix myshk all shake 1.0e-4 200 0 b 1 a 1
+### Output
 
-# outputs
-variable xPress equal c_thermo_press[1]
-variable yPress equal c_thermo_press[2]
-variable zPress equal c_thermo_press[3]
-variable lz equal lz
-variable myst equal 0.5*${lz}*(v_zPress-0.5*(v_xPress+v_yPress))*${A2m}*${atm2Pa}*${N2mN}
-dump mydmp all atom 5000 dump.lammpstrj
-compute mytemp all temp
-fix myat1 all ave/time 10 500 5000 c_mytemp file temperatureVStime.dat
-fix myat2 all ave/time 10 500 5000 v_myst file surfacetensionVStime.dat
+This [video](https://www.youtube.com/watch?v=l_APjA5_wZc) has been made with this script.
 
-# longer run for surface tension measurement
-run 100000
+### Contact
+
+Feel free to contact me by email if you have inquiries. You can find contact details on my [personal page](https://simongravelle.github.io/).
