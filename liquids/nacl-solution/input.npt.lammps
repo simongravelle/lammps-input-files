@@ -1,30 +1,30 @@
 # Bulk TIP4P/2005 water system
-###############	variables
-variable	pre equal 1 # desired pressure (Atm)
-variable	tem equal 293.15 # desired temperature (K)
-############### main parameters
-units		real # style of units (A, fs, Kcal/mol)
-atom_style	full # molecular + charge
-bond_style	harmonic
-angle_style	harmonic
-boundary	p p p # periodic boundary conditions
-pair_style  	lj/cut/tip4p/long 1 2 1 1 0.1546 10 10 # cut-off 1 nm
-kspace_style	pppm/tip4p 1.0e-4
-pair_modify	mix arithmetic tail yes # eij = sqrt(ei*ej), dij = 0.5*(di+dj)
-############### import positions and parameters
-read_data	build/data.lammps
-include 	PARM.lammps
-############### groups # descriptions
-group		wat type 1 2 # bulk water
-group		nacl type 3 4 # na cl
-############### dynamics
-velocity 	all create ${tem} 4928459 rot yes mom yes dist gaussian
-timestep	2 # (fs)
-fix		myshk wat shake 1.0e-5 200 0 b 1 a 1 # shake with increased precision
-fix		mynpt all npt temp ${tem} ${tem} 100 iso ${pre} ${pre} 1000 # npt equilibrium
-############### output 
-dump		dp1 all atom 1000 dump.npt.lammpstrj
-thermo		1000 
-############### run 
-run		50000 # 100 ps
-write_data	equilibrium.lammps
+# variables
+variable pre equal 1 # desired pressure (Atm)
+variable tem equal 293.15 # desired temperature (K)
+# main parameters
+units real # style of units (A, fs, Kcal/mol)
+atom_style full # molecular + charge
+bond_style harmonic
+angle_style harmonic
+boundary p p p # periodic boundary conditions
+pair_style lj/cut/tip4p/long 1 2 1 1 0.1546 10 # cut-off 1 nm
+kspace_style pppm/tip4p 1.0e-4
+pair_modify mix arithmetic tail yes # eij = sqrt(ei*ej), dij = 0.5*(di+dj)
+# import positions and parameters
+read_data build/data.lammps
+include PARM.lammps
+# groups # descriptions
+group wat type 1 2 # bulk water
+group nacl type 3 4 # na cl
+# dynamics
+velocity all create ${tem} 4928459 rot yes mom yes dist gaussian
+timestep 2 # (fs)
+fix myshk wat shake 1.0e-5 200 0 b 1 a 1 # shake with increased precision
+fix mynpt all npt temp ${tem} ${tem} 100 iso ${pre} ${pre} 1000 # npt equilibrium
+# output 
+dump dp1 all atom 1000 dump.npt.lammpstrj
+thermo 1000 
+# run 
+run 50000 # 100 ps
+write_data equilibrium.data
