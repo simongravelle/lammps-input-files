@@ -1,4 +1,4 @@
-% this octave script generate the file data.lammps to be read from lammps input script. it contains a slack of water molecule
+% this octave script generates the file conf.data containing a slab of water moleculesin vacuum
 
 clear all
 close all
@@ -49,7 +49,7 @@ end
 X = ['The number of water molecule is ',num2str(cptmol)];
 disp(X)
 
-fid = fopen('data.lammps','wt');
+fid = fopen('conf.data','wt');
 fprintf(fid, '# System\n\n');
 fprintf(fid, num2str(cptatom));
 fprintf(fid, ' atoms\n');
