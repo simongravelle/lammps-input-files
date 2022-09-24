@@ -1,6 +1,6 @@
 # LAMMPS input files
 
-This folder contains input files for the LAMMPS molecular dynamics software. If you have new to LAMMPS, you can find [tutorials here]( lammpstutorials.github.io/). There are also detailled scripts and how-to instruction [here](https://github.com/simongravelle/how-to-lammps).
+This folder contains input files for the LAMMPS molecular dynamics software. If you har new to LAMMPS, you can find beginner and advanced user tutorials [here]( lammpstutorials.github.io/). There are also some more detailled scripts and how-to instructions [here](https://github.com/simongravelle/how-to-lammps).
 
 ## Liquids
 
