@@ -6,7 +6,7 @@ This folder contains input files for the LAMMPS molecular dynamics software. If 
   <a href="solids/amorphous-carbon/"><img src="solids/amorphous-carbon/amorphous-carbon.jpg" width="24.5%" /></a>
   <a href="liquids/salt-dissolution-water/"><img src="liquids/salt-dissolution-water/NaCldissolution.jpeg" width="24.5%" /></a>
   <a href="solids/CNT-under-deformation/"><img src="solids/CNT-under-deformation/cnt-under-deformation.jpg" width="24.5%" /></a>
-  <a href="colloidal-suspension/nanographene-in-shear-flow/"><img src="colloidal-suspension/nanographene-in-shear-flow/HBC_molecule.jpeg" width="24.5%" /></a>
+  <a href="solids/NaCl-under-compression/"><img src="solids/NaCl-under-compression/nacl_crystal.jpg" width="24.5%" /></a>
 </p>
 
 ## Videos
