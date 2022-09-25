@@ -1,6 +1,8 @@
 log.*
 dump.*
 *.lammpstrj
+*.xtc
+*.trr
 .nfs*
 *.svg
 .ipy*

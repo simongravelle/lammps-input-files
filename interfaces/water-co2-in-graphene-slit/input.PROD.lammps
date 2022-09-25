@@ -17,7 +17,7 @@ read_data solvated.data
 include PARM_FLEXCO2.lammps
 # output
 write_dump all atom prod.lammpstrj
-dump mydp1 all xtc 500 prod.xtc
+dump mydp1 all xtc 10 prod.xtc
 thermo 5000
 # group
 group h2o type 1 2
@@ -29,5 +29,5 @@ timestep 1.0
 fix mynvt all nvt temp ${tem} ${tem} 100
 molecule h2o_mol H2O_TIP4P.txt
 fix myshk h2o shake 1.0e-4 200 0 b 1 a 1 mol h2o_mol 
-run 500000
+run 10000
 write_data prod.data
