@@ -1,0 +1,31 @@
+# This LAMMPS input script simulates a CO2/H2O mixture in a graphene slit
+# Written by Simon Gravelle (https://simongravelle.github.io/)
+# Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+
+variable tem equal 300
+# initial
+units real
+atom_style full
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+improper_style harmonic
+boundary p p p
+pair_style lj/cut 10.0
+pair_modify mix arithmetic tail yes
+special_bonds lj/coul 0.0 0.0 0.5 angle yes
+# import data
+read_data graphite_raw.data
+include PARM_FLEXCO2.lammps
+# dynamics
+fix mynpt all npt temp ${tem} ${tem} 100 x 1 1 1000 y 1 1 1000
+timestep 0.5
+# output
+dump dp1 all atom 1000 graphite.lammpstrj
+thermo 1000
+# first, equilibrate graphite
+run 5000
+timestep 2.0
+run 5000
+write_data graphite.data
