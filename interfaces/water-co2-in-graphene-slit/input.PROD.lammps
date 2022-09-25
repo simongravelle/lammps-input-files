@@ -1,0 +1,64 @@
+# LAMMPS input file
+variable tem equal 300
+# initial
+units real
+atom_style full
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+improper_style harmonic
+boundary p p p
+pair_style lj/cut/tip4p/long 1 2 1 1 0.105 10.0
+kspace_style pppm/tip4p 1.0e-4
+pair_modify mix arithmetic tail yes
+special_bonds lj/coul 0.0 0.0 0.5 angle yes
+# import data
+read_data graphite.data
+include PARM_FLEXCO2.lammps
+# insert molecules
+region insert block -10 10 -12 12 -18 18
+# insert single CO2
+lattice sc 4.5 origin 0.5 0.5 0.5
+molecule co2_mol CO2_TRAPPE.txt
+create_atoms 0 region insert mol co2_mol 464563
+# insert bulk water
+lattice sc 4.5 origin 0.0 0.0 0.0
+molecule h2o_mol H2O_TIP4P.txt
+create_atoms 0 region insert mol h2o_mol 545474
+# output
+dump dp1 all atom 1000 solvate.lammpstrj
+thermo 1000
+# group
+group h2o type 1 2
+group co2 type 3 4
+group car type 5
+# use nve/limit to tame the molecules
+fix mynve all nve/limit 0.1
+# cancel momuntum to avoid drift
+fix mymom all momentum 50 linear 0 0 1
+# dynamics water
+compute th2o h2o temp
+fix myber1 h2o temp/berendsen ${tem} ${tem} 100
+fix_modify myber1 temp th2o
+fix myshk h2o shake 1.0e-4 200 0 b 1 a 1 mol h2o_mol 
+# dynamics co2
+compute tco2 co2 temp
+fix myber2 co2 temp/berendsen ${tem} ${tem} 100
+fix_modify myber2 temp tco2
+# dynamics carbon
+compute tcar car temp
+fix myber3 car temp/berendsen ${tem} ${tem} 100
+fix_modify myber3 temp tcar
+# dynamics all
+timestep 0.5
+run 5000
+timestep 1.0
+unfix mynve
+fix mynve all nve
+run 20000
+unfix mynve 
+unfix myber1
+unfix myber2
+fix mynpt all npt temp ${tem} ${tem} 100 aniso 1 1 1000
+run 100000
+write_data solvated.data
