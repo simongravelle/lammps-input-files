@@ -1,4 +1,4 @@
-# NaCl crytal dissolution in water
+# NaCl crystal dissolution in water
 
 <img align="right" width="30%" src="NaCldissolution.jpeg">
 
