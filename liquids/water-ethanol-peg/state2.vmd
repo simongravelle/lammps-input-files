@@ -343,7 +343,7 @@ display dof_focaldist 0.700000
 mol new mixture.gro type gro first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
 mol addfile dump.xtc type xtc first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
 mol delrep 0 top
-mol representation DynamicBonds 1.600000 0.300000 12.000000
+mol representation DynamicBonds 1.600000 0.100000 12.000000
 mol color ResName
 mol selection {resname PEG}
 mol material Opaque
@@ -377,7 +377,7 @@ mol clipplane center 5 0 top {0.0 0.0 0.0}
 mol clipplane color  5 0 top {0.5 0.5 0.5 }
 mol clipplane normal 5 0 top {0.0 0.0 1.0}
 mol clipplane status 5 0 top {0}
-mol representation VDW 0.800000 52.000000
+mol representation VDW 0.700000 52.000000
 mol color ResName
 mol selection {resname wat and name O}
 mol material Opaque
@@ -411,7 +411,7 @@ mol clipplane center 5 1 top {0.0 0.0 0.0}
 mol clipplane color  5 1 top {0.5 0.5 0.5 }
 mol clipplane normal 5 1 top {0.0 0.0 1.0}
 mol clipplane status 5 1 top {0}
-mol representation VDW 0.600000 47.000000
+mol representation VDW 0.400000 47.000000
 mol color ResName
 mol selection {resname wat and name H}
 mol material Opaque
@@ -445,7 +445,7 @@ mol clipplane center 5 2 top {0.0 0.0 0.0}
 mol clipplane color  5 2 top {0.5 0.5 0.5 }
 mol clipplane normal 5 2 top {0.0 0.0 1.0}
 mol clipplane status 5 2 top {0}
-mol representation VDW 0.800000 52.000000
+mol representation VDW 0.700000 52.000000
 mol color ResName
 mol selection {resname eth and name O}
 mol material Opaque
@@ -479,7 +479,7 @@ mol clipplane center 5 3 top {0.0 0.0 0.0}
 mol clipplane color  5 3 top {0.5 0.5 0.5 }
 mol clipplane normal 5 3 top {0.0 0.0 1.0}
 mol clipplane status 5 3 top {0}
-mol representation VDW 1.000000 52.000000
+mol representation VDW 0.800000 52.000000
 mol color ResName
 mol selection {resname eth and name C}
 mol material Opaque
@@ -582,7 +582,7 @@ mol clipplane color  5 6 top {0.5 0.5 0.5 }
 mol clipplane normal 5 6 top {0.0 0.0 1.0}
 mol clipplane status 5 6 top {0}
 mol rename top mixture.gro
-set viewpoints([molinfo top]) {{{1 0 0 -0.2381} {0 1 0 -0.144612} {0 0 1 -0.109052} {0 0 0 1}} {{-0.999686 0.017316 -0.0181032 0} {0.0171454 0.999808 0.00953668 0} {0.0182651 0.00922329 -0.999791 0} {0 0 0 1}} {{0.064969 0 0 0} {0 0.064969 0 0} {0 0 0.064969 0} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}}}
+set viewpoints([molinfo top]) {{{1 0 0 -0.0653013} {0 1 0 -0.187718} {0 0 1 0.0756955} {0 0 0 1}} {{-0.025498 -0.99492 -0.0973858 0} {-0.997659 0.0191416 0.065655 0} {-0.0634573 0.0988319 -0.993079 0} {0 0 0 1}} {{0.0547448 0 0 0} {0 0.0547448 0 0} {0 0 0.0547448 0} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}}}
 lappend viewplist [molinfo top]
 set topmol [molinfo top]
 # done with molecule 1
