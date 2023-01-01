@@ -1,0 +1,82 @@
+# Mass
+
+mass 1 12.011 # PEG CC32A
+mass 2 15.9994 # PEG OC30A
+mass 3 1.008 # PEG HCA2
+mass 4 15.9994 # PEG OC311
+mass 5 1.008 # PEG HCP1
+mass 6 12.011 # ethanol
+mass 7 1.008 # ethanol
+mass 8 1.008 # ethanol
+mass 9 12.011 # ethanol
+mass 10 15.9994 # ethanol
+mass 11 1.008 # water
+mass 12 15.9994 # water
+
+# Pair Coeff
+
+pair_coeff 1 1 0.056 3.58141
+pair_coeff 2 2 0.100 2.93997
+pair_coeff 3 3 0.035 2.38761
+pair_coeff 4 4 0.192 3.14487
+pair_coeff 5 5 0.046 0.40001
+pair_coeff 6 6 0.06630155 3.5811794 
+pair_coeff 7 7 0.028293679 2.373408 
+pair_coeff 8 8 0.0 0.0 
+pair_coeff 9 9 0.24501823 2.8114421 
+pair_coeff 10 10 0.11949714 3.1000042
+pair_coeff 11 11 0.0 0.0 
+pair_coeff 12 12 0.119431704 3.400251 
+
+# Bond coeff
+
+bond_coeff 1 222.35 1.5300
+bond_coeff 2 308.79 1.1111
+bond_coeff 3 359.76 1.1415
+bond_coeff 4 427.715 1.1420
+bond_coeff 5 544.635 0.9600
+bond_coeff 6 349.27414 1.09 
+bond_coeff 7 399.79163 1.43 
+bond_coeff 8 299.84396 1.52 
+bond_coeff 9 349.92828 1.1 
+bond_coeff 10 442.1606 0.972 
+bond_coeff 11 442.1606 0.972 
+
+# Angle coeff
+
+angle_coeff	1 charmm 50.0000 109.0000 0.0000 0.0000
+angle_coeff	2 charmm 26.5000 110.1000 22.5300 2.179   
+angle_coeff	3 charmm 45.0000 111.5000 0.0000 0.0000 
+angle_coeff	4 charmm 13.0258 109.4000 0.0000 0.0000
+angle_coeff	5 charmm 35.5000 109.0000 5.4000 1.802
+angle_coeff	6 charmm 55.0000 108.8900 0.0000 0.0000
+angle_coeff	7 charmm 75.7000 110.1000 0.0000 0.0000
+angle_coeff	8 charmm 95.0000 109.7000 0.0000 0.0000
+angle_coeff 9 harmonic 47.69405 109.5 
+angle_coeff 10 harmonic 55.12715 109.5 
+angle_coeff 11 harmonic 55.113907 111.0 
+angle_coeff 12 harmonic 52.476738 107.57 
+angle_coeff 13 harmonic 47.501896 108.53 
+angle_coeff 14 harmonic 54.993103 110.3 
+angle_coeff 15 harmonic 47.555878 103.0 
+
+# Dihedral coeff
+# weighting factor put to 0, possibly wrong
+
+dihedral_coeff 1 charmm 0.57 1 0 0
+dihedral_coeff 2 charmm 0.29 2 0 0
+dihedral_coeff 3 charmm 0.43 3 0 0
+dihedral_coeff 4 charmm 0.59 1 180 0
+dihedral_coeff 5 charmm 1.16 2 0 0 
+dihedral_coeff 6 charmm 0.12 1 0 0 
+dihedral_coeff 7 charmm 0.42 2 0 0
+dihedral_coeff 8 charmm 0.29 3 0 0
+dihedral_coeff 9 charmm 2.87 1 180 0
+dihedral_coeff 10 charmm 0.03 2 0 0
+dihedral_coeff 11 charmm 0.23 3 0 0
+dihedral_coeff 12 charmm 1.36 1 180 0
+dihedral_coeff 13 charmm 0.16 2 0 0
+dihedral_coeff 14 charmm 1.01 3 0 0
+dihedral_coeff 15 harmonic 0.30114722 1 3 
+dihedral_coeff 16 harmonic 1.414914 1 3 
+dihedral_coeff 17 harmonic 0.0 1 1 

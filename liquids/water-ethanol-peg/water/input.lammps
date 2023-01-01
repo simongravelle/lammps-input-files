@@ -1,0 +1,24 @@
+# LAMMPS input file 
+# Created using atb2lammps 
+# https://github.com/simongravelle/atb2lammps
+
+boundary p p p
+units real
+atom_style      full
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  harmonic
+improper_style  harmonic
+pair_style      lj/cut/coul/long 14
+kspace_style    pppm 0.0001
+special_bonds lj 0.0 0.0 0.5 coul 0.0 0.0 1.0 angle yes dihedral yes
+read_data data.lammps
+include parm.lammps
+minimize 1.0e-5 1.0e-7 1000 10000
+reset_timestep 0
+fix mymom all momentum 100 linear 1 1 1 angular
+fix mynvt all nvt temp 300 300 100
+timestep 1.0
+dump mydmp all atom 1000 dump.lammpstrj
+thermo 1000
+run 50000
