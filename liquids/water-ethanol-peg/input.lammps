@@ -18,12 +18,16 @@ minimize 1.0e-5 1.0e-7 1000 10000
 reset_timestep 0
 fix mynpt all npt temp 360 360 100 iso 1000 1000 1000
 timestep 1.0
-dump mydmp all xtc 1000 dump.xtc
-write_dump all atom dump.lammpstrj
 thermo 1000
 run 20000
 fix mynpt all npt temp 300 300 100 iso 1 1 1000
 run 20000
+unfix mynpt
+fix mynvt all nvt temp 300 300 100
+run 100000
+dump mydmp all xtc 100 dump.xtc
+write_dump all atom dump.lammpstrj
+run 50000
 write_data peg.data
 
 
