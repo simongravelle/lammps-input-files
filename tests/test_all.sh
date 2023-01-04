@@ -11,4 +11,4 @@ cd ../liquid-mixture-PEG-water-ethanol/
     cp input.lammps input_test.lammps
     sed -i  ' {n;/run / {s/run/run 100 #/}}' ${test}
     mpirun -np 4 ${lmp} -in ${test}
-    rm log.lammps dump.* mixture.gro input_test.lammps create_mixture.py peg.data
+    rm log.lammps dump.* mixture.gro mixture.data input_test.lammps create_mixture.py peg.data

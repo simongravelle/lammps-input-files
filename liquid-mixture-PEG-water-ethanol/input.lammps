@@ -19,7 +19,7 @@ reset_timestep 0
 
 # first equilibration at large temperature
 fix mynpt all npt temp 360 360 100 iso 1000 1000 1000
-dump mydmp all xtc 5000 dump.xtc
+dump mydmp all xtc 200 dump.xtc
 write_dump all atom dump.lammpstrj
 timestep 1.0
 thermo 1000
