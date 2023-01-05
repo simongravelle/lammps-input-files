@@ -6,7 +6,7 @@ This folder contains input files for the [LAMMPS](https://www.lammps.org/) molec
   <a href="solids/amorphous-carbon/"><img src="solids/amorphous-carbon/amorphous-carbon.jpg" width="24.5%" /></a>
   <a href="liquids/salt-dissolution-water/"><img src="liquids/salt-dissolution-water/NaCldissolution.jpeg" width="24.5%" /></a>
   <a href="solids/CNT-under-deformation/"><img src="solids/CNT-under-deformation/cnt-under-deformation.jpg" width="24.5%" /></a>
-  <a href="solids/NaCl-under-compression/"><img src="solids/NaCl-under-compression/nacl_crystal.jpg" width="24.5%" /></a>
+  <a href="solids/NaCl-under-compression/"><img src="solid-NaCl-under-compression/nacl_crystal.jpg" width="24.5%" /></a>
 </p>
 
 ## Videos
