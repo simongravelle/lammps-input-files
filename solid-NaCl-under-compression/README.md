@@ -8,7 +8,7 @@ The simulation consists of a block of NaCl atoms. The box size along x is reduce
 
 ### How to
 
-Run the generatedata.py script using python3 or just use the already generated data.lammps file. Execute the npt.lammps file using LAMMPS, then execute the input.lammps. Visualise the dump file using VMD. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
+Run the make-LAMMPS-data.ipynb script using Jupyter notebook. Execute the input.lammps file using LAMMPS. Visualise the dump file using VMD. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 ### Output
 
