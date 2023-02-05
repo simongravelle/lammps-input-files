@@ -9,7 +9,7 @@ This folder contains input files for the [LAMMPS](https://www.lammps.org/) molec
   <a href="solids/NaCl-under-compression/"><img src="solid-NaCl-under-compression/nacl_crystal.jpg" width="24.5%" /></a>
 </p>
 
-## Looking to lear LAMMPS?
+## Looking to learn LAMMPS?
 
 Have a look at [lammpstutorials.github.io](lammpstutorials.github.io/).
 
