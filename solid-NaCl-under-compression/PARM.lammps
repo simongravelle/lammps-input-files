@@ -1,6 +1,7 @@
-############### mass parameters
-mass		1 22.99000
-mass		2 35.45000
-############### pair coeffs
-pair_coeff 	1 1 0.0552 2.31
-pair_coeff	2 2 0.1004 4.3
+# mass parameters
+mass 1 22.99000
+mass 2 35.45000
+
+# pair coeffs
+pair_coeff 1 1 0.0552 2.31
+pair_coeff 2 2 0.1004 4.3
