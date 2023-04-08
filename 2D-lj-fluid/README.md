@@ -2,4 +2,4 @@
 
 # 2D Lennard-Jones fluids
 
-LAMMPS [input script](input.lammps) for a binary 2D gas of LJ particles.
+LAMMPS [input script](input.lammps) for a binary gas of LJ particles in a 2D box.
