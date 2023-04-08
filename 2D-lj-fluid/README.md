@@ -1,7 +1,5 @@
-# 2D Lennard-Jones fluids
-
 <img align="right" width="30%" src="2D-lj.jpg">
 
-### Description
+# 2D Lennard-Jones fluids
 
-This LAMMPS simulation consists a binary 2D gas of LJ particles.
+LAMMPS input script for a binary 2D gas of LJ particles.
