@@ -1,4 +1,4 @@
-<img align="right" width="30%" src="2D-lj.jpg">
+<img align="right" width="30%" src="2D-lj.npg">
 
 # 2D Lennard-Jones fluids
 
