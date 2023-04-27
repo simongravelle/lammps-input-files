@@ -1,42 +1,42 @@
-# ============= This LAMMPS input script simulates a Graphene-Oxide nanoparticle in vacuum
-# ============= Written by Simon Gravelle (https://simongravelle.github.io/)
-# ============= Find more scripts here: https://github.com/simongravelle/lammps-input-files
-# ============= LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+# This LAMMPS input script simulates a Graphene-Oxide nanoparticle in vacuum
+# Written by Simon Gravelle (https://simongravelle.github.io/)
+# Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
 
-# ============= basic parameters
-boundary	p p p
-units		real
-atom_style	full
-bond_style	harmonic
-angle_style	harmonic
-dihedral_style	opls
-improper_style	harmonic
-pair_style	lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
-kspace_style	pppm/tip4p 1.0e-4
-pair_modify 	shift yes mix arithmetic
-special_bonds	lj/coul 0.0 0.0 0.5 angle yes dihedral yes
+# basic parameters
+boundary p p p
+units real
+atom_style full
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+improper_style harmonic
+pair_style lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
+kspace_style pppm/tip4p 1.0e-4
+pair_modify shift yes mix arithmetic
+special_bonds lj/coul 0.0 0.0 0.5 angle yes dihedral yes
 
-# ============= import data and parameters
-read_data	data.lammps
-include 	PARM.lammps
+# import data and parameters
+read_data data.lammps
+include parm.lammps
 
-# ============= set the two groups for H2O and GO
-group		H2O type 1
-group		H2O include molecule
-group		GO type 3
-group		GO include molecule
+# set the two groups for H2O and GO
+group H2O type 1
+group H2O include molecule
+group GO type 3
+group GO include molecule
 
-# ============= fix nve + berendsen = NVT ensemble
-# ============= maintain water molecules shape with shake
-# ============= set timestep (1 fs)
-fix		mynve all nve
-fix		myber all temp/berendsen 300 300 100
-fix		s1 H2O shake 1.0e-4 200 0 b 1 a 1
-timestep 	1.0
+# fix nve + berendsen = NVT ensemble
+# maintain water molecules shape with shake
+# set timestep (1 fs)
+fix mynve all nve
+fix myber all temp/berendsen 300 300 100
+fix s1 H2O shake 1.0e-4 200 0 b 1 a 1
+timestep 1.0
 
-# ============= dump atom positions every 1 ps and log info every 1 ps
-dump            mydmp all atom 1000 dump.lammpstrj
-thermo 		1000
+# dump atom positions every 1 ps and log info every 1 ps
+dump mydmp all atom 1000 dump.lammpstrj
+thermo 1000
 
-# ============= run for 50 ps
-run		50000
+# run for 50 ps
+run 50000

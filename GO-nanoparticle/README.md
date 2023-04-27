@@ -1,6 +1,6 @@
 # Graphene oxide nanoparticle in interaction with water
 
-<img align="right" width="30%" src="GO-nanoparticle.jpg">
+<img align="right" width="30%" src="GO-nanoparticle.png">
 
 ### Description
 
