@@ -1,102 +1,102 @@
-# ============= This LAMMPS input script simulates a single CNT with defects under longitudinal stress
-# ============= Written by Simon Gravelle (https://simongravelle.github.io/)
-# ============= Find more scripts here: https://github.com/simongravelle/lammps-input-files
-# ============= LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+# This LAMMPS input script simulates a single CNT with defects under longitudinal stress
+# Written by Simon Gravelle (https://simongravelle.github.io/)
+# Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
 
-# ============= define variables
-variable	poro equal 0.03 # control the fraction of atom to remove
-variable	seed equal 15462 # change to run different simulation
-variable	T equal 300 # initiale temperature
-variable	dt equal 0.0005 # ps unit 
+# define variables
+variable poro equal 0.03 # control the fraction of atom to remove
+variable seed equal 15462 # change to run different simulation
+variable T equal 300 # initiale temperature
+variable dt equal 0.0005 # ps unit 
 
-# ============= basic parameters
-units		metal # required by airebo
-atom_style	full
-boundary	p p p
-pair_style  	airebo 2.5 1 1
+# basic parameters
+units metal # required by airebo
+atom_style full
+boundary p p p
+pair_style airebo 2.5 1 1
 
-# ============= import data
-# ============= rescale box
-read_data	data.CNT
-change_box	all z final -30 70 y final -20 20 x final -20 20
+# import data
+# rescale box
+read_data data.CNT
+change_box all z final -30 70 y final -20 20 x final -20 20
 
-# ============= force field
-pair_coeff 	* * ../../shared/CH.airebo C C C
+# force field
+pair_coeff * * CH.airebo C C C
 
-# ============= define groups
-# ============= isolate atoms at the edges
-group		CNT type 1
-variable	zmax equal bound(CNT,zmax)-10
-variable	zmin equal bound(CNT,zmin)+10
-variable	zmax0 equal bound(CNT,zmax)-20
-variable	zmin0 equal bound(CNT,zmin)+20
-region		top block INF INF INF INF ${zmax} INF
-region		bot block INF INF INF INF INF ${zmin}
-region		mob block INF INF INF INF ${zmin0} ${zmax0}
-group		topgroup region top
-group		botgroup region bot
-group		mobile region mob
-set 		group topgroup type 2 # control group 1
-set 		group botgroup type 3 # control group 2
+# define groups
+# isolate atoms at the edges
+group CNT type 1
+variable zmax equal bound(CNT,zmax)-10
+variable zmin equal bound(CNT,zmin)+10
+variable zmax0 equal bound(CNT,zmax)-20
+variable zmin0 equal bound(CNT,zmin)+20
+region top block INF INF INF INF ${zmax} INF
+region bot block INF INF INF INF INF ${zmin}
+region mob block INF INF INF INF ${zmin0} ${zmax0}
+group topgroup region top
+group botgroup region bot
+group mobile region mob
+set group topgroup type 2 # control group 1
+set group botgroup type 3 # control group 2
 
-# ============= create porosity only in the central part
-delete_atoms 	porosity mob ${poro} ${seed} 
+# create porosity only in the central part
+delete_atoms porosity mob ${poro} ${seed} 
 
-# ============= fix nve + berendsen = NVT ensemble
-# ============= set timestep (0.5 fs)
-fix		myber all temp/berendsen ${T} ${T} 0.1
-fix		mynve all nve
-timestep	${dt}
+# fix nve + berendsen = NVT ensemble
+# set timestep (0.5 fs)
+fix myber all temp/berendsen ${T} ${T} 0.1
+fix mynve all nve
+timestep ${dt}
 
-# ============= dump atom positions every 0.25 ps and log info every 0.25 ps
-dump 		mydmp all atom 500 dump.eq.lammpstrj
-thermo		500
+# dump atom positions every 0.25 ps and log info every 0.25 ps
+dump mydmp all atom 500 dump.eq.lammpstrj
+thermo 500
 
-# ============= first run (5 ps)
-# ============= equilibrate the whole system at T
-run		10000 
+# first run (5 ps)
+# equilibrate the whole system at T
+run 10000 
 
-# ============= cancel berendsen and dump (will be replaced)
-unfix		myber
-undump		mydmp
+# cancel berendsen and dump (will be replaced)
+unfix myber
+undump mydmp
 
-# ============= dump atom positions every 0.5 ps
-dump 		mydmp all atom 1000 dump.run.lammpstrj
+# dump atom positions every 0.5 ps
+dump mydmp all atom 1000 dump.run.lammpstrj
 
-# ============= kill all the force along z for the control group 1 
-# ============= kill all the force along z for the control group 2 
-# ============= cancel velocity for the control group 1 
-# ============= cancel velocity for the control group 2
-fix 		sf1 topgroup setforce NULL NULL 0.0
-fix 		sf2 botgroup setforce NULL NULL 0.0
-velocity	topgroup set NULL NULL 0
-velocity	botgroup set NULL NULL 0
+# kill all the force along z for the control group 1 
+# kill all the force along z for the control group 2 
+# cancel velocity for the control group 1 
+# cancel velocity for the control group 2
+fix sf1 topgroup setforce NULL NULL 0.0
+fix sf2 botgroup setforce NULL NULL 0.0
+velocity topgroup set NULL NULL 0
+velocity botgroup set NULL NULL 0
 
-# ============= for thermalisation of the control group 1 along x and y only
-# ============= for thermalisation of the control group 2 along x and y only
-# ============= to print the temperature of the central part
-compute	Ttop topgroup temp/partial 1 1 0
-compute	Tbot botgroup temp/partial 1 1 0
-compute	Tmob mobile temp
-thermo_modify 	temp Tmob
+# for thermalisation of the control group 1 along x and y only
+# for thermalisation of the control group 2 along x and y only
+# to print the temperature of the central part
+compute Ttop topgroup temp/partial 1 1 0
+compute Tbot botgroup temp/partial 1 1 0
+compute Tmob mobile temp
+thermo_modify temp Tmob
 
-# ============= add berendsen thermostat to top and bot groups
-fix		myber1 topgroup temp/berendsen ${T} ${T} 0.1
-fix_modify	myber1 temp Ttop # for thermalisation of the control group 1 along x and y only
-fix		myber2 botgroup temp/berendsen ${T} ${T} 0.1
-fix_modify	myber2 temp Tbot # for thermalisation of the control group 2 along x and y only
+# add berendsen thermostat to top and bot groups
+fix myber1 topgroup temp/berendsen ${T} ${T} 0.1
+fix_modify myber1 temp Ttop # for thermalisation of the control group 1 along x and y only
+fix myber2 botgroup temp/berendsen ${T} ${T} 0.1
+fix_modify myber2 temp Tbot # for thermalisation of the control group 2 along x and y only
 
-# ============= print CNT length and force every 0.05 ps
-variable	L equal v_zmax-v_zmin # length of the central part
-fix 		myat1 all ave/time 10 10 100 v_L file tubeLength.dat
-variable	longforce equal f_sf1[3]-f_sf2[3]
-fix 		myat2 all ave/time 10 10 100 v_longforce file forcetube.dat
+# print CNT length and force every 0.05 ps
+variable L equal v_zmax-v_zmin # length of the central part
+fix myat1 all ave/time 10 10 100 v_L file tubeLength.dat
+variable longforce equal f_sf1[3]-f_sf2[3]
+fix myat2 all ave/time 10 10 100 v_longforce file forcetube.dat
 
-# ============= loop for incremental elongation of the tube
-variable 	a loop 100
-label 		loop
-displace_atoms	topgroup move 0 0 0.1
-displace_atoms	botgroup move 0 0 -0.1
-run		1000
-next		a
-jump 		input.lammps loop
+# loop for incremental elongation of the tube
+variable a loop 100
+label loop
+displace_atoms topgroup move 0 0 0.1
+displace_atoms botgroup move 0 0 -0.1
+run 1000
+next a
+jump input.lammps loop

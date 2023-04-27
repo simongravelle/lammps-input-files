@@ -1,6 +1,6 @@
-# Carbon nanotube under longitudinal strain using a reactive force field
+# Carbon nanotube under longitudinal strain
 
-<img align="right" width="30%" src="cnt-under-deformation.jpg">
+<img align="right" width="30%" src="cnt-under-deformation.png">
 
 ### Description
 
