@@ -1,0 +1,4 @@
+
+mass 1 15.999400
+mass 2 28.085501
+pair_coeff * * SiO.tersoff O Si

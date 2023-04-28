@@ -1,10 +1,10 @@
 # Silicalite SiO2 MFI structure 
 
-<img align="right" width="30%" src="silicalite.jpeg">
+<img align="right" width="30%" src="silicalite.png">
 
 ### Description
 
-The simulation consists of SiO2 MFI sctructure in the NVT ensemble. The force field is the bond order potential SiO.tersoff.
+The system consists of a SiO2 MFI sctructure. The force field is the bond order potential SiO.tersoff.
 
 ### How to
 
