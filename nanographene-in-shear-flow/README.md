@@ -4,7 +4,7 @@
 
 The simulation consists of a molecule of hexabenzocoronene (sometimes referred to as the "molecular equivalent of graphene", or "graphene quantum dot") immersed in  water. A linear shear flow is imposed by two translating walls. The molecule structure has been downloaded from the [ATB repository](https://atb.uq.edu.au/). 
 
-![nanographene in water](./NanographeneInShearFlow.jpeg)
+![nanographene in water](./NanographeneInShearFlow.png)
 
 ### How to
 

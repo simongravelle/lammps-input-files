@@ -76,11 +76,11 @@ A=[A;Sym];
 cptatom=max(A(:,1));
 
 % Hexaben molecule
-PnmpA=load('../../shared/Hexabenzocoronene/Position.dat');
-BnmpA=load('../../shared/Hexabenzocoronene/Bond.dat');
-AnmpA=load('../../shared/Hexabenzocoronene/Angle.dat');
-DnmpA=load('../../shared/Hexabenzocoronene/Dihedral.dat');
-InmpA=load('../../shared/Hexabenzocoronene/Impropers.dat');
+PnmpA=load('Hexabenzocoronene/Position.dat');
+BnmpA=load('Hexabenzocoronene/Bond.dat');
+AnmpA=load('Hexabenzocoronene/Angle.dat');
+DnmpA=load('Hexabenzocoronene/Dihedral.dat');
+InmpA=load('Hexabenzocoronene/Impropers.dat');
 
 x=0; y=0; z=0;
 cptmol=cptmol+1;
@@ -108,11 +108,11 @@ end
 
 % water molecules
 nbCarWall=length(A(:,1));
-PnmpA=load('../../shared/H2O_TIP4P2005/position.dat');
+PnmpA=load('H2O_TIP4P2005/position.dat');
 PnmpA(:,3) = PnmpA(:,3) + 3;
-BnmpA=load('../../shared/H2O_TIP4P2005/bond.dat');
+BnmpA=load('H2O_TIP4P2005/bond.dat');
 BnmpA(:,2) = BnmpA(:,2) + 8;
-AnmpA=load('../../shared/H2O_TIP4P2005/angle.dat');
+AnmpA=load('H2O_TIP4P2005/angle.dat');
 AnmpA(:,2) = AnmpA(:,2) + 2;
 
 dx=3.4;
