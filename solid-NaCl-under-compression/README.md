@@ -1,6 +1,6 @@
 # Compression of NaCl crystal
 
-<img align="right" width="30%" src="nacl_crystal.jpg">
+<img align="right" width="30%" src="nacl_crystal.png">
 
 ### Description
 
