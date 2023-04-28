@@ -1,0 +1,10 @@
+# set charges to 0
+set type * charge 0
+# bond parameters and force field
+# specify neighbor search
+bond_style harmonic
+bond_coeff 1 0.01 0.0 
+pair_coeff * * 0.3 3.0 
+neigh_modify exclude group solide solide 
+neigh_modify every 1 delay 0 check yes 
+mass * 39.1 
