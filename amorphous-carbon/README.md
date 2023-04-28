@@ -1,4 +1,4 @@
-<img align="right" width="30%" src="amorphous-carbon.jpg">
+<img align="right" width="30%" src="amorphous-carbon.png">
 
 # Generation of amorphous carbon structure using the liquid quench method
 
