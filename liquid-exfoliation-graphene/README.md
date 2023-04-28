@@ -4,7 +4,7 @@
 
 The simulation consists of a nanoparticle made of multiple graphene layers in a box filled with water. A linear shear is imposed thanks to two moving walls.  With a shear rate of 1e10 1/s or higher, the layers separate from each other and the particle is exfoliated into multiple single layer particles.
 
-![Exfoliated graphene at 3 different times](./liquid-exfoliation.jpg)
+![Exfoliated graphene at 3 different times](./liquid-exfoliation.png)
 
 
 ### How to

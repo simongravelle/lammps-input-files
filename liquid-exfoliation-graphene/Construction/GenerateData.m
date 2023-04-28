@@ -31,7 +31,7 @@ tylo=-8.5223; tyhi=-tylo;
 tzlo=-walldistance/2-widthwall-5; tzhi=-tzlo;
 
 % wall 1 FeO
-PnmpA=load('../../../shared/FeO/Positions.dat');
+PnmpA=load('FeO/Positions.dat');
 x=txlo+dFeO/2;
 y=tylo+dFeO/2;
 z=-widthwall/2;
@@ -63,15 +63,15 @@ A=[A; At];
 cptatom=max(A(:,1));
 
 % load  graphene
-PnmpA=load('../../../shared/GrapheneParticle/Positions.dat');
+PnmpA=load('GrapheneParticle/Positions.dat');
 PnmpA(:,5)=PnmpA(:,5)-mean(PnmpA(:,5));
 PnmpA(:,6)=PnmpA(:,6)-mean(PnmpA(:,6));
 PnmpA(:,7)=PnmpA(:,7)-mean(PnmpA(:,7));
 PnmpA(:,3) = PnmpA(:,3)+4; % shift atom ids
-BnmpA=load('../../../shared/GrapheneParticle/Bonds.dat');
-AnmpA=load('../../../shared/GrapheneParticle/Angles.dat');
-DnmpA=load('../../../shared/GrapheneParticle/Dihedrals.dat');
-InmpA=load('../../../shared/GrapheneParticle/Impropers.dat');
+BnmpA=load('GrapheneParticle/Bonds.dat');
+AnmpA=load('GrapheneParticle/Angles.dat');
+DnmpA=load('GrapheneParticle/Dihedrals.dat');
+InmpA=load('GrapheneParticle/Impropers.dat');
 % place graphene layers
 x=0;
 y=0;
@@ -106,11 +106,11 @@ lengthAbeforewater=length(A(:,1));
 clear PnmpA;
 clear BnmpA;
 clear AnmpA;
-PnmpA=load('../../../shared/H2O_SPCE/position.dat');
+PnmpA=load('H2O_SPCE/position.dat');
 PnmpA(:,3) = PnmpA(:,3)+2; % shift atom ids
-BnmpA=load('../../../shared/H2O_SPCE/bond.dat');
+BnmpA=load('H2O_SPCE/bond.dat');
 BnmpA(:,2) = BnmpA(:,2)+2; % shift bond ids
-AnmpA=load('../../../shared/H2O_SPCE/angle.dat');
+AnmpA=load('H2O_SPCE/angle.dat');
 AnmpA(:,2) = AnmpA(:,2)+2; % shift angle ids
 % place water molecules
 dx=ee; dy=ee; dz=ee;
