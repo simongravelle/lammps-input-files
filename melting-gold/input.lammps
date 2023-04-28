@@ -1,47 +1,45 @@
-# ============= This LAMMPS input script simulates the melting of a cube of Au
-# ============= Written by Simon Gravelle (https://simongravelle.github.io/)
-# ============= Find more scripts here: https://github.com/simongravelle/lammps-input-files
-# ============= LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+# This LAMMPS input script simulates the melting of a cube of Au
+# Written by Simon Gravelle (https://simongravelle.github.io/)
+# Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
 
-# ============= define variables
-variable	fccAu equal 4.065
-variable	L1 equal ${fccAu}*10
-variable	L2 equal ${fccAu}*6
-variable	Ti equal 1
-variable	Tf equal 2500
+# define variables
+variable fccAu equal 4.065
+variable L1 equal ${fccAu}*10
+variable L2 equal ${fccAu}*6
+variable Ti equal 1
+variable Tf equal 2500
 
-# ============= basic parameters
-units 		metal
-boundary 	p p p
-atom_style 	atomic
+# basic parameters
+units metal
+boundary p p p
+atom_style atomic
 
-# ============= create box
-region 		system block -${L1} ${L1} -${L1} ${L1} -${L1} ${L1}
-region 		cube block -${L2} ${L2} -${L2} ${L2} -${L2} ${L2}
-create_box 	1 system
+# create box
+region system block -${L1} ${L1} -${L1} ${L1} -${L1} ${L1}
+region cube block -${L2} ${L2} -${L2} ${L2} -${L2} ${L2}
+create_box 1 system
 
-# ============= force field
-pair_style 	eam/fs
-pair_coeff 	* * ../../shared/FeAu-eam-LJ.fs Au
+include parm.lammps
 
-# ============= create atoms (last command used to re-set lattice to default value)
-lattice 	fcc 4.065
-create_atoms 	1 region cube
-lattice 	none 1.0
+# create atoms (last command used to re-set lattice to default value)
+lattice fcc 4.065
+create_atoms 1 region cube
+lattice none 1.0
 
-# ============= give atoms velocity
-# ============= fix nve + berendsen = NVT ensemble
-# ============= temperature increases from 1 K to 2500 K
-# ============= set timestep (1 fs)
-velocity 	all create ${Ti} 425521 rot yes mom yes dist gaussian
-fix		mynve all nve
-fix 		myber all temp/berendsen ${Ti} ${Tf} 0.1
-fix 		myrc all recenter INIT INIT INIT
-timestep	0.001
+# give atoms velocity
+# fix nve + berendsen = NVT ensemble
+# temperature increases from 1 K to 2500 K
+# set timestep (1 fs)
+velocity all create ${Ti} 425521 rot yes mom yes dist gaussian
+fix mynve all nve
+fix myber all temp/berendsen ${Ti} ${Tf} 0.1
+fix myrc all recenter INIT INIT INIT
+timestep 0.001
 
-# ============= dump atom positions every 1 ps and log info every 1 ps
-dump		dp1 all atom 1000 dump.lammpstrj
-thermo		1000
+# dump atom positions every 1 ps and log info every 1 ps
+dump dp1 all atom 1000 dump.lammpstrj
+thermo 1000
 
-# ============= run (100 ps)
-run		100000 
+# run (100 ps)
+run 100000 
