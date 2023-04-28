@@ -17,3 +17,7 @@ This [video](https://www.youtube.com/watch?v=v2_OGMO9NOA&t=4s) has been made wit
 ### Contact
 
 Feel free to contact me by email if you have inquiries. You can find contact details on my [personal page](https://simongravelle.github.io/).
+
+### Cite
+
+If you use this script, please cite [this article](https://pubs.aip.org/aip/jcp/article/157/10/104702/2841856/Transport-of-thin-water-films-From-thermally).
