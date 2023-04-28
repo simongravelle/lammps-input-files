@@ -1,6 +1,6 @@
 # NaCl ions in water
 
-<img align="right" width="30%" src="nacl_solution_transparent.jpg">
+<img align="right" width="30%" src="nacl_solution_transparent.png">
 
 ### Description
 
