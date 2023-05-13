@@ -42,7 +42,7 @@ attemps = 0
 
 # Load NaCl positions for the wall crystal structure and water
 wallNaCl = np.zeros((10000,7))
-file1 = open('../../shared/NaCl/Position.dat', 'r')
+file1 = open('NaCl/Position.dat', 'r')
 Lines = file1.readlines()
 count = 0
 for line in Lines:
@@ -50,9 +50,9 @@ for line in Lines:
     count += 1
 wallNaCl = wallNaCl[0:count]
 
-Ph2o = np.loadtxt('../../shared/H2O_TIP4P2005/position.dat')
-Bh2o = np.loadtxt('../../shared/H2O_TIP4P2005/bond.dat')
-Ah2o = np.loadtxt('../../shared/H2O_TIP4P2005/angle.dat')
+Ph2o = np.loadtxt('H2O_TIP4P2005/position.dat')
+Bh2o = np.loadtxt('H2O_TIP4P2005/bond.dat')
+Ah2o = np.loadtxt('H2O_TIP4P2005/angle.dat')
 
 while cptH2O+nNa+nCl < N: # if the initial distance between the wall is too small to acomodate the molecules, increase h
     if attemps>0:
