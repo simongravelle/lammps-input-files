@@ -2,4 +2,4 @@
 
 # Water ethanol mixture
 
-LAMMPS [input script](input.lammps) for a a mixture of water and ethanol.
+LAMMPS [input script](input.lammps) for a mixture of water and ethanol with salt.
