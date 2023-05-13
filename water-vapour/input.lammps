@@ -1,4 +1,7 @@
-# lammps input file
+# This LAMMPS input script simulates surface tension measurement of water
+# Written by Simon Gravelle (https://simongravelle.github.io/)
+# Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
 
 variable T equal 273.15+20 # temperature in Kelvin
 variable A2m equal 1e-10 # Angstrom to meter
