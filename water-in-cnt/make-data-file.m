@@ -19,7 +19,7 @@ tylo=-10; tyhi=-tylo; Ly=tyhi-tylo;
 tzlo=-27.8696-0.89990265356/2; tzhi=-tzlo; Lz=tzhi-tzlo;
 
 % import CNT atoms' positions
-A=load('../../shared/CNT/position.dat');
+A=load('CNT/position.dat');
 A(:,3)=A(:,3)+2; % shift to account for water molecule (O and H) 
 A(:,5)=A(:,5)-mean(A(:,5)); % recenter the CNT
 A(:,6)=A(:,6)-mean(A(:,6)); % recenter the CNT
@@ -29,9 +29,9 @@ cptmol=cptmol+1;
 A(:,2)=cptmol;
 
 % import water molecules details
-Ph2o=load('../../shared/H2O_TIP4P2005/position.dat');
-Bh2o=load('../../shared/H2O_TIP4P2005/bond.dat');
-Ah2o=load('../../shared/H2O_TIP4P2005/angle.dat');
+Ph2o=load('H2O_TIP4P2005/position.dat');
+Bh2o=load('H2O_TIP4P2005/bond.dat');
+Ah2o=load('H2O_TIP4P2005/angle.dat');
 
 % add a few water molecules inside the CNT
 x=0;
