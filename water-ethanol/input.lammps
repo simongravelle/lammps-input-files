@@ -1,0 +1,66 @@
+# This LAMMPS input script simulates a water ethanol mixture with salt
+# Written by Simon Gravelle (https://simongravelle.github.io/)
+# Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+
+variable Nwat equal 200
+variable Neth equal 200
+variable Nsod equal 10
+variable Nchl equal 10
+
+units real
+atom_style full
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+boundary p p p
+pair_style lj/cut/tip4p/long 3 4 1 1 0.105 12.0
+kspace_style pppm/tip4p 1.0e-5
+special_bonds lj 0.0 0.0 1.0 coul 0.0 0.0 1.0
+pair_modify mix arithmetic
+
+region box block -20 20 -20 20 -20 20
+create_box 10 box &
+bond/types 5 &
+angle/types 6 &
+dihedral/types 4 &
+extra/bond/per/atom 20 &
+extra/angle/per/atom 20 &
+extra/special/per/atom 20 &
+extra/dihedral/per/atom 20
+
+include parm.lammps
+
+dump dp1 all atom 500 dump.lammpstrj
+thermo 500
+
+molecule ethmol ethanol.mol
+molecule h2omol water.mol
+
+create_atoms 1 random ${Nsod} 704220 NULL overlap 1.5 maxtry 1000
+create_atoms 2 random ${Nchl} 104769 NULL overlap 1.5 maxtry 1000
+create_atoms 0 random ${Neth} 654312 NULL mol ethmol 36597 overlap 1.5 maxtry 1000
+create_atoms 0 random ${Nwat} 456415 NULL mol h2omol 454756 overlap 2 maxtry 1000
+
+set type 1 charge 1
+set type 2 charge -1
+
+group nacl type 1 2
+group water type 3 4
+group ethnl type 5:10
+
+fix mynve all nve/limit 0.1
+fix myber all temp/berendsen 300 300 100
+fix myshk all shake 1.0e-5 200 0 b 1 a 1
+
+run 2000
+
+unfix mynve
+unfix myber
+
+fix mynpt all npt temp 300 300 100 iso 1 1 1000
+
+run 100000
+
+write_data npt.data
+
