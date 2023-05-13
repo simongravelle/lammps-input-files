@@ -1,22 +1,22 @@
 % this file generate the PARM.lammps file
 
 % Water
-MASSwater=load('../../shared/H2O_TIP4P2005/file.mass'); 
-PAIRCOEFFwater=load('../../shared/H2O_TIP4P2005/file.paircoeff');
-BONDwater=load('../../shared/H2O_TIP4P2005/file.bond');
-ANGLEwater=load('../../shared/H2O_TIP4P2005/file.angle');
+MASSwater=load('H2O_TIP4P2005/file.mass'); 
+PAIRCOEFFwater=load('H2O_TIP4P2005/file.paircoeff');
+BONDwater=load('H2O_TIP4P2005/file.bond');
+ANGLEwater=load('H2O_TIP4P2005/file.angle');
 
 % Toluene
-MASSToluene=load('../../shared/toluene/file.mass');
+MASSToluene=load('toluene/file.mass');
 MASSToluene(:,1)=MASSToluene(:,1)+length(MASSwater(:,1));
-PAIRCOEFFToluene=load('../../shared/toluene/file.paircoeff');
+PAIRCOEFFToluene=load('toluene/file.paircoeff');
 PAIRCOEFFToluene(:,[1:2])=PAIRCOEFFToluene(:,[1:2])+length(MASSwater(:,1));
-BONDToluene=load('../../shared/toluene/file.bond');
+BONDToluene=load('toluene/file.bond');
 BONDToluene(:,1)=BONDToluene(:,1)+length(BONDwater(:,1));
-ANGLEToluene=load('../../shared/toluene/file.angle');
+ANGLEToluene=load('toluene/file.angle');
 ANGLEToluene(:,1)=ANGLEToluene(:,1)+length(ANGLEwater(:,1));
-DIHEDRALToluene=load('../../shared/toluene/file.dihedral');
-IMPROPERToluene=load('../../shared/toluene/file.improper');
+DIHEDRALToluene=load('toluene/file.dihedral');
+IMPROPERToluene=load('toluene/file.improper');
 
 MASS=[MASSwater; MASSToluene];
 PAIRCOEFF=[PAIRCOEFFwater; PAIRCOEFFToluene];

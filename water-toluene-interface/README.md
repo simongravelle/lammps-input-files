@@ -1,11 +1,10 @@
+<img align="right" width="30%" src="water-toluene.png">
 
 ## Molecular dynamics simulation of a oil-water-vapor interface
 
 ### Description
 
 Molecular dynamics simulation of a slab of initially mixed water and toluene molecules in contact with vacuum. The temperature is 300°K.
-
-![Algorithm schema](./WaterToluene.jpeg)
 
 ### How to
 
