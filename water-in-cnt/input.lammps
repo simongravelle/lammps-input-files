@@ -26,7 +26,7 @@ kspace_style pppm/tip4p 1.0e-4 # TIP4P/2005
 # load data, parameter, and molecule files
 read_data data.lammps
 include PARM.lammps
-molecule h2omol ../../shared/H2O_TIP4P2005/TIP4P2005.lammps
+molecule h2omol TIP4P2005.lammps
 
 # define region and group of interest
 variable zlo equal zlo
