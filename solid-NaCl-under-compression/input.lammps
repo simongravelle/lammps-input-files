@@ -47,5 +47,6 @@ run 500
 next a
 jump input.lammps loop
 
+# Uncomment to write the final state
 # write final state
 # write_data final.data
