@@ -1,0 +1,40 @@
+# Timestep     No_Moles     No_Specs     ON2	ON3	ON	
+100         167           3	 165	 1	 1	
+# Timestep     No_Moles     No_Specs     ON2	ON	ON3	O2N4	O2N3	N	O2N2	
+200         165           7	 154	 1	 2	 2	 2	 3	 1	
+# Timestep     No_Moles     No_Specs     ON2	O3N5	ON3	O2N4	O2N3	N	ON	
+300         162           7	 149	 2	 2	 3	 1	 3	 2	
+# Timestep     No_Moles     No_Specs     ON2	O2N4	ON	N	ON3	O2N3	
+400         165           6	 153	 4	 3	 3	 1	 1	
+# Timestep     No_Moles     No_Specs     ON2	O2N4	ON	ON3	O3N5	N	O2N3	
+500         160           7	 146	 6	 2	 2	 1	 2	 1	
+# Timestep     No_Moles     No_Specs     ON2	O2N4	O2N3	ON3	ON	N	
+600         161           6	 148	 5	 2	 3	 2	 1	
+# Timestep     No_Moles     No_Specs     ON2	ON	ON3	O2N4	O2N3	N	
+700         165           6	 157	 1	 1	 2	 2	 2	
+# Timestep     No_Moles     No_Specs     ON2	O2N4	O2N3	N	ON3	ON	
+800         164           6	 153	 3	 3	 3	 1	 1	
+# Timestep     No_Moles     No_Specs     ON2	O2N4	O2N3	N	ON	ON3	O3N4	
+900         162           7	 144	 5	 1	 3	 4	 4	 1	
+# Timestep     No_Moles     No_Specs     ON2	O3N6	O2N4	O2N3	N	
+1000         159           5	 151	 2	 4	 1	 1	
+# Timestep     No_Moles     No_Specs     ON2	O2N3	ON3	O2N4	O2N2	N	ON	
+1100         163           7	 151	 2	 3	 3	 1	 2	 1	
+# Timestep     No_Moles     No_Specs     ON2	O3N6	O2N4	O3N4	N	
+1200         162           5	 155	 1	 3	 1	 2	
+# Timestep     No_Moles     No_Specs     ON2	O2N3	O2N4	N	
+1300         163           4	 155	 2	 4	 2	
+# Timestep     No_Moles     No_Specs     ON2	O4N8	ON	ON3	
+1400         164           4	 161	 1	 1	 1	
+# Timestep     No_Moles     No_Specs     ON2	O2N4	O2N3	N	ON	ON3	
+1500         164           6	 152	 4	 2	 3	 2	 1	
+# Timestep     No_Moles     No_Specs     ON2	O2N5	O2N4	ON	ON3	
+1600         160           5	 150	 1	 6	 2	 1	
+# Timestep     No_Moles     No_Specs     ON2	O2N3	N	O2N4	
+1700         166           4	 161	 2	 2	 1	
+# Timestep     No_Moles     No_Specs     ON2	O2N4	O2N3	N	O3N6	ON3	ON	
+1800         157           7	 142	 8	 2	 2	 1	 1	 1	
+# Timestep     No_Moles     No_Specs     ON2	O2N3	ON	ON3	O2N4	N	
+1900         165           6	 152	 3	 2	 1	 3	 4	
+# Timestep     No_Moles     No_Specs     ON2	O2N4	O3N6	ON3	ON	
+2000         162           5	 156	 3	 1	 1	 1	
