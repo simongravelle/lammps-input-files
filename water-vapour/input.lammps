@@ -29,7 +29,7 @@ region fluid block INF INF INF INF -3 3
 
 include PARM.lammps
 
-molecule h2omol ../LAMMPS-molecules/H2O/tip4p-2005.mol
+molecule h2omol ../LAMMPS-molecules/H2O-water/tip4p-2005.mol
 create_atoms 0 region fluid mol h2omol 482793
 
 # dynamics
