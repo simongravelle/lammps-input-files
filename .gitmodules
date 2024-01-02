@@ -1,0 +1,3 @@
+[submodule "LAMMPS-molecules"]
+	path = LAMMPS-molecules
+	url = git@github.com:simongravelle/LAMMPS-molecules.git

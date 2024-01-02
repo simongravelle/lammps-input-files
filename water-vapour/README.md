@@ -1,14 +1,14 @@
 ## Measure the surface tension of water
 
+<img src="water-light.png" width="33%" align="right"/></a>
+
 ### Description
 
 Molecular dynamics simulation of a slab of water in contact with vacuum. The water model is TIP4P/2005. The surface tension is measured from the difference between the stresses normal and parallel to the liquid-vapour interface. 
 
-![Algorithm schema](./water-vapour.png)
-
 ### How to
 
-Run the make-data-file.m using Octave or Matlab to create the lammps data file. Then, execute the input.lammps file using LAMMPS. Visualise the dump file using VMD, and extract the temperature and surface tension from the two data files. If you are new to LAMMPS, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
+Execute the input.lammps file using LAMMPS. Visualize the dump file using VMD, and extract the temperature and surface tension from the two data files. If you are new to LAMMPS, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 ### Output
 
