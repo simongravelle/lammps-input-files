@@ -1,6 +1,6 @@
 # LAMMPS input files
 
-* [Measure the surface tension of water](WATER-VAPOUR)
+* [Measure the surface tension of water](water-vapour/)
 
 This folder contains input files for the [LAMMPS](https://www.lammps.org/) molecular dynamics software. If you are new to LAMMPS, you can find beginner and advanced user tutorials [here](https://lammpstutorials.github.io/). There are also some more detailled scripts and how-to instructions [here](https://github.com/simongravelle/how-to-lammps).
 
