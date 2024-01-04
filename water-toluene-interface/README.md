@@ -1,6 +1,6 @@
 ## Simulating an oil-water-vapor interface
 
-<img src="water.png" width="30%" align="right"/></a>
+<img src="water-toluene.png" width="30%" align="right"/></a>
 
 ### Description
 
