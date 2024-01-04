@@ -1,54 +1,62 @@
 # lammps input file
 
-processors	* * *
+boundary p p p
+units real
 
-boundary	p p p
-units		real
+atom_style full
+bond_style harmonic
+angle_style harmonic
+dihedral_style harmonic
+improper_style harmonic
+pair_style lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
+kspace_style pppm/tip4p 1.0e-5
+pair_modify shift yes mix arithmetic
+special_bonds lj 0.0 0.0 0.5 coul 0.0 0.0 1.0 angle yes dihedral yes
 
-atom_style	full
-bond_style	harmonic
-angle_style	harmonic
-dihedral_style	hybrid opls harmonic
-improper_style	harmonic
+region box block -60 60 -20 20 -20 20
+create_box 5 box &
+    bond/types 6 &
+    angle/types 5 &
+    dihedral/types 3 &
+    improper/types 1 &
+    extra/bond/per/atom 20 &
+    extra/angle/per/atom 20 &
+    extra/dihedral/per/atom 20 &
+    extra/improper/per/atom 20 &
+    extra/special/per/atom 20
+region fluid block -20 20 -20 20 -20 20
 
-pair_style	lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
-kspace_style	pppm/tip4p 1.0e-4
-pair_modify 	shift yes mix arithmetic
-special_bonds	lj/coul 0.0 0.0 0.5 angle yes dihedral yes
+include PARM.lammps
 
-read_data	./data.lammps
-include 	./PARM.lammps
+molecule h2omol ../LAMMPS-molecules/water_H2O/tip4p-2005.mol
+molecule topmol ../LAMMPS-molecules/toluene_C7H8/GROMOS.mol offset 2 1 1 0 0
 
-dump 		dp1 all atom 1000 dump.eq.lammpstrj		
+create_atoms 0 random 100 47870 fluid mol topmol 73892 overlap 1.8 maxtry 200
+create_atoms 0 random 1000 45615 fluid mol h2omol 14756 overlap 1.6 maxtry 200
 
-group		H2O type 1
-group		H2O include molecule
-group		tol type 22
-group		tol include molecule
+dump dp1 all atom 50 dump.lammpstrj 
+thermo 50
 
-fix		s1 H2O shake 1.0e-4 200 0 b 1 a 1
+group tol type 3
+group tol include molecule
+group H2O type 1
+group H2O include molecule
 
-fix		mynve all nve
-fix 		myber all temp/berendsen 1.0 300.0 100.0
+fix myshk H2O shake 1.0e-5 200 0 b 1 a 1
+fix mynvt all nvt temp 10 300 100
+timestep 1.0
 
-fix		myrc all recenter NULL INIT NULL
- 
-thermo 	500
-timestep 	1.0
-run		50000
-undump		dp1
-change_box 	all y final -50 50
+run 5000
+undump dp1
 
-dump 		dp1 all atom 5000 dump.run.lammpstrj		
-fix 		myber all temp/berendsen 300.0 300.0 100.0
+dump dp1 all atom 500 dump.lammpstrj
+dump_modify dp1 append yes
+thermo 500
 
-fix		myrc all recenter NULL INIT NULL
+fix mynvt all nvt temp 300 300 100
 
-run		1000000
-
-
-
-
+run 20000
+write_data water-toluene-interface.data
 
 
 

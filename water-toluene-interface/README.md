@@ -1,18 +1,18 @@
-<img align="right" width="30%" src="water-toluene.png">
+## Simulating an oil-water-vapor interface
 
-## Molecular dynamics simulation of a oil-water-vapor interface
+<img src="water.png" width="30%" align="right"/></a>
 
 ### Description
 
-Molecular dynamics simulation of a slab of initially mixed water and toluene molecules in contact with vacuum. The temperature is 300°K.
+Molecular dynamics simulation of a slab of initially mixed water and toluene molecules in contact with vacuum. The temperature is maintained at 300K. This [video](https://www.youtube.com/watch?v=rFG4MNJ5K10) has been made with this script.
 
 ### How to
 
-Run the MakeDataFile.m and MakeParmFile.m using Octave or Matlab to create the lammps data and parameter files. Then, execute the input.lammps file using LAMMPS. Visualise the dump file using VMD. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
+Execute the input.lammps file using LAMMPS. Visualize the dump file using VMD. 
 
-### Output
+### Find LAMMPS tutorial
 
-This [video](https://www.youtube.com/watch?v=rFG4MNJ5K10) has been made with this script.
+If you are new to LAMMPS, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 ### Contact
 
