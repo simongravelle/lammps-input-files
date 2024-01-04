@@ -1,6 +1,7 @@
 # LAMMPS input files
 
 * [2D Lennard-Jones fluids](2D-lennard-jones-fluid/)
+* [3D Lennard-Jones fluids](3D-lennard-jones-fluid/)
 * [Simulating an oil-water-vapor interface](water-toluene-interface/)
 * [Measure the surface tension of water](water-vapour/)
 

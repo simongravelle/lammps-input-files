@@ -3,14 +3,12 @@
 # Find more scripts here: https://github.com/simongravelle/lammps-input-files
 # LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
 
-# main parameters
 units lj
 dimension 3
 atom_style atomic
 pair_style lj/cut 2.5
 boundary p p p
 
-# create system and insert atoms
 region myreg block -30 30 -30 30 -30 30
 create_box 2 myreg
 create_atoms 1 random 5000 341341 myreg
@@ -18,18 +16,14 @@ create_atoms 2 random 500 127569 myreg
 
 include parm.lammps
 
-# minimisation
 minimize 1.0e-4 1.0e-6 1000 10000
 reset_timestep 0
 
-# dynamics
 fix mynve all nve
 fix mylgv all langevin 1.0 1.0 0.1 1530917
 timestep 0.005
 
-# outputs
 thermo 1000
 dump mydmp all atom 1000 dump.lammpstrj
 
-# run
-run 10000
+run 20000
