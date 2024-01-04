@@ -1,0 +1,32 @@
+# This LAMMPS input script simulates a water ethanol mixture with salt
+# Written by Simon Gravelle (https://simongravelle.github.io/)
+# Find more scripts here: https://github.com/simongravelle/lammps-input-files
+# LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
+
+units real
+atom_style full
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+boundary p p p
+pair_style lj/cut/tip4p/long 3 4 1 1 0.105 12.0
+kspace_style pppm/tip4p 1.0e-5
+special_bonds lj 0.0 0.0 1.0 coul 0.0 0.0 1.0
+pair_modify mix arithmetic
+
+read_data water-ethanol.data
+include parm.lammps
+
+group nacl type 1:2
+group water type 3:4
+group ethnl type 5:10
+
+reset_atoms image all
+
+dump mydmp all custom 10 dump.lammpstrj id type xu yu zu
+thermo 10
+
+fix myshk all shake 1.0e-5 200 0 b 1 a 1
+fix mynpt all npt temp 300 300 100 iso 1 1 1000
+
+run 200
