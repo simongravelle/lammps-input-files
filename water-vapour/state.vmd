@@ -276,7 +276,7 @@ atomselect macro qwikmd_hetero {(not name QWIKMDDELETE and hetero and not qwikmd
 # Display settings
 display eyesep       0.065000
 display focallength  2.000000
-display height       1.000000
+display height       6.000000
 display distance     -2.000000
 display projection   Orthographic
 display nearclip set 0.500000
@@ -296,20 +296,6 @@ display dof off
 display dof_fnumber 64.000000
 display dof_focaldist 0.700000
 mol new dump.lammpstrj type lammpstrj first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
-graphics top color 0
-graphics top material 0
-graphics top line {-10.200000 -10.200000 -23.799999} {10.200000 -10.200000 -23.799999} style solid width 3
-graphics top line {-10.200000 -10.200000 -23.799999} {-10.200000 10.200000 -23.799999} style solid width 3
-graphics top line {-10.200000 -10.200000 -23.799999} {-10.200000 -10.200000 23.799999} style solid width 3
-graphics top line {10.200000 -10.200000 -23.799999} {10.200000 -10.200000 23.799999} style solid width 3
-graphics top line {-10.200000 10.200000 -23.799999} {10.200000 10.200000 -23.799999} style solid width 3
-graphics top line {-10.200000 -10.200000 23.799999} {-10.200000 10.200000 23.799999} style solid width 3
-graphics top line {10.200000 -10.200000 -23.799999} {10.200000 10.200000 -23.799999} style solid width 3
-graphics top line {-10.200000 10.200000 -23.799999} {-10.200000 10.200000 23.799999} style solid width 3
-graphics top line {-10.200000 -10.200000 23.799999} {10.200000 -10.200000 23.799999} style solid width 3
-graphics top line {10.200000 10.200000 23.799999} {10.200000 10.200000 -23.799999} style solid width 3
-graphics top line {10.200000 10.200000 23.799999} {10.200000 -10.200000 23.799999} style solid width 3
-graphics top line {10.200000 10.200000 23.799999} {-10.200000 10.200000 23.799999} style solid width 3
 mol delrep 0 top
 mol representation VDW 0.800000 42.000000
 mol color Name
@@ -380,7 +366,7 @@ mol clipplane color  5 1 top {0.5 0.5 0.5 }
 mol clipplane normal 5 1 top {0.0 0.0 1.0}
 mol clipplane status 5 1 top {0}
 mol rename top dump.lammpstrj
-set viewpoints([molinfo top]) {{{1 0 0 0.0616672} {0 1 0 -0.301994} {0 0 1 -0.00710605} {0 0 0 1}} {{1.00583e-07 0 1 0} {0 1 0 0} {-1 0 1.00583e-07 0} {0 0 0 1}} {{0.0195748 0 0 0} {0 0.0195748 0 0} {0 0 0.0195748 0} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}}}
+set viewpoints([molinfo top]) {{{1 0 0 -0.216565} {0 1 0 -0.151318} {0 0 1 0.0166637} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}} {{0.11153 0 0 0} {0 0.11153 0 0} {0 0 0.11153 0} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}}}
 lappend viewplist [molinfo top]
 set topmol [molinfo top]
 # done with molecule 0
@@ -433,7 +419,6 @@ color scale colors turbo {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
 color scale colors CET_R2 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
   color scale method RWB
   set colorcmds {
-    {color Display {Background} white}
     {color Display {BackgroundTop} black}
     {color Display {BackgroundBot} blue2}
     {color Display {FPS} white}
