@@ -1,6 +1,6 @@
 #!/usr/local/bin/vmd
-# VMD script written by save_state $Revision: 1.47 $
-# VMD version: 1.9.3
+# VMD script written by save_state $Revision: 1.48 $
+# VMD version: 1.9.4a57
 set viewplist {}
 set fixedlist {}
 proc vmdrestoremymaterials {} {
@@ -12,9 +12,9 @@ proc vmdrestoremymaterials {} {
     }
   }
   material change ambient Opaque 0.000000
-  material change diffuse Opaque 0.510000
-  material change specular Opaque 0.200000
-  material change shininess Opaque 0.300000
+  material change diffuse Opaque 0.560000
+  material change specular Opaque 0.120000
+  material change shininess Opaque 0.290000
   material change mirror Opaque 0.000000
   material change opacity Opaque 1.000000
   material change outline Opaque 0.000000
@@ -221,96 +221,51 @@ proc vmdrestoremymaterials {} {
 }
 vmdrestoremymaterials
 # Atom selection macros
-atomselect macro at {resname ADE A THY T
-}
-atomselect macro acidic {resname ASP GLU
-}
-atomselect macro cyclic {resname HIS PHE PRO TRP TYR
-}
-atomselect macro acyclic {protein and not cyclic
-}
-atomselect macro aliphatic {resname ALA GLY ILE LEU VAL
-}
-atomselect macro alpha {protein and name CA
-}
-atomselect macro amino {protein
-}
-atomselect macro aromatic {resname HIS PHE TRP TYR
-}
-atomselect macro basic {resname ARG HIS LYS HSP
-}
-atomselect macro bonded {numbonds > 0
-}
-atomselect macro buried {resname ALA LEU VAL ILE PHE CYS MET TRP
-}
-atomselect macro cg {resname CYT C GUA G
-}
-atomselect macro charged {basic or acidic
-}
-atomselect macro hetero {not (protein or nucleic)
-}
-atomselect macro hydrophobic {resname ALA LEU VAL ILE PRO PHE MET TRP
-}
-atomselect macro small {resname ALA GLY SER
-}
-atomselect macro medium {resname VAL THR ASP ASN PRO CYS ASX PCA HYP
-}
-atomselect macro large {protein and not (small or medium)
-}
-atomselect macro neutral {resname VAL PHE GLN TYR HIS CYS MET TRP ASX GLX PCA HYP
-}
-atomselect macro polar {protein and not hydrophobic
-}
-atomselect macro purine {resname ADE A GUA G
-}
-atomselect macro pyrimidine {resname CYT C THY T URA U
-}
-atomselect macro surface {protein and not buried
-}
-atomselect macro lipid {resname DLPE DMPC DPPC GPC LPPC PALM PC PGCL POPC POPE
-}
-atomselect macro lipids {lipid
-}
-atomselect macro ion {resname AL BA CA CAL CD CES CLA CL CO CS CU CU1 CUA HG IN IOD K LIT MG MN3 MO3 MO4 MO5 MO6 NA NAW OC7 PB POT PT RB SOD TB TL WO4 YB ZN ZN1 ZN2
-}
-atomselect macro ions {ion
-}
-atomselect macro sugar {resname AGLC
-}
-atomselect macro solvent {not (protein or sugar or nucleic or lipid)
-}
-atomselect macro glycan {resname NAG BGLN FUC AFUC MAN AMAN BMA BMAN
-}
-atomselect macro carbon {name "C.*" and not ion
-}
-atomselect macro hydrogen {name "[0-9]?H.*"
-}
-atomselect macro nitrogen {name "N.*"
-}
-atomselect macro oxygen {name "O.*"
-}
-atomselect macro sulfur {name "S.*" and not ion
-}
-atomselect macro noh {not hydrogen
-}
-atomselect macro heme {resname HEM HEME
-}
-atomselect macro conformationall {altloc ""
-}
-atomselect macro conformationA {altloc "" or altloc "A"
-}
-atomselect macro conformationB {altloc "" or altloc "B"
-}
-atomselect macro conformationC {altloc "" or altloc "C"
-}
-atomselect macro conformationD {altloc "" or altloc "D"
-}
-atomselect macro conformationE {altloc "" or altloc "E"
-}
-atomselect macro conformationF {altloc "" or altloc "F"
-}
-atomselect macro drude {type DRUD or type LP
-}
+atomselect macro at {resname ADE A THY T}
+atomselect macro acidic {resname ASP GLU}
+atomselect macro cyclic {resname HIS PHE PRO TRP TYR}
+atomselect macro acyclic {protein and not cyclic}
+atomselect macro aliphatic {resname ALA GLY ILE LEU VAL}
+atomselect macro alpha {protein and name CA}
+atomselect macro amino protein
+atomselect macro aromatic {resname HIS PHE TRP TYR}
+atomselect macro basic {resname ARG HIS LYS HSP}
+atomselect macro bonded {numbonds > 0}
+atomselect macro buried {resname ALA LEU VAL ILE PHE CYS MET TRP}
+atomselect macro cg {resname CYT C GUA G}
+atomselect macro charged {basic or acidic}
+atomselect macro hetero {not (protein or nucleic)}
+atomselect macro hydrophobic {resname ALA LEU VAL ILE PRO PHE MET TRP}
+atomselect macro small {resname ALA GLY SER}
+atomselect macro medium {resname VAL THR ASP ASN PRO CYS ASX PCA HYP}
+atomselect macro large {protein and not (small or medium)}
+atomselect macro neutral {resname VAL PHE GLN TYR HIS CYS MET TRP ASX GLX PCA HYP}
+atomselect macro polar {protein and not hydrophobic}
+atomselect macro purine {resname ADE A GUA G}
+atomselect macro pyrimidine {resname CYT C THY T URA U}
+atomselect macro surface {protein and not buried}
+atomselect macro lipid {resname DLPE DMPC DPPC GPC LPPC PALM PC PGCL POPC POPE}
+atomselect macro lipids lipid
+atomselect macro ion {resname AL BA CA CAL CD CES CLA CL CO CS CU CU1 CUA HG IN IOD K LIT MG MN3 MO3 MO4 MO5 MO6 NA NAW OC7 PB POT PT RB SOD TB TL WO4 YB ZN ZN1 ZN2}
+atomselect macro ions ion
+atomselect macro sugar {resname AGLC}
+atomselect macro solvent {not (protein or sugar or nucleic or lipid)}
+atomselect macro glycan {resname NAG BGLN FUC AFUC MAN AMAN BMA BMAN}
+atomselect macro carbon {name "C.*" and not ion}
+atomselect macro hydrogen {name "[0-9]?H.*"}
+atomselect macro nitrogen {name "N.*"}
+atomselect macro oxygen {name "O.*"}
+atomselect macro sulfur {name "S.*" and not ion}
+atomselect macro noh {not hydrogen}
+atomselect macro heme {resname HEM HEME}
+atomselect macro conformationall {altloc ""}
+atomselect macro conformationA {altloc "" or altloc "A"}
+atomselect macro conformationB {altloc "" or altloc "B"}
+atomselect macro conformationC {altloc "" or altloc "C"}
+atomselect macro conformationD {altloc "" or altloc "D"}
+atomselect macro conformationE {altloc "" or altloc "E"}
+atomselect macro conformationF {altloc "" or altloc "F"}
+atomselect macro drude {type DRUD or type LP}
 atomselect macro unparametrized beta<1
 atomselect macro addedmolefacture {occupancy 0.8}
 atomselect macro qwikmd_protein {(not name QWIKMDDELETE and protein)}
@@ -321,9 +276,9 @@ atomselect macro qwikmd_hetero {(not name QWIKMDDELETE and hetero and not qwikmd
 # Display settings
 display eyesep       0.065000
 display focallength  2.000000
-display height       6.000000
+display height       1.000000
 display distance     -2.000000
-display projection   Orthographic
+display projection   Perspective
 display nearclip set 0.500000
 display farclip  set 10.000000
 display depthcue   off
@@ -341,22 +296,8 @@ display dof off
 display dof_fnumber 64.000000
 display dof_focaldist 0.700000
 mol new dump.lammpstrj type lammpstrj first 0 last -1 step 1 filebonds 1 autobonds 1 waitfor all
-graphics top color 16
-graphics top material 0
-graphics top line {-40.000000 -40.000000 -0.500000} {40.000000 -40.000000 -0.500000} style solid width 1
-graphics top line {-40.000000 -40.000000 -0.500000} {-40.000000 40.000000 -0.500000} style solid width 1
-graphics top line {-40.000000 -40.000000 -0.500000} {-40.000000 -40.000000 0.500000} style solid width 1
-graphics top line {40.000000 -40.000000 -0.500000} {40.000000 -40.000000 0.500000} style solid width 1
-graphics top line {-40.000000 40.000000 -0.500000} {40.000000 40.000000 -0.500000} style solid width 1
-graphics top line {-40.000000 -40.000000 0.500000} {-40.000000 40.000000 0.500000} style solid width 1
-graphics top line {40.000000 -40.000000 -0.500000} {40.000000 40.000000 -0.500000} style solid width 1
-graphics top line {-40.000000 40.000000 -0.500000} {-40.000000 40.000000 0.500000} style solid width 1
-graphics top line {-40.000000 -40.000000 0.500000} {40.000000 -40.000000 0.500000} style solid width 1
-graphics top line {40.000000 40.000000 0.500000} {40.000000 40.000000 -0.500000} style solid width 1
-graphics top line {40.000000 40.000000 0.500000} {40.000000 -40.000000 0.500000} style solid width 1
-graphics top line {40.000000 40.000000 0.500000} {-40.000000 40.000000 0.500000} style solid width 1
 mol delrep 0 top
-mol representation VDW 0.500000 47.000000
+mol representation VDW 0.400000 39.000000
 mol color Name
 mol selection {type 1}
 mol material Opaque
@@ -364,7 +305,7 @@ mol addrep top
 mol selupdate 0 top 0
 mol colupdate 0 top 0
 mol scaleminmax top 0 0.000000 0.000000
-mol smoothrep top 0 1
+mol smoothrep top 0 0
 mol drawframes top 0 {now}
 mol clipplane center 0 0 top {0.0 0.0 0.0}
 mol clipplane color  0 0 top {0.5 0.5 0.5 }
@@ -390,7 +331,7 @@ mol clipplane center 5 0 top {0.0 0.0 0.0}
 mol clipplane color  5 0 top {0.5 0.5 0.5 }
 mol clipplane normal 5 0 top {0.0 0.0 1.0}
 mol clipplane status 5 0 top {0}
-mol representation VDW 0.900000 47.000000
+mol representation VDW 0.900000 46.000000
 mol color Name
 mol selection {type 2}
 mol material Opaque
@@ -398,7 +339,7 @@ mol addrep top
 mol selupdate 1 top 0
 mol colupdate 1 top 0
 mol scaleminmax top 1 0.000000 0.000000
-mol smoothrep top 1 1
+mol smoothrep top 1 0
 mol drawframes top 1 {now}
 mol clipplane center 0 1 top {0.0 0.0 0.0}
 mol clipplane color  0 1 top {0.5 0.5 0.5 }
@@ -425,10 +366,10 @@ mol clipplane color  5 1 top {0.5 0.5 0.5 }
 mol clipplane normal 5 1 top {0.0 0.0 1.0}
 mol clipplane status 5 1 top {0}
 mol rename top dump.lammpstrj
-set viewpoints([molinfo top]) {{{1 0 0 0.528337} {0 1 0 2.11308} {0 0 1 0} {0 0 0 1}} {{1 0 0 0} {0 0.999967 -0.00814478 0} {0 0.00814478 0.999967 0} {0 0 0 1}} {{0.0324085 0 0 0} {0 0.0324085 0 0} {0 0 0.0324085 0} {0 0 0 1}} {{1 0 0 0} {0 1 0 -0.05} {0 0 1 0} {0 0 0 1}}}
+set viewpoints([molinfo top]) {{{1 0 0 0.257765} {0 1 0 0.542586} {0 0 1 0} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}} {{0.00695039 0 0 0} {0 0.00695039 0 0} {0 0 0.00695039 0} {0 0 0 1}} {{1 0 0 0} {0 1 0 0} {0 0 1 0} {0 0 0 1}}}
 lappend viewplist [molinfo top]
 set topmol [molinfo top]
-# done with molecule 1
+# done with molecule 0
 foreach v $viewplist {
   molinfo $v set {center_matrix rotate_matrix scale_matrix global_matrix} $viewpoints($v)
 }
@@ -452,6 +393,30 @@ color scale colors GWB {0.0 1.0 0.0} {1.0 1.0 1.0} {0.0 0.0 1.0}
 color scale colors BWG {0.0 0.0 1.0} {1.0 1.0 1.0} {0.0 1.0 0.0}
 color scale colors BlkW {0.0 0.0 0.0} {0.5 0.5 0.5} {1.0 1.0 1.0}
 color scale colors WBlk {1.0 1.0 1.0} {0.5 0.5 0.5} {0.0 0.0 0.0}
+color scale colors cividis {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors viridis {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors magma {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors plasma {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors inferno {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_L3 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_L8 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_L9 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_L16 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_L17 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_L18 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_L19 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_L20 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_C2 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_C4 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_C6 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_C7 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_I1 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_I2 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_I3 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_D11 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_D12 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors turbo {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
+color scale colors CET_R2 {0.0 0.0 0.0} {0.0 0.0 0.0} {0.0 0.0 0.0}
   color scale method RWB
   set colorcmds {
     {color Display {Background} white}
@@ -460,7 +425,7 @@ color scale colors WBlk {1.0 1.0 1.0} {0.5 0.5 0.5} {0.0 0.0 0.0}
     {color Display {FPS} white}
     {color Name {LPA} green}
     {color Name {LPB} green}
-    {color Name {1} pink}
+    {color Name {1} gray}
     {color Name {2} cyan}
     {color Type {LP} green}
     {color Type {DRUD} pink}
@@ -576,8 +541,6 @@ color scale colors WBlk {1.0 1.0 1.0} {0.5 0.5 0.5} {0.0 0.0 0.0}
     {color Segname {} blue}
     {color Conformation {all} blue}
     {color Molecule {0} blue}
-    {color Molecule {1} red}
-    {color Molecule {dump.lammpstrj} red}
     {color Structure {3_10_Helix} blue}
     {color Surface {Grasp} gray}
     {color Labels {Springs} orange}
@@ -588,14 +551,14 @@ color scale colors WBlk {1.0 1.0 1.0} {0.5 0.5 0.5} {0.0 0.0 0.0}
     set val [catch {eval $colcmd}]
   }
   color change rgb 0 0.0 0.0 1.0
-  color change rgb 2 0.3499999940395355 0.3499999940395355 0.3499999940395355
+  color change rgb 2 0.6169154047966003 0.6169154047966003 0.6169154047966003
   color change rgb 3 1.0 0.5 0.0
   color change rgb 4 1.0 1.0 0.0
   color change rgb 5 0.5 0.5 0.20000000298023224
   color change rgb 6 0.6000000238418579 0.6000000238418579 0.6000000238418579
   color change rgb 7 0.0 1.0 0.0
-  color change rgb 9 0.7099999785423279 0.699999988079071 0.699999988079071
-  color change rgb 10 0.25 1.0 1.0
+  color change rgb 9 1.0 0.6000000238418579 0.6000000238418579
+  color change rgb 10 0.0 1.0 1.0
   color change rgb 11 0.6499999761581421 0.0 0.6499999761581421
   color change rgb 12 0.5 0.8999999761581421 0.4000000059604645
   color change rgb 13 0.8999999761581421 0.4000000059604645 0.699999988079071
