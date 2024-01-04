@@ -1,6 +1,6 @@
 ## Measure the surface tension of water
 
-<img src="water-light.png" width="50%" align="right"/></a>
+<img src="water.png" width="30%" align="right"/></a>
 
 ### Description
 
