@@ -17,6 +17,7 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
 * [3D Lennard-Jones fluids](3D-lennard-jones-fluid/)
 * [Silicalite SiO2 MFI structure](bulk-silicalite/)
 * [Melting a cube of gold metal](melting-gold/)
+* [Graphene oxide nanoparticle in interaction with water](GO-nanoparticle)
 * [NaCl crystal dissolution in water](salt-dissolution-water/)
 * [Water-ethanol-Na-Cl mixture](water-ethanol/)
 * [Simulating an oil-water-vapor interface](water-toluene-interface/)
