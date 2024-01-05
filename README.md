@@ -25,7 +25,9 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
 
 ## Need more inputs?
 
-Some more inputs are stored in the [repository](https://github.com/lammpstutorials/lammpstutorials.github.io) of LAMMPS tutorials.
+Many more inputs are stored
+in the [repository](https://github.com/lammpstutorials/lammpstutorials.github.io) of LAMMPS tutorials,
+and in the [example folder](https://github.com/lammps/lammps/tree/develop/examples) of LAMMPS .
 
 ## Contact 
 
