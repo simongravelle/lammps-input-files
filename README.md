@@ -7,7 +7,7 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
 <p float="left">
   <a href="3D-lennard-jones-fluid/"><img src="3D-lennard-jones-fluid/LJ.png" width="24.5%" /></a>
   <a href="salt-dissolution-water/"><img src="salt-dissolution-water/salt-dissolution.png" width="24.5%" /></a>
-  <a href="CNT-under-deformation/"><img src="CNT-under-deformation/cnt-under-deformation.jpg" width="24.5%" /></a>
+  <a href="GO-nanoparticle/"><img src="GO-nanoparticle/GO-nanoparticle.png" width="24.5%" /></a>
   <a href="water-toluene-interface/"><img src="water-toluene-interface/water-toluene.png" width="24.5%" /></a>
 </p>
 
@@ -17,7 +17,7 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
 * [3D Lennard-Jones fluids](3D-lennard-jones-fluid/)
 * [Silicalite SiO2 MFI structure](bulk-silicalite/)
 * [Melting a cube of gold metal](melting-gold/)
-* [Graphene oxide nanoparticle in interaction with water](GO-nanoparticle)
+* [Graphene oxide nanoparticle in interaction with water](GO-nanoparticle/)
 * [NaCl crystal dissolution in water](salt-dissolution-water/)
 * [Water-ethanol-Na-Cl mixture](water-ethanol/)
 * [Simulating an oil-water-vapor interface](water-toluene-interface/)
