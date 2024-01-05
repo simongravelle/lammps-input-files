@@ -1,4 +1,4 @@
-# Melting of a cube of gold metal 
+# Melting a cube of gold metal 
 
 <img align="right" width="30%" src="gold-melting.png">
 
@@ -7,6 +7,7 @@
 The simulation consists of a cube of gold atoms using the embedded atom method (eam) force field.
 The temperature is increased linearly from 1 K to 2500 K
 during the simulation, and the initially solid cube eventuelly melts. 
+This [video](https://www.youtube.com/watch?v=aVxBxGGsqMA) has been made with this script.
 
 ### How to
 

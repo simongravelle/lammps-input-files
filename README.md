@@ -15,7 +15,8 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
 
 * [2D Lennard-Jones fluids](2D-lennard-jones-fluid/)
 * [3D Lennard-Jones fluids](3D-lennard-jones-fluid/)
-* [Melting of a cube of gold metal](melting-gold/)
+* [Melting a cube of gold metal](melting-gold/)
+* [NaCl crystal dissolution in water](salt-dissolution-water/)
 * [Water-ethanol-Na-Cl mixture](water-ethanol/)
 * [Simulating an oil-water-vapor interface](water-toluene-interface/)
 * [Measure the surface tension of water](water-vapour/)
