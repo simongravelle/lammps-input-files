@@ -59,4 +59,4 @@ fix mynvt all nvt temp 300 300 0.1
 run 10000
 
 # write final state of simulation
-write_data data.lammps
+write_data final_state.data

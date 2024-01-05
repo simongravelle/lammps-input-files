@@ -42,6 +42,7 @@ run 10000
 # second equilibration step
 timestep 2.0
 run 100000
+undump mydmp
 reset_timestep 0
 
 # save adsorbed status of atoms
