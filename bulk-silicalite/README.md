@@ -5,14 +5,15 @@
 ### Description
 
 The system consists of a SiO2 MFI sctructure. The force field is the bond order potential SiO.tersoff.
+This [video](https://www.youtube.com/watch?v=hyj0vCOnzJA) has been made with this script.
 
 ### How to
 
 Run the input.lammps script using LAMMPS. If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
-### Output
+### Find LAMMPS tutorial
 
-This [video](https://www.youtube.com/watch?v=hyj0vCOnzJA) has been made with this script.
+If you are new to LAMMPS, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 ### Contact
 

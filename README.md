@@ -15,6 +15,7 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
 
 * [2D Lennard-Jones fluids](2D-lennard-jones-fluid/)
 * [3D Lennard-Jones fluids](3D-lennard-jones-fluid/)
+* [Silicalite SiO2 MFI structure](bulk-silicalite/)
 * [Melting a cube of gold metal](melting-gold/)
 * [NaCl crystal dissolution in water](salt-dissolution-water/)
 * [Water-ethanol-Na-Cl mixture](water-ethanol/)

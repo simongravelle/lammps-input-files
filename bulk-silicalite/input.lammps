@@ -3,24 +3,18 @@
 # Find more scripts here: https://github.com/simongravelle/lammps-input-files
 # LAMMPS tutorials for beginners: https://lammpstutorials.github.io/
 
-# basic parameters
 boundary p p p
 units metal
 atom_style atomic
 pair_style tersoff
 
-# import data
 read_data data.lammps
 include parm.lammps
 
-# give atoms velocity, apply fix nvt (fixed volume)
-# choose timestep (0.5 fs)
 fix mynpt all nvt temp 300 300 0.1
 timestep 0.0005
 
-# dump atom positions every 0.5 ps and log info every 0.5 ps
 dump dp1 all atom 1000 dump.lammpstrj
 thermo 1000
 
-# run (10 ps)
 run 20000
