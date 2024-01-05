@@ -6,7 +6,7 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
 
 <p float="left">
   <a href="3D-lennard-jones-fluid/"><img src="3D-lennard-jones-fluid/LJ.png" width="24.5%" /></a>
-  <a href="salt-dissolution-water/"><img src="salt-dissolution-water/NaCldissolution.jpeg" width="24.5%" /></a>
+  <a href="salt-dissolution-water/"><img src="salt-dissolution-water/salt-dissolution.png" width="24.5%" /></a>
   <a href="CNT-under-deformation/"><img src="CNT-under-deformation/cnt-under-deformation.jpg" width="24.5%" /></a>
   <a href="water-toluene-interface/"><img src="water-toluene-interface/water-toluene.png" width="24.5%" /></a>
 </p>
