@@ -1,8 +1,12 @@
 # LAMMPS input files
 
-This folder contains input files for the [LAMMPS](https://www.lammps.org/) molecular simulation code.
-If you are new to LAMMPS, you can find beginner and advanced user tutorials [here](https://lammpstutorials.github.io/).
-For most folders, there is a corresponding video on my [youtube channel](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw). 
+This folder contains input files for the [LAMMPS](https://www.lammps.org/)
+molecular simulation code. If you are new to LAMMPS, you can find tutorials 
+for beginners on [LAMMPS tutorials](https://lammpstutorials.github.io/).
+For most folders, there is a corresponding video
+on [youtube](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw). 
+
+## Overview
 
 <p float="left">
     <a href="amorphous-carbon/"><img src="amorphous-carbon/amorphous-carbon.png" width="24.5%" /></a>
@@ -31,11 +35,12 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
 * [Simulating an oil-water-vapor interface](water-toluene-interface/)
 * [Measure the surface tension of water](water-vapour/)
 
-## Need more inputs?
+## Find more input
 
 Many more inputs are stored
-in the [repository](https://github.com/lammpstutorials/lammpstutorials.github.io) of LAMMPS tutorials,
-and in the [example folder](https://github.com/lammps/lammps/tree/develop/examples) of LAMMPS .
+in the [repository](https://github.com/lammpstutorials/lammpstutorials.github.io)
+of LAMMPS tutorials, and in the
+[example folder](https://github.com/lammps/lammps/tree/develop/examples) of LAMMPS .
 
 ## Contact 
 
