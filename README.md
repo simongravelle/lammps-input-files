@@ -9,31 +9,47 @@ on [youtube](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw).
 ## Overview
 
 <p float="left">
-    <a href="amorphous-carbon/"><img src="amorphous-carbon/amorphous-carbon.png" width="24.5%" /></a>
-  <a href="3D-lennard-jones-fluid/"><img src="3D-lennard-jones-fluid/LJ.png" width="24.5%" /></a>
-  <a href="salt-dissolution-water/"><img src="salt-dissolution-water/salt-dissolution.png" width="24.5%" /></a>
-  <a href="GO-nanoparticle/"><img src="GO-nanoparticle/GO-nanoparticle.png" width="24.5%" /></a>
-  <a href="water-toluene-interface/"><img src="water-toluene-interface/water-toluene.png" width="24.5%" /></a>
-  <a href="melting-gold/"><img src="melting-gold/gold-melting.png" width="24.5%" /></a>
-  <a href="reversibly-adsorbing-particles/"><img src="reversibly-adsorbing-particles/reversible-adsorbing-particles.png" width="24.5%" /></a>
-  <a href="water-ethanol/"><img src="water-ethanol/water-ethanol.png" width="24.5%" /></a>
+    <a href="inputs/amorphous-carbon/">
+        <img src="inputs/amorphous-carbon/amorphous-carbon.png" width="24.5%" />
+    </a>
+    <a href="inputs/3D-lennard-jones-fluid/">
+        <img src="inputs/3D-lennard-jones-fluid/LJ.png" width="24.5%" />
+    </a>
+    <a href="inputs/salt-dissolution-water/">
+        <img src="inputs/salt-dissolution-water/salt-dissolution.png" width="24.5%" />
+    </a>
+    <a href="inputs/GO-nanoparticle/">
+        <img src="inputs/GO-nanoparticle/GO-nanoparticle.png" width="24.5%" />
+    </a>
+    <a href="inputs/water-toluene-interface/">
+        <img src="inputs/water-toluene-interface/water-toluene.png" width="24.5%" />
+    </a>
+    <a href="inputs/melting-gold/">
+        <img src="inputs/melting-gold/gold-melting.png" width="24.5%" />
+    </a>
+    <a href="inputs/reversibly-adsorbing-particles/">
+        <img src="inputs/reversibly-adsorbing-particles/reversible-adsorbing-particles.png" width="24.5%" />
+    </a>
+    <a href="inputs/water-ethanol/">
+        <img src="inputs/water-ethanol/water-ethanol.png" width="24.5%" />
+    </a>
 </p>
 
 ## (Incomplete) list of input
 
-* [2D Lennard-Jones fluids](2D-lennard-jones-fluid/)
-* [3D Lennard-Jones fluids](3D-lennard-jones-fluid/)
-* [Silicalite SiO2 MFI structure](bulk-silicalite/)
-* [Melting a cube of gold metal](melting-gold/)
-* [Reactivity of ion hydronium](illustration-ion-hydronium/)
-* [Graphene oxide nanoparticle in interaction with water](GO-nanoparticle/)
-* [NaCl ions in water](nacl-solution/)
-* [NaCl crystal dissolution in water](salt-dissolution-water/)
-* [Generation of amorphous carbon structure using the liquid quench method](amorphous-carbon/)
-* [Adsorption combined with diffusion create pink noise in nanopore](reversibly-adsorbing-particles/)
-* [Water-ethanol-Na-Cl mixture](water-ethanol/)
-* [Simulating an oil-water-vapor interface](water-toluene-interface/)
-* [Measure the surface tension of water](water-vapour/)
+* [2D Lennard-Jones fluids](inputs/2D-lennard-jones-fluid/)
+* [3D Lennard-Jones fluids](inputs/3D-lennard-jones-fluid/)
+* [Generation of amorphous carbon structure using the liquid quench method](inputs/amorphous-carbon/)
+* [Silicalite SiO2 MFI structure](inputs/bulk-silicalite/)
+* [Melting a cube of gold metal](inputs/melting-gold/)
+* [Reactivity of ion hydronium](inputs/illustration-ion-hydronium/)
+* [Graphene oxide nanoparticle in interaction with water](inputs/GO-nanoparticle/)
+* [NaCl ions in water](inputs/nacl-solution/)
+* [NaCl crystal dissolution in water](inputs/salt-dissolution-water/)
+* [Adsorption combined with diffusion create pink noise in nanopore](inputs/reversibly-adsorbing-particles/)
+* [Water-ethanol-Na-Cl mixture](inputs/water-ethanol/)
+* [Simulating an oil-water-vapor interface](inputs/water-toluene-interface/)
+* [Measure the surface tension of water](inputs/water-vapour/)
 
 ## Find more input
 
