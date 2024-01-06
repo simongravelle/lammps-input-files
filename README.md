@@ -54,7 +54,7 @@ on [youtube](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw).
 ## Find more input
 
 Many more inputs are stored
-in the [repository](https://github.com/lammpstutorials/lammpstutorials.github.io)
+in the [repository](https://github.com/lammpstutorials/lammpstutorials-inputs)
 of LAMMPS tutorials, and in the
 [example folder](https://github.com/lammps/lammps/tree/develop/examples) of LAMMPS .
 
