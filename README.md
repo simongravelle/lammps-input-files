@@ -20,6 +20,7 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
 * [Reactivity of ion hydronium](illustration-ion-hydronium/)
 * [Graphene oxide nanoparticle in interaction with water](GO-nanoparticle/)
 * [NaCl crystal dissolution in water](salt-dissolution-water/)
+* [Generation of amorphous carbon structure using the liquid quench method](amorphous-carbon/)
 * [Adsorption combined with diffusion create pink noise in nanopore](reversibly-adsorbing-particles/)
 * [Water-ethanol-Na-Cl mixture](water-ethanol/)
 * [Simulating an oil-water-vapor interface](water-toluene-interface/)
