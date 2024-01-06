@@ -1,6 +1,6 @@
 # NaCl ions in water
 
-<img align="right" width="30%" src="nacl_solution_transparent.png">
+<img align="right" width="30%" src="nacl-solution.png">
 
 ### Description
 
@@ -8,8 +8,11 @@ The simulation consists of a bulk solution of NaCl in water in the NPT ensemble.
 
 ### How to
 
-Run the make-LAMMPS-data.ipynb notebook using Jupyter/Python. Then run input.lammps. 
-If you are new to LAMMPS and VMD, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
+Run the make-LAMMPS-data.ipynb notebook using Jupyter/Python. Then run input.lammps using LAMMPS. 
+
+### Find LAMMPS tutorial
+
+If you are new to LAMMPS, you can find [tutorials and instructions here](https://lammpstutorials.github.io/).
 
 ### Contact
 

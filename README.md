@@ -5,10 +5,13 @@ If you are new to LAMMPS, you can find beginner and advanced user tutorials [her
 For most folders, there is a corresponding video on my [youtube channel](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw). 
 
 <p float="left">
+    <a href="amorphous-carbon/"><img src="amorphous-carbon/amorphous-carbon.png" width="24.5%" /></a>
   <a href="3D-lennard-jones-fluid/"><img src="3D-lennard-jones-fluid/LJ.png" width="24.5%" /></a>
   <a href="salt-dissolution-water/"><img src="salt-dissolution-water/salt-dissolution.png" width="24.5%" /></a>
   <a href="GO-nanoparticle/"><img src="GO-nanoparticle/GO-nanoparticle.png" width="24.5%" /></a>
   <a href="water-toluene-interface/"><img src="water-toluene-interface/water-toluene.png" width="24.5%" /></a>
+  <a href="melting-gold/"><img src="melting-gold/gold-melting.png" width="24.5%" /></a>
+    <a href="reversibly-adsorbing-particles/"><img src="reversibly-adsorbing-particles/reversible-adsorbing-particles.png" width="24.5%" /></a>
 </p>
 
 ## (Incomplete) list of input
@@ -19,6 +22,7 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
 * [Melting a cube of gold metal](melting-gold/)
 * [Reactivity of ion hydronium](illustration-ion-hydronium/)
 * [Graphene oxide nanoparticle in interaction with water](GO-nanoparticle/)
+* [NaCl ions in water](nacl-solution/)
 * [NaCl crystal dissolution in water](salt-dissolution-water/)
 * [Generation of amorphous carbon structure using the liquid quench method](amorphous-carbon/)
 * [Adsorption combined with diffusion create pink noise in nanopore](reversibly-adsorbing-particles/)
