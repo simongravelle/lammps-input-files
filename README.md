@@ -11,7 +11,8 @@ For most folders, there is a corresponding video on my [youtube channel](https:/
   <a href="GO-nanoparticle/"><img src="GO-nanoparticle/GO-nanoparticle.png" width="24.5%" /></a>
   <a href="water-toluene-interface/"><img src="water-toluene-interface/water-toluene.png" width="24.5%" /></a>
   <a href="melting-gold/"><img src="melting-gold/gold-melting.png" width="24.5%" /></a>
-    <a href="reversibly-adsorbing-particles/"><img src="reversibly-adsorbing-particles/reversible-adsorbing-particles.png" width="24.5%" /></a>
+  <a href="reversibly-adsorbing-particles/"><img src="reversibly-adsorbing-particles/reversible-adsorbing-particles.png" width="24.5%" /></a>
+  <a href="water-ethanol/"><img src="water-ethanol/water-ethanol.png" width="24.5%" /></a>
 </p>
 
 ## (Incomplete) list of input
