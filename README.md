@@ -2,7 +2,7 @@
 
 This folder contains input files for the [LAMMPS](https://www.lammps.org/)
 molecular simulation code. If you are new to LAMMPS, you can find tutorials 
-for beginners on [LAMMPS tutorials](https://lammpstutorials.github.io/).
+for beginners on [lammpstutorials.github.io](https://lammpstutorials.github.io/).
 For most folders, there is a corresponding video
 on [youtube](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw). 
 
