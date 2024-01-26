@@ -46,6 +46,7 @@ on [youtube](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw).
 * [Graphene oxide nanoparticle in interaction with water](inputs/GO-nanoparticle/)
 * [NaCl ions in water](inputs/nacl-solution/)
 * [NaCl crystal dissolution in water](inputs/salt-dissolution-water/)
+* [Solid NaCl under compression](inputs/solid-NaCl-under-compression/)
 * [Adsorption combined with diffusion create pink noise in nanopore](inputs/reversibly-adsorbing-particles/)
 * [Water-ethanol-Na-Cl mixture](inputs/water-ethanol/)
 * [Simulating an oil-water-vapor interface](inputs/water-toluene-interface/)
