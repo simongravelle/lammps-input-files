@@ -35,7 +35,7 @@ on [youtube](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw).
     </a>
 </p>
 
-## List of input
+## List of inputs
 
 * [2D Lennard-Jones fluids](inputs/2D-lennard-jones-fluid/)
 * [3D Lennard-Jones fluids](inputs/3D-lennard-jones-fluid/)
