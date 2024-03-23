@@ -65,3 +65,11 @@ Many more inputs are stored in:
 ## Contact 
 
 Feel free to contact me by [email](https://simongravelle.github.io/) if you have questions or requests.
+
+## Acknowledgments ##
+
+This project has received funding from the European
+Union's Horizon 2020 research and innovation programme
+under the Marie Skłodowska-Curie grant agreement No 101065060.
+
+![MSCA image](https://raw.githubusercontent.com/simongravelle/nmrformd/main/docs/source/figures/logo/msca.png)
