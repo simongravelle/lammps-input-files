@@ -52,7 +52,7 @@ on [youtube](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw).
 * [Simulating an oil-water-vapor interface](inputs/water-toluene-interface/)
 * [Measure the surface tension of water](inputs/water-vapour/)
 * [Liquid mixture of PEG, water, and ethanol](inputs/liquid-mixture-PEG-water-ethanol/)
-* [Water-co2 mixture ingraphene slit](inputs/water-co2-in-graphene-slit/)
+* [Water-co2 mixture in graphene slit](inputs/water-co2-in-graphene-slit/)
 * [Water in graphene slit](inputs/water-in-graphene-slit/)
 
 ## Find more input
