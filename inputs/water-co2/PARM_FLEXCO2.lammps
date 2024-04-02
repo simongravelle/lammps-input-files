@@ -1,0 +1,17 @@
+# parameters 
+
+mass 1 15.9994 # H2O O (water TIP4P/2005)
+mass 2 1.008 # H2O H (water TIP4P/2005)
+mass 3 12.0107 # CO2
+mass 4 15.9994 # CO2
+
+pair_coeff 1 1 0.18481 3.165 # H2O
+pair_coeff 2 2 0.0 0.0 # H2O
+pair_coeff 3 3 0.053649 2.8 # CO2
+pair_coeff 4 4 0.156973 3.05 # CO2
+
+bond_coeff 1 0 0.9572 # H2O
+bond_coeff 2 2566.7 1.16 # CO2 REF 16 Thermodynamic and transport properties of carbon dioxide from molecular simulation. J. Chem. Phys. 2007, 126, 064509
+
+angle_coeff 1 0 104.52 # H2O
+angle_coeff 2 295.4 180.00 # CO2 REF 24 Harris, J. G.; Yung, K. H. Carbon dioxide’s liquid−vapor coexistence curve and critical properties as predicted by a simple molecular model. J. Phys. Chem. 1995, 99, 12021−12024.

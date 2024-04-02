@@ -1,0 +1,51 @@
+# LAMMPS input file
+variable tem equal 300
+
+# initial
+units real
+atom_style full
+bond_style harmonic
+angle_style harmonic
+boundary p p p
+pair_style lj/cut/tip4p/long 1 2 1 1 0.105 12.0
+kspace_style pppm/tip4p 1.0e-5
+pair_modify mix arithmetic tail yes
+
+# create box
+region box block -20 20 -20 20 -20 20
+create_box 4 box &
+bond/types 2 &
+angle/types 2 &
+extra/bond/per/atom 20 &
+extra/angle/per/atom 20 &
+extra/special/per/atom 20 &
+
+include PARM_FLEXCO2.lammps
+
+# insert CO2
+molecule co2_mol CO2_TRAPPE.txt
+create_atoms 0 random 300 234312 NULL mol co2_mol 464563 overlap 1.5 maxtry 1000
+
+# insert water
+molecule h2o_mol H2O_TIP4P.txt
+create_atoms 0 random 300 654312 NULL mol h2o_mol 545474 overlap 1.5 maxtry 1000
+
+# output
+dump dp1 all atom 1000 dump.lammpstrj
+thermo 1000
+
+# group
+group h2o type 1 2
+group co2 type 3 4
+
+fix myshk h2o shake 1.0e-4 200 0 b 1 a 1 mol h2o_mol 
+fix mynvt all nvt temp ${tem} ${tem} 100
+fix mymom all momentum 500 linear 1 1 1
+
+run 5000
+
+unfix mynvt
+fix mynpt all npt temp ${tem} ${tem} 100 iso 100 1 1000
+
+run 20000
+write_data initial.data
