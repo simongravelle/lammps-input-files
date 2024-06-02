@@ -55,10 +55,10 @@ on [youtube](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw).
 * [Water-co2 mixture in graphene slit](inputs/water-co2-in-graphene-slit/)
 * [Water in graphene slit](inputs/water-in-graphene-slit/)
 
-## Find more input
+## Find more LAMMPS inputs
 
-Many more inputs are stored in:
-- the [repository](https://github.com/lammpstutorials/lammpstutorials-inputs) of LAMMPS tutorials,
+More input files are shared in:
+- the [repository](https://github.com/lammpstutorials/lammpstutorials-inputs) of [lammpstutorials.github.io](https://lammpstutorials.github.io/),
 - my [publication-data](https://github.com/simongravelle/publication-data) repository,
 - the [example folder](https://github.com/lammps/lammps/tree/develop/examples) of LAMMPS.
 
