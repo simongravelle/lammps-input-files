@@ -1,10 +1,16 @@
 # LAMMPS input files
 
+[![DOI](https://zenodo.org/badge/314814105.svg)](https://zenodo.org/doi/10.5281/zenodo.13340907)
+
 This folder contains input files for the [LAMMPS](https://www.lammps.org/)
 molecular simulation code. If you are new to LAMMPS, you can find tutorials 
 for beginners on [lammpstutorials.github.io](https://lammpstutorials.github.io/).
 For most folders, there is a corresponding video
 on [youtube](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw). 
+
+## How to cite
+
+You can refer to the inputs in this directory using this DOI: [10.5281/zenodo.13340908](https://zenodo.org/doi/10.5281/zenodo.13340907).
 
 ## Overview
 
