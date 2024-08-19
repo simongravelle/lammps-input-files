@@ -1,6 +1,7 @@
-# LAMMPS input files
-
 [![DOI](https://zenodo.org/badge/314814105.svg)](https://zenodo.org/doi/10.5281/zenodo.13340907)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+# LAMMPS input files
 
 This folder contains input files for the [LAMMPS](https://www.lammps.org/)
 molecular simulation code. If you are new to LAMMPS, you can find tutorials 
