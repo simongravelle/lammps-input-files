@@ -11,7 +11,8 @@ on [youtube](https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw).
 
 ## How to cite
 
-You can refer to the inputs in this directory using this DOI: [10.5281/zenodo.13340908](https://zenodo.org/doi/10.5281/zenodo.13340907).
+You can refer to the inputs in this directory using this
+DOI: [10.5281/zenodo.13340908](https://zenodo.org/doi/10.5281/zenodo.13340907).
 
 ## Overview
 
@@ -78,5 +79,3 @@ Feel free to contact me by [email](https://simongravelle.github.io/) if you have
 This project has received funding from the European
 Union's Horizon 2020 research and innovation programme
 under the Marie Skłodowska-Curie grant agreement No 101065060.
-
-![MSCA image](https://raw.githubusercontent.com/simongravelle/nmrformd/main/docs/source/figures/logo/msca.png)
