@@ -20,26 +20,14 @@ DOI: [10.5281/zenodo.13340908](https://zenodo.org/doi/10.5281/zenodo.13340907).
     <a href="inputs/amorphous-carbon/">
         <img src="inputs/amorphous-carbon/amorphous-carbon.png" width="24.5%" />
     </a>
+    <a href="inputs/water-ethanol/">
+        <img src="inputs/water-ethanol/water-ethanol.png" width="24.5%" />
+    </a>
     <a href="inputs/3D-lennard-jones-fluid/">
         <img src="inputs/3D-lennard-jones-fluid/LJ.png" width="24.5%" />
     </a>
-    <a href="inputs/salt-dissolution-water/">
-        <img src="inputs/salt-dissolution-water/salt-dissolution.png" width="24.5%" />
-    </a>
-    <a href="inputs/GO-nanoparticle/">
-        <img src="inputs/GO-nanoparticle/GO-nanoparticle.png" width="24.5%" />
-    </a>
     <a href="inputs/water-toluene-interface/">
         <img src="inputs/water-toluene-interface/water-toluene.png" width="24.5%" />
-    </a>
-    <a href="inputs/melting-gold/">
-        <img src="inputs/melting-gold/gold-melting.png" width="24.5%" />
-    </a>
-    <a href="inputs/reversibly-adsorbing-particles/">
-        <img src="inputs/reversibly-adsorbing-particles/reversible-adsorbing-particles.png" width="24.5%" />
-    </a>
-    <a href="inputs/water-ethanol/">
-        <img src="inputs/water-ethanol/water-ethanol.png" width="24.5%" />
     </a>
 </p>
 
