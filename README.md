@@ -53,10 +53,11 @@ DOI: [10.5281/zenodo.13340908](https://zenodo.org/doi/10.5281/zenodo.13340907).
 
 ## Find more LAMMPS inputs
 
-More input files are shared in:
-- the [repository](https://github.com/lammpstutorials/lammpstutorials-inputs) of [lammpstutorials.github.io](https://lammpstutorials.github.io/),
-- my [publication-data](https://github.com/simongravelle/publication-data) repository,
-- the [example folder](https://github.com/lammps/lammps/tree/develop/examples) of LAMMPS.
+More input files are shared in the:
+- [Inputs](https://github.com/lammpstutorials/lammpstutorials-inputs) repository of [lammpstutorials.github.io](https://lammpstutorials.github.io/),
+- [Files](https://github.com/lammpstutorials/lammpstutorials-article/tree/main/files) repository of the lammpstutorials' [article](https://lammpstutorials.github.io/),
+- [Repository](https://github.com/simongravelle/publication-data) associated with my publications,
+- [Example folder](https://github.com/lammps/lammps/tree/develop/examples) of LAMMPS.
 
 ## Contact 
 
